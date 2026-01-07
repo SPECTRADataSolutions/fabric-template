@@ -1,0 +1,1244 @@
+{
+  "timestamp": "2025-12-02 16:18:44",
+  "base_url": "https://velonetic.yourzephyr.com/flex/services/rest/latest",
+  "category": "all",
+  "total_tested": 120,
+  "passed": 36,
+  "failed": 84,
+  "skipped": 0,
+  "results": [
+    {
+      "path": "/release",
+      "resource": "Get all releases for all projects with Access [/release]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 77,
+        "duration": 0.39259815216064453,
+        "path": "/release"
+      }
+    },
+    {
+      "path": "/testcase/requirement/{testcaseid}",
+      "resource": "Get Requirement Summary by Testcase ID [/testcase/requirement/{testcaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/requirement/{testcaseid}"
+      }
+    },
+    {
+      "path": "/testcase/tags",
+      "resource": "Get all tags [/testcase/tags]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 30,
+        "duration": 0.22392559051513672,
+        "path": "/testcase/tags"
+      }
+    },
+    {
+      "path": "/testcase/tags/{releaseid}{",
+      "resource": "Get all tags [/testcase/tags/{releaseid}{?fetchall}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/tags/{releaseid}{"
+      }
+    },
+    {
+      "path": "/testcase/name{",
+      "resource": "Get all Testcase Names by Testcase IDs [/testcase/name{?tcid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/name{"
+      }
+    },
+    {
+      "path": "/testcase/count{",
+      "resource": "Get Count Of Testcases By Phase [/testcase/count{?tcrcatalogtreeid}{?releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/count{"
+      }
+    },
+    {
+      "path": "/testcase/count/ids{",
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/ids{?treeids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/count/ids{"
+      }
+    },
+    {
+      "path": "/testcase/count/{releaseid}",
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/count/{releaseid}"
+      }
+    },
+    {
+      "path": "/testcase/cumulative{",
+      "resource": "Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative{?releaseid}{?requirementid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/cumulative{"
+      }
+    },
+    {
+      "path": "/testcase/cumulative/data{",
+      "resource": "Get Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative/data{?releaseid}{?requirementid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/cumulative/data{"
+      }
+    },
+    {
+      "path": "/testcase/count/discrete/{releaseid}",
+      "resource": "Testcase count per node [/testcase/count/discrete/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/count/discrete/{releaseid}"
+      }
+    },
+    {
+      "path": "/testcase/path{",
+      "resource": "Get Traceable Path from Root [/testcase/path{?testcaseid}{?tctid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/path{"
+      }
+    },
+    {
+      "path": "/testcase/pathbyrelease{",
+      "resource": "Get Traceable Path from Root [/testcase/pathbyrelease{?testcaseid}{?releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/pathbyrelease{"
+      }
+    },
+    {
+      "path": "/testcase/planning/{treeId}{",
+      "resource": "Get Testcase by Criteria [/testcase/planning/{treeId}{?offset}{?pagesize}{?order}{?isascorder}{?tcname}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/planning/{treeId}{"
+      }
+    },
+    {
+      "path": "/testcase/{testcaseId}",
+      "resource": "Get Testcase by ID [/testcase/{testcaseId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/{testcaseId}"
+      }
+    },
+    {
+      "path": "/testcase/nodes{",
+      "resource": "Get Testcases by Tree IDs [/testcase/nodes{?treeids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/nodes{"
+      }
+    },
+    {
+      "path": "/testcase/detail/{id}",
+      "resource": "Get Testcase details by ID [/testcase/detail/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/detail/{id}"
+      }
+    },
+    {
+      "path": "/testcase/altid{",
+      "resource": "Get Testcase by ID [/testcase/altid{?altids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/altid{"
+      }
+    },
+    {
+      "path": "/testcase/byrequirement{",
+      "resource": "Get Testcase Summary by Requirement ID [/testcase/byrequirement{?requirementid}{?breadcrumb}{?releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/byrequirement{"
+      }
+    },
+    {
+      "path": "/testcase/versions{",
+      "resource": "Get all testcase version by testcase id  [/testcase/versions{?testcaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/versions{"
+      }
+    },
+    {
+      "path": "/testcase{",
+      "resource": "Get Testcase by Criteria [/testcase{?offset}{?pagesize}{?releaseid}{?keyword}{?zqlquery}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase{"
+      }
+    },
+    {
+      "path": "/testcase/tree/{treeid}{",
+      "resource": "Get Testcase by Tree ID [/testcase/tree/{treeid}{?offset}{?pagesize}{?order}{?isascorder}{?dbsearch}{?frozen}{?is_cfield}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/tree/{treeid}{"
+      }
+    },
+    {
+      "path": "/testcasetree/phases/execution/{releaseid}",
+      "resource": "Get Execution Tree by releaseid [/testcasetree/phases/execution/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcasetree/phases/execution/{releaseid}"
+      }
+    },
+    {
+      "path": "/testcasetree/hierarchy/{treeid}",
+      "resource": "Get TCR hierarchy [/testcasetree/hierarchy/{treeid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcasetree/hierarchy/{treeid}"
+      }
+    },
+    {
+      "path": "/testcasetree/{tctId}",
+      "resource": "Get Testcase Tree [/testcasetree/{tctId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcasetree/{tctId}"
+      }
+    },
+    {
+      "path": "/testcasetree/phases/{releaseid}",
+      "resource": "Get Testcase Tree by releaseid [/testcasetree/phases/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcasetree/phases/{releaseid}"
+      }
+    },
+    {
+      "path": "/testcasetree/projectrepository/{projectid}",
+      "resource": "Get Project Repository Testcase Tree by projectid [/testcasetree/projectrepository/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 9,
+        "duration": 0.045493364334106445,
+        "path": "/testcasetree/projectrepository/{projectid}"
+      }
+    },
+    {
+      "path": "/testcasetree/lite{",
+      "resource": "Get tree by criteria [/testcasetree/lite{?type}{?releaseid}{?revisionid}{?parentid}{?isShared}{?limit}{?offset}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcasetree/lite{"
+      }
+    },
+    {
+      "path": "/tcuh/testcase/{id}{",
+      "resource": "Get Testcase usage history details [/tcuh/testcase/{id}{?isascorder}{?order}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/tcuh/testcase/{id}{"
+      }
+    },
+    {
+      "path": "/testcase/{testcaseVersionId}/teststep{",
+      "resource": "Get teststep [/testcase/{testcaseVersionId}/teststep{?isfetchstepversion}{?versionId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/testcase/{testcaseVersionId}/teststep{"
+      }
+    },
+    {
+      "path": "//executionchangehistory{",
+      "resource": "Get Testcase usage history details [//executionchangehistory{?releaseTestScheduleId}{?isascorder}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "//executionchangehistory{"
+      }
+    },
+    {
+      "path": "/execution/path{",
+      "resource": "Get node path [/execution/path{?scheduleid}{?assigneeuserid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/path{"
+      }
+    },
+    {
+      "path": "/execution/{id}",
+      "resource": "To get Schedule by ID [/execution/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/{id}"
+      }
+    },
+    {
+      "path": "/execution/ids{",
+      "resource": "To schedule by schedule IDs [/execution/ids{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/ids{"
+      }
+    },
+    {
+      "path": "/execution/expanded{",
+      "resource": "To schedule by schedule ids [/execution/expanded{?ids}{?stepresults}{?resulthistory}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/expanded{"
+      }
+    },
+    {
+      "path": "/execution/user/project{",
+      "resource": "Get Schedules by Criteria [/execution/user/project{?projectid}{?createdby}{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?orderByAsc}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/user/project{"
+      }
+    },
+    {
+      "path": "/execution{",
+      "resource": "Get Schedules by Criteria [/execution{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?isascorder}{?offset}{?includeanyoneuser}{?pagesize}{?is_cfield}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution{"
+      }
+    },
+    {
+      "path": "/execution/byfilter{",
+      "resource": "Get Teststep results by IDs [/execution/byfilter{?testcaseid}{?releaseid}{?rtsid}{?order}{?isascorder}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/byfilter{"
+      }
+    },
+    {
+      "path": "/execution/teststepresult/bytctid{",
+      "resource": "Get teststep results by ID's [/execution/teststepresult/bytctid{?tctid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/teststepresult/bytctid{"
+      }
+    },
+    {
+      "path": "/execution/teststepresult/{id}",
+      "resource": "Get Test Step Result [/execution/teststepresult/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/teststepresult/{id}"
+      }
+    },
+    {
+      "path": "/execution/teststepresult{",
+      "resource": "Get test step results by criteria [/execution/teststepresult{?sids}{?cyclephaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/execution/teststepresult{"
+      }
+    },
+    {
+      "path": "/admin/user/preference",
+      "resource": "Get All user preferences  [/admin/user/preference]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 212,
+        "duration": 0.04803180694580078,
+        "path": "/admin/user/preference"
+      }
+    },
+    {
+      "path": "/project/user/{UserID}",
+      "resource": "Get Project by User ID [/project/user/{UserID}?isLite=false&adminUser=false]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/project/user/{UserID}"
+      }
+    },
+    {
+      "path": "/ui/users{",
+      "resource": "Get user Grid view [/ui/users{?offset}{?pagesize}{?hidedisabledusers}{?order}{?isascorder}{?isLoggedIn}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/ui/users{"
+      }
+    },
+    {
+      "path": "/user/current{",
+      "resource": "Get Current Logged-In Users [/user/current{?auditLog}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/current{"
+      }
+    },
+    {
+      "path": "/user/defect",
+      "resource": "Get Defect Users present in System. [/user/defect]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.4830014705657959,
+        "path": "/user/defect"
+      }
+    },
+    {
+      "path": "/user/filter{",
+      "resource": "Get All Users Present in the System. [/user/filter{?includeDashboardUser}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/filter{"
+      }
+    },
+    {
+      "path": "/user/loggedin/count{",
+      "resource": "Getting all the Logged-In in User count [/user/loggedin/count{?skipdefectuser}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/loggedin/count{"
+      }
+    },
+    {
+      "path": "/user/{id}{",
+      "resource": "Get User by ID [/user/{id}{?isLite}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/{id}{"
+      }
+    },
+    {
+      "path": "/user{",
+      "resource": "Get All Users Present in the System. [/user{?hidedisabledusers}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user{"
+      }
+    },
+    {
+      "path": "/user/project/{projectid}{",
+      "resource": "Get User by Project ID [/user/project/{projectid}{?isLite}{?adminUser}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/project/{projectid}{"
+      }
+    },
+    {
+      "path": "/user/validZbotUsers{",
+      "resource": "Get valid users for Zbot. [/user/validZbotUsers{?projectId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/user/validZbotUsers{"
+      }
+    },
+    {
+      "path": "/usertoken",
+      "resource": "Get all token  [/usertoken]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 3,
+        "duration": 0.03706216812133789,
+        "path": "/usertoken"
+      }
+    },
+    {
+      "path": "/attachment/{id}",
+      "resource": "Get Attachment Details by id [/attachment/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/attachment/{id}"
+      }
+    },
+    {
+      "path": "/attachment{",
+      "resource": "Get attachment details [/attachment{?itemid}{?type}{?isLink}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/attachment{"
+      }
+    },
+    {
+      "path": "/admin/preference/admin",
+      "resource": "Get All Preferences - Admin [/admin/preference/admin]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 76,
+        "duration": 0.056798458099365234,
+        "path": "/admin/preference/admin"
+      }
+    },
+    {
+      "path": "/admin/app",
+      "resource": "Get All Applications  [/admin/app]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 23,
+        "duration": 0.04106879234313965,
+        "path": "/admin/app"
+      }
+    },
+    {
+      "path": "/admin/preference/lov/all",
+      "resource": "Get list of values [/admin/preference/lov/all]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 65,
+        "duration": 0.04159379005432129,
+        "path": "/admin/preference/lov/all"
+      }
+    },
+    {
+      "path": "/admin/preference/all",
+      "resource": "Get All Preferences  [/admin/preference/all]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 212,
+        "duration": 0.04123735427856445,
+        "path": "/admin/preference/all"
+      }
+    },
+    {
+      "path": "/admin/preference/anonymous",
+      "resource": "Get Anonymous Preferences  [/admin/preference/anonymous]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 91,
+        "duration": 0.026541948318481445,
+        "path": "/admin/preference/anonymous"
+      }
+    },
+    {
+      "path": "/admin/backup/schedule",
+      "resource": "Get Daily Back-up Schedule [/admin/backup/schedule]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.0605921745300293,
+        "path": "/admin/backup/schedule"
+      }
+    },
+    {
+      "path": "/admin/ldap/default/settings",
+      "resource": "Get All user preferences  [/admin/ldap/default/settings]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.040036916732788086,
+        "path": "/admin/ldap/default/settings"
+      }
+    },
+    {
+      "path": "/admin/preference{",
+      "resource": "Get Preference by key [/admin/preference{?key}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/admin/preference{"
+      }
+    },
+    {
+      "path": "/admin/preference/item/usage{",
+      "resource": "Get Preference Item Usage [/admin/preference/item/usage{?preferencename}{?value}{?id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/admin/preference/item/usage{"
+      }
+    },
+    {
+      "path": "/automation/schedule{",
+      "resource": "get Scheduled job via scheduled job id [/automation/schedule{?schedulejobid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/automation/schedule{"
+      }
+    },
+    {
+      "path": "/upload-file/automation/schedule/get-latest-job-progress{",
+      "resource": "Get latest Scheduled Automation Job Progress  [/upload-file/automation/schedule/get-latest-job-progress{?jobid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/upload-file/automation/schedule/get-latest-job-progress{"
+      }
+    },
+    {
+      "path": "/upload-file/automation/file-upload-job/list{",
+      "resource": "All scheduled jobs by project id and release id  [/upload-file/automation/file-upload-job/list{?releaseId}{?projectId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/upload-file/automation/file-upload-job/list{"
+      }
+    },
+    {
+      "path": "/cycle/assignments/{releaseid}{",
+      "resource": "Calculate assignments for release [/cycle/assignments/{releaseid}{?allexecutions}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/assignments/{releaseid}{"
+      }
+    },
+    {
+      "path": "/cycle/{cycleid}",
+      "resource": "Get Cycle by ID [/cycle/{cycleid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/{cycleid}"
+      }
+    },
+    {
+      "path": "/cycle/cycleName/{releaseid}{",
+      "resource": "Get Cycle names for release [/cycle/cycleName/{releaseid}{?orderBy}{?cycleName}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/cycleName/{releaseid}{"
+      }
+    },
+    {
+      "path": "/cycle/phase/name{",
+      "resource": "Get all cyclePhase Names [/cycle/phase/name{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/phase/name{"
+      }
+    },
+    {
+      "path": "/cycle/release/{releaseid}",
+      "resource": "Get Cycle for release [/cycle/release/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/release/{releaseid}"
+      }
+    },
+    {
+      "path": "/cycle/status/count/{releaseid}",
+      "resource": "get status count for releaseid [/cycle/status/count/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/cycle/status/count/{releaseid}"
+      }
+    },
+    {
+      "path": "/defect/{defectId}",
+      "resource": "Get defect by ID [/defect/{defectId}?projectId={projectId}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/defect/%7BdefectId%7D (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/defect/{defectId}"
+      }
+    },
+    {
+      "path": "/externalGroup/search{",
+      "resource": "Search groups in LDAP or crowd [/externalGroup/search{?name}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/externalGroup/search{"
+      }
+    },
+    {
+      "path": "/field/fieldtype",
+      "resource": "Get all the field's type metadata. [/field/fieldtype]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 16,
+        "duration": 0.0360257625579834,
+        "path": "/field/fieldtype"
+      }
+    },
+    {
+      "path": "/field/metadata{",
+      "resource": "Get customfield metadata  [/field/metadata{?visible}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/metadata{"
+      }
+    },
+    {
+      "path": "/field/{id}",
+      "resource": "Get Field by Id [/field/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/{id}"
+      }
+    },
+    {
+      "path": "/field/name{",
+      "resource": "Get Field by dispaly name [/field/name{?name}{?projectid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/name{"
+      }
+    },
+    {
+      "path": "/field{",
+      "resource": "Get Field by fieldName [/field{?name}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field{"
+      }
+    },
+    {
+      "path": "/field/importfields/{entityName}",
+      "resource": "Get Importable Fields By Entity  [/field/importfields/{entityName}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04157567024230957,
+        "path": "/field/importfields/{entityName}"
+      }
+    },
+    {
+      "path": "/field/ids{",
+      "resource": "Get list of CustomFields [/field/ids{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/ids{"
+      }
+    },
+    {
+      "path": "/field/project/{id}",
+      "resource": "Get list of project specific CustomFields [/field/project/{id}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/project/{id}"
+      }
+    },
+    {
+      "path": "/field/entity/{entityname}{",
+      "resource": "Get fields by entity [/field/entity/{entityname}{?includsystemfield}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03754115104675293,
+        "path": "/field/entity/{entityname}{"
+      }
+    },
+    {
+      "path": "/field/validate{",
+      "resource": "Validating field in the system. [/field/validate{?id}{?entityname}{?searchfieldname}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/field/validate{"
+      }
+    },
+    {
+      "path": "/fileWatcher/watcher{",
+      "resource": "get Scheduled job via scheduled job id [/fileWatcher/watcher{?schedulejobid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/fileWatcher/watcher{"
+      }
+    },
+    {
+      "path": "/gadget/{dashboardId}",
+      "resource": "Get all requirement node and requirement name by release id [/gadget/{dashboardId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/gadget/{dashboardId}"
+      }
+    },
+    {
+      "path": "/global-repository/project",
+      "resource": "Get All projects that allowed access to current global reporsitory user [/global-repository/project]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.035611629486083984,
+        "path": "/global-repository/project"
+      }
+    },
+    {
+      "path": "/info/license",
+      "resource": "Get License Information. [/info/license]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.037101030349731445,
+        "path": "/info/license"
+      }
+    },
+    {
+      "path": "/license/",
+      "resource": "Get License Information [/license/]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.042083740234375,
+        "path": "/license/"
+      }
+    },
+    {
+      "path": "/parsertemplate/{TemplateId}",
+      "resource": "Get Template  [/parsertemplate/{TemplateId}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/parsertemplate/{TemplateId}"
+      }
+    },
+    {
+      "path": "/parsertemplate",
+      "resource": "Get List of Templates  [/parsertemplate]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 9,
+        "duration": 0.04861807823181152,
+        "path": "/parsertemplate"
+      }
+    },
+    {
+      "path": "/project/details",
+      "resource": "Get All Normal Project Details [/project/details]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.04891848564147949,
+        "path": "/project/details"
+      }
+    },
+    {
+      "path": "/project/normal",
+      "resource": "Get All Normal project [/project/normal]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.038669586181640625,
+        "path": "/project/normal"
+      }
+    },
+    {
+      "path": "/project/all/leads",
+      "resource": "Get lead for all projects [/project/all/leads]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.1144101619720459,
+        "path": "/project/all/leads"
+      }
+    },
+    {
+      "path": "/project/{id}{",
+      "resource": "Get Project by ID [/project/{id}{?isLite}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/project/{id}{"
+      }
+    },
+    {
+      "path": "/project/project/{UserID}",
+      "resource": "Get allocated Projects [/project/project/{UserID}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/project/project/{UserID}"
+      }
+    },
+    {
+      "path": "/project/count/allprojects",
+      "resource": "Get Project Team Count for all projects [/project/count/allprojects]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.038581132888793945,
+        "path": "/project/count/allprojects"
+      }
+    },
+    {
+      "path": "/project/count/allusers",
+      "resource": "Get Project Team Count for all users [/project/count/allusers]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.03889632225036621,
+        "path": "/project/count/allusers"
+      }
+    },
+    {
+      "path": "/project/allocated/projects",
+      "resource": "Get Project Team  for Allocated Projects [/project/allocated/projects]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.043023109436035156,
+        "path": "/project/allocated/projects"
+      }
+    },
+    {
+      "path": "/project/projectteam/{pid}",
+      "resource": "Get Project team for project [/project/projectteam/{pid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/project/projectteam/{pid}"
+      }
+    },
+    {
+      "path": "/project{",
+      "resource": "Get All projects by UserId [/project{?userId}{?isLite}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/project{"
+      }
+    },
+    {
+      "path": "/project/lite",
+      "resource": "Get All projects  [/project/lite]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.03905844688415527,
+        "path": "/project/lite"
+      }
+    },
+    {
+      "path": "/project/shared",
+      "resource": "Get All Shared projects  [/project/shared]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 33,
+        "duration": 0.053600311279296875,
+        "path": "/project/shared"
+      }
+    },
+    {
+      "path": "/project/sharedprojects/{projectid}",
+      "resource": "Get Shared projects  [/project/sharedprojects/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.04067659378051758,
+        "path": "/project/sharedprojects/{projectid}"
+      }
+    },
+    {
+      "path": "/project/sharedtoprojects/{projectid}",
+      "resource": "Get Shared projects shared to given project [/project/sharedtoprojects/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03758120536804199,
+        "path": "/project/sharedtoprojects/{projectid}"
+      }
+    },
+    {
+      "path": "/release/paged/project/{projectid}{",
+      "resource": "Get releases for a project through page and offset [/release/paged/project/{projectid}{?pagesize}{?offset}{?order}{?isascorder}{?isVisible}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/release/paged/project/{projectid}{"
+      }
+    },
+    {
+      "path": "/release/{releaseid}",
+      "resource": "Get Release by Release ID [/release/{releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/release/{releaseid}"
+      }
+    },
+    {
+      "path": "/release/project/{projectid}",
+      "resource": "Get releases for a project [/release/project/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 4,
+        "duration": 0.049039602279663086,
+        "path": "/release/project/{projectid}"
+      }
+    },
+    {
+      "path": "/advancesearch/testexecutions/{altid}{",
+      "resource": "Search test executions for given altId [/advancesearch/testexecutions/{altid}{?maxresults}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.09355688095092773,
+        "path": "/advancesearch/testexecutions/{altid}{"
+      }
+    },
+    {
+      "path": "/advancesearch/reindex/health",
+      "resource": "Check Indexing Health [/advancesearch/reindex/health]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.5505638122558594,
+        "path": "/advancesearch/reindex/health"
+      }
+    },
+    {
+      "path": "/system/info/cache/info",
+      "resource": "Get All list of Caches [/system/info/cache/info]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.058363914489746094,
+        "path": "/system/info/cache/info"
+      }
+    },
+    {
+      "path": "/system/info/channelinfo",
+      "resource": "Get Channel Information [/system/info/channelinfo]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/system/info/channelinfo"
+      }
+    },
+    {
+      "path": "/system/info/license",
+      "resource": "Get License Information [/system/info/license]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.043561697006225586,
+        "path": "/system/info/license"
+      }
+    },
+    {
+      "path": "/system/info/servertime",
+      "resource": "Get License Information [/system/info/servertime]",
+      "success": false,
+      "data": {
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "path": "/system/info/servertime"
+      }
+    },
+    {
+      "path": "/system/info/stats",
+      "resource": "Get License Information [/system/info/stats]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.14245843887329102,
+        "path": "/system/info/stats"
+      }
+    },
+    {
+      "path": "/license/detail",
+      "resource": "Get License Detail Information [/license/detail]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/license/detail"
+      }
+    },
+    {
+      "path": "/license/peak/detail",
+      "resource": "License Peak Usage Detail [/license/peak/detail?licensetype={licensetype}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/license/peak/detail (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/license/peak/detail"
+      }
+    },
+    {
+      "path": "/ui/searchGroups{",
+      "resource": "Get group Grid view [/ui/searchGroups{?text}{?offset}{?pagesize}{?order}{?isascorder}{?hidedisabledgroups}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/ui/searchGroups{"
+      }
+    },
+    {
+      "path": "/ui/searchProjects{",
+      "resource": "Get project Grid view [/ui/searchProjects{?text}{?offset}{?pagesize}{?order}{?isascorder}{?includeglobalproject}{?isProjectAdmin}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "Not found",
+        "path": "/ui/searchProjects{"
+      }
+    }
+  ]
+}

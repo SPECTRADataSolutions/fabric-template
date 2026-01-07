@@ -1,0 +1,24 @@
+# Local lakehouse data (gitignored - generated during tests)
+.lakehouse/
+
+# Pytest cache
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
+
+# Test artifacts
+*.log
+test-results/
+
+# Spark artifacts
+derby.log
+metastore_db/
+spark-warehouse/
+
+
+

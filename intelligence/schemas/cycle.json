@@ -1,0 +1,87 @@
+{
+  "entity": "cycle",
+  "sample_data": {
+    "id": 210,
+    "environment": "Production",
+    "build": "1.0.0",
+    "name": "API Intelligence Probe - Cycle 20251209134246",
+    "startDate": 1765287766648,
+    "endDate": 1767879766648,
+    "cycleStartDate": "12/09/2025",
+    "cycleEndDate": "01/08/2026",
+    "status": 0,
+    "revision": 1,
+    "releaseId": 1,
+    "cyclePhases": [],
+    "createdOn": 1765287767571,
+    "hasChild": false
+  },
+  "schema": {
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "environment": {
+        "type": "string"
+      },
+      "build": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "startDate": {
+        "type": "integer"
+      },
+      "endDate": {
+        "type": "integer"
+      },
+      "cycleStartDate": {
+        "type": "string"
+      },
+      "cycleEndDate": {
+        "type": "string"
+      },
+      "status": {
+        "type": "integer"
+      },
+      "revision": {
+        "type": "integer"
+      },
+      "releaseId": {
+        "type": "integer"
+      },
+      "cyclePhases": {
+        "type": "array"
+      },
+      "createdOn": {
+        "type": "integer"
+      },
+      "hasChild": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "build",
+      "createdOn",
+      "cycleEndDate",
+      "cyclePhases",
+      "cycleStartDate",
+      "endDate",
+      "environment",
+      "hasChild",
+      "id",
+      "name",
+      "releaseId",
+      "revision",
+      "startDate",
+      "status"
+    ]
+  },
+  "endpoint": "/cycle",
+  "method": "POST",
+  "status": "\u2705 Working",
+  "notes": "Requires unlocked release. Use existing releases."
+}

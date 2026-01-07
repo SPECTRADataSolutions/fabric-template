@@ -1,0 +1,1826 @@
+ZEPHYR_ENDPOINTS_CATALOG = [
+  {
+    "endpoint_path": "/admin/preference/admin",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get All Preferences - Admin",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/app",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get All Applications",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference/lov/all",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get list of values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference/all",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get All Preferences",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference/anonymous",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get Anonymous Preferences",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/backup/schedule",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get Daily Back-up Schedule",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/ldap/default/settings",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get All user preferences",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get Preference by key",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference/item/usage",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get Preference Item Usage",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/user/preference",
+    "http_method": "GET",
+    "category": "admin",
+    "description": "Get All user preferences",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/admin/preference",
+    "http_method": "PUT",
+    "category": "admin",
+    "description": "Update a given Preference",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/assignmenttree",
+    "http_method": "PUT",
+    "category": "other",
+    "description": "Change multiple assignments",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/assignmenttree",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Create free form release testschedule",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/assignmenttree",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Create freeForm testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/assignmenttree",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Create testcase free form using search",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/attachment",
+    "http_method": "GET",
+    "category": "attachments",
+    "description": "Get Attachment Details by id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/attachment",
+    "http_method": "GET",
+    "category": "attachments",
+    "description": "Get attachment details",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/automation/job/delete",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Delete job using job id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/automation/schedule",
+    "http_method": "GET",
+    "category": "automation",
+    "description": "get Scheduled job via scheduled job id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/automation/job/detail",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Configure new Job",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/cancel",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Cancel job by id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/create-and-execute-job",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Create/execute a job",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/schedule/get-latest-job-progress",
+    "http_method": "GET",
+    "category": "automation",
+    "description": "Get latest Scheduled Automation Job Progress",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/file-upload-job/list",
+    "http_method": "GET",
+    "category": "automation",
+    "description": "All scheduled jobs by project id and release id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/create-job-detail",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Create new Job",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/execute-job",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Schedule/execute job for File Upload",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/upload-file/automation/update-execute-job",
+    "http_method": "POST",
+    "category": "automation",
+    "description": "Update/execute a job",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle/assignments",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "Calculate assignments for release",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/clone",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Clone a Cycle",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/cyclephase/clone",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Clone a CyclePhase",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/copy",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "copy a CyclePhase",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Create a New Cycle",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Create Cycle Phase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Create Cycle Phase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "DELETE",
+    "category": "cycles",
+    "description": "Delete Cycle",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "DELETE",
+    "category": "cycles",
+    "description": "Delete Cycle Phase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "Get Cycle by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle/cycleName",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "Get Cycle names for release",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/phase/name",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "Get all cyclePhase Names",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/release",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "Get Cycle for release",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/status/count",
+    "http_method": "GET",
+    "category": "cycles",
+    "description": "get status count for releaseid",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/move",
+    "http_method": "POST",
+    "category": "cycles",
+    "description": "Move a CyclePhase",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle/toggle",
+    "http_method": "PUT",
+    "category": "cycles",
+    "description": "get status count for releaseid",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "PUT",
+    "category": "cycles",
+    "description": "Update a Cycle",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/cycle",
+    "http_method": "PUT",
+    "category": "cycles",
+    "description": "Update Cycle Phase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/defectmapping",
+    "http_method": "POST",
+    "category": "defects",
+    "description": "Save defect schedule",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/defect",
+    "http_method": "POST",
+    "category": "defects",
+    "description": "Create defect in the system.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/defect",
+    "http_method": "GET",
+    "category": "defects",
+    "description": "Get defect by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "//executionchangehistory",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get Testcase usage history details",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/assign",
+    "http_method": "PUT",
+    "category": "executions",
+    "description": "Assign/Reassign schedules values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/bulk",
+    "http_method": "PUT",
+    "category": "executions",
+    "description": "Execute testcases",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "POST",
+    "category": "executions",
+    "description": "Create schedules values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "DELETE",
+    "category": "executions",
+    "description": "Delete / Unassign test schedules",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "DELETE",
+    "category": "executions",
+    "description": "Delete / Unassign frozen test cases and schedules",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/path",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get node path",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "To get Schedule by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/ids",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "To schedule by schedule IDs",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/expanded",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "To schedule by schedule ids",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/user/project",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get Schedules by Criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get Schedules by Criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/byfilter",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get Teststep results by IDs",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/modify",
+    "http_method": "POST",
+    "category": "executions",
+    "description": "Modify schedules values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/statusandattachment",
+    "http_method": "PUT",
+    "category": "executions",
+    "description": "To update execution details, attachment and status",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "PUT",
+    "category": "executions",
+    "description": "To update execution details",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution",
+    "http_method": "PUT",
+    "category": "executions",
+    "description": "Update Schedules Values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/updateteststatus",
+    "http_method": "POST",
+    "category": "executions",
+    "description": "Update Test Execution Status",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/externalrequirement/importall",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Import External Requirement Based on Filter or JQL",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/externalGroup/importGroupsAndUsers",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Import groups and users from the list",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/externalGroup/search",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Search groups in LDAP or crowd",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/externalGroup/sync",
+    "http_method": "PUT",
+    "category": "other",
+    "description": "Sync groups and users from the list",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field",
+    "http_method": "POST",
+    "category": "fields",
+    "description": "Add Custom Field",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/fieldtype",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get all the field's type metadata.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/metadata",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get customfield metadata",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get Field by Id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/name",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get Field by dispaly name",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get Field by fieldName",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/importfields",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get Importable Fields By Entity",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/ids",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get list of CustomFields",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/project",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get list of project specific CustomFields",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/entity",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Get fields by entity",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/cascade",
+    "http_method": "PUT",
+    "category": "fields",
+    "description": "Update Cascade",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/field/validate",
+    "http_method": "GET",
+    "category": "fields",
+    "description": "Validating field in the system.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/fieldmap",
+    "http_method": "POST",
+    "category": "fields",
+    "description": "create field map",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/fileWatcher/watcher",
+    "http_method": "GET",
+    "category": "other",
+    "description": "get Scheduled job via scheduled job id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/fileWatcher/watcher",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Schedule job for ZBlast",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/gadget",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get all requirement node and requirement name by release id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/global-repository/project",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get All projects that allowed access to current global reporsitory user",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/group",
+    "http_method": "POST",
+    "category": "groups",
+    "description": "Create group in the System",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/group",
+    "http_method": "PUT",
+    "category": "groups",
+    "description": "Update group in the System",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/import",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Add new import job",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/import/execute",
+    "http_method": "PUT",
+    "category": "other",
+    "description": "Execute import job by id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/info/license",
+    "http_method": "GET",
+    "category": "info",
+    "description": "Get License Information.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/license",
+    "http_method": "GET",
+    "category": "license",
+    "description": "Get License Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/parsertemplate",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Create Template",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/parsertemplate",
+    "http_method": "DELETE",
+    "category": "other",
+    "description": "Delete Template",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/parsertemplate",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get Template",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/parsertemplate",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get List of Templates",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/parsertemplate",
+    "http_method": "PUT",
+    "category": "other",
+    "description": "Update Template",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "POST",
+    "category": "projects",
+    "description": "Create Project",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project/details",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get All Normal Project Details",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/normal",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get All Normal project",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/all/leads",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get lead for all projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project/user",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project by User ID",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/project",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get allocated Projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/count/allprojects",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project Team Count for all projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/count/allusers",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project Team Count for all users",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/allocated/projects",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project Team  for Allocated Projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/projectteam",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Project team for project",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get All projects by UserId",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project/lite",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get All projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/shared",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get All Shared projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/sharedprojects",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Shared projects",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project/sharedtoprojects",
+    "http_method": "GET",
+    "category": "projects",
+    "description": "Get Shared projects shared to given project",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "PUT",
+    "category": "projects",
+    "description": "Assign User to the Project",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "POST",
+    "category": "projects",
+    "description": "Project storage migration",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/project",
+    "http_method": "PUT",
+    "category": "projects",
+    "description": "Retry failed attachment migration",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/release",
+    "http_method": "POST",
+    "category": "releases",
+    "description": "Create New Release",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/release/paged/project",
+    "http_method": "GET",
+    "category": "releases",
+    "description": "Get releases for a project through page and offset",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/release",
+    "http_method": "GET",
+    "category": "releases",
+    "description": "Get Release by Release ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/release",
+    "http_method": "GET",
+    "category": "releases",
+    "description": "Get all releases for all projects with Access",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/release/project",
+    "http_method": "GET",
+    "category": "releases",
+    "description": "Get releases for a project",
+    "requires_auth": True,
+    "hierarchical": True
+  },
+  {
+    "endpoint_path": "/requirement",
+    "http_method": "POST",
+    "category": "requirements",
+    "description": "Create new requirement",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/requirement",
+    "http_method": "PUT",
+    "category": "requirements",
+    "description": "Update Requirement",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/requirement/bulk",
+    "http_method": "POST",
+    "category": "requirements",
+    "description": "Bulk Update Requirement",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/requirementtree/add",
+    "http_method": "POST",
+    "category": "requirements",
+    "description": "Create new requirement tree",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/role",
+    "http_method": "POST",
+    "category": "roles",
+    "description": "Add role",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/role/permission",
+    "http_method": "PUT",
+    "category": "roles",
+    "description": "Save or assign role permissions",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/reindex",
+    "http_method": "PUT",
+    "category": "search",
+    "description": "Reindex specific project by id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch",
+    "http_method": "POST",
+    "category": "search",
+    "description": "Search via filters",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/zql",
+    "http_method": "POST",
+    "category": "search",
+    "description": "Search via filters",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/zql",
+    "http_method": "POST",
+    "category": "search",
+    "description": "Search via filters",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/zql",
+    "http_method": "POST",
+    "category": "search",
+    "description": "Search via filters",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/testexecutions",
+    "http_method": "GET",
+    "category": "search",
+    "description": "Search test executions for given altId",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/search/update/bulk",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Search and Edit the Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/search/update/bulk",
+    "http_method": "/TESTCASE/SEARCH/ALLOCATE/BULK/REQUIREMENT",
+    "category": "testcases",
+    "description": "Search and Edit the Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "POST",
+    "http_method": "/TESTCASE/SEARCH/DELETE/BULK?RELEASEID={RELEASEID}",
+    "category": "other",
+    "description": "Search and Map the Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/advancesearch/reindex/health",
+    "http_method": "GET",
+    "category": "search",
+    "description": "Check Indexing Health",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/cache/clear",
+    "http_method": "POST",
+    "category": "system",
+    "description": "Clear the Specified Cache",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/downloadzbot",
+    "http_method": "PUT",
+    "category": "system",
+    "description": "Download Zbot",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/cache/info",
+    "http_method": "GET",
+    "category": "system",
+    "description": "Get All list of Caches",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/channelinfo",
+    "http_method": "GET",
+    "category": "system",
+    "description": "Get Channel Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/license",
+    "http_method": "GET",
+    "category": "system",
+    "description": "Get License Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/servertime",
+    "http_method": "GET",
+    "category": "system",
+    "description": "Get License Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/system/info/stats",
+    "http_method": "GET",
+    "category": "system",
+    "description": "Get License Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/license/detail",
+    "http_method": "GET",
+    "category": "license",
+    "description": "Get License Detail Information",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/license/peak/detail",
+    "http_method": "GET",
+    "category": "license",
+    "description": "License Peak Usage Detail",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/teststepresult/bytctid",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get teststep results by ID's",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/teststepresult",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get Test Step Result",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/teststepresult",
+    "http_method": "GET",
+    "category": "executions",
+    "description": "Get test step results by criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/execution/teststepresult/saveorupdate",
+    "http_method": "POST",
+    "category": "executions",
+    "description": "Save or Update Test step result",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/allocate/requirement",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Allocate Requirements to testcase Id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/allocate/requirement",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Allocate Requirements to testcase Ids",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/bulk",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Bulk Update Testcase values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/update/bulk",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Bulk Update Testcase values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/clone/on",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Clone Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/bulk",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Create bulk Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Create Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/createnewversion",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "create new version of testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "DELETE",
+    "category": "testcases",
+    "description": "Delete Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "DELETE",
+    "category": "testcases",
+    "description": "Delete Multiple Testcase Tree Linkage",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/requirement",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Requirement Summary by Testcase ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/tags",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get all tags",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/tags",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get all tags",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/name",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get all Testcase Names by Testcase IDs",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/count",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Count Of Testcases By Phase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/count/ids",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Count Of Testcases By Phase ids.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/count",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Count Of Testcases By Phase ids.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/cumulative",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Cumulative Testcase by Release ID and Requirement ID.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/cumulative/data",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Cumulative Testcase by Release ID and Requirement ID.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/count/discrete",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Testcase count per node",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/path",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Traceable Path from Root",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/pathbyrelease",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Traceable Path from Root",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/planning",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase by Criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/nodes",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcases by Tree IDs",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/detail",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase details by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/altid",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/byrequirement",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase Summary by Requirement ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/versions",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get all testcase version by testcase id",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase by Criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/tree",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase by Tree ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/mapby/altid",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Map Testcase to Requirement",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/move/from",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Move Testcases",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/share/on",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Share Testcase",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase/flag",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update Flag status by Tree Testcase ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update Testcase values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update Testcase With Version",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update Testcase values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/copy",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Copy Testcase tree node to another target node",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Create Tree node",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree",
+    "http_method": "DELETE",
+    "category": "testcases",
+    "description": "Delete Testcase Tree",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/phases/execution",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Execution Tree by releaseid",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/hierarchy",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get TCR hierarchy",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase Tree",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/phases",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Testcase Tree by releaseid",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/projectrepository",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get Project Repository Testcase Tree by projectid",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/lite",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get tree by criteria",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/move",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Move Testcase tree",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/move",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Move Testcase tree to other Release",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/share",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Share Testcase tree node to another target node",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree/assignuser",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update tree node values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcasetree",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update tree node values",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/tcuh/testcase",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get Testcase usage history details",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Create teststep",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "POST",
+    "category": "testcases",
+    "description": "Create teststep",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "DELETE",
+    "category": "testcases",
+    "description": "Delete teststep",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "GET",
+    "category": "testcases",
+    "description": "Get teststep",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/testcase",
+    "http_method": "PUT",
+    "category": "testcases",
+    "description": "Update teststep",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/ui/auditLogs",
+    "http_method": "POST",
+    "category": "other",
+    "description": "Get audit logs Grid view",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/ui/users",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get user Grid view",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/ui/searchGroups",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get group Grid view",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/ui/searchProjects",
+    "http_method": "GET",
+    "category": "other",
+    "description": "Get project Grid view",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user",
+    "http_method": "POST",
+    "category": "users",
+    "description": "Create User in the System",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/current",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get Current Logged-In Users",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/defect",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get Defect Users present in System.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/filter",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get All Users Present in the System.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/loggedin/count",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Getting all the Logged-In in User count",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get User by ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get All Users Present in the System.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/project",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get User by Project ID",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/validZbotUsers",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get valid users for Zbot.",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user/logout",
+    "http_method": "DELETE",
+    "category": "users",
+    "description": "Logout User from System",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/user",
+    "http_method": "PUT",
+    "category": "users",
+    "description": "Update User",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/usertoken/all",
+    "http_method": "DELETE",
+    "category": "users",
+    "description": "delete all token",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/usertoken",
+    "http_method": "DELETE",
+    "category": "users",
+    "description": "delete token",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/usertoken",
+    "http_method": "POST",
+    "category": "users",
+    "description": "generate token",
+    "requires_auth": True,
+    "hierarchical": False
+  },
+  {
+    "endpoint_path": "/usertoken",
+    "http_method": "GET",
+    "category": "users",
+    "description": "Get all token",
+    "requires_auth": True,
+    "hierarchical": False
+  }
+]

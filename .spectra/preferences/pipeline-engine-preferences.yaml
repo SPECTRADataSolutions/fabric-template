@@ -1,0 +1,370 @@
+# SPECTRA Pipeline Engine Preferences
+# Generated from user commentary and standards review
+# This file guides the pipeline engine in building pipelines exactly as desired
+
+version: "2.0.0"
+source: "zephyr"
+last_updated: "2025-12-11"
+status: "active"
+
+# Preference Categories
+preferences:
+  
+  # Workspace & Infrastructure
+  workspace_setup:
+    lakehouse_connection:
+      issue: "Lakehouse ID can be wrong when publishing new/updated notebooks"
+      requirement: "Stable way to handle edge case - ensure lakehouse always connected correctly"
+      action: "Pipeline engine must validate and fix lakehouse connection on every publish"
+      priority: "high"
+    
+    admin_setup:
+      requirement: "Add Mark and Alana as admins"
+      documented: true
+      reference: "playbooks document this well"
+  
+  # Schema Organization
+  schema_organization:
+    default_schema: "dbo"
+      preference: "Never use it, prefer to remove but may not be possible"
+      action: "Avoid using dbo schema"
+    
+    stage_schemas:
+      - "log"  # All stage logs
+      - "prepare"  # Prepare stage tables
+      - "source"  # Source stage tables
+      - "extract"  # Extract stage tables (future)
+      - "clean"  # Clean stage tables (future)
+      - "transform"  # Transform stage tables (future)
+      - "refine"  # Refine stage tables (future)
+      - "analyse"  # Analyse stage tables (future)
+    
+    schema_naming:
+      pattern: "canonical mononym (no numbers)"
+      note: "Would like to number stages (1-source, 2-prepare) but breaks naming standards"
+      solution: "Sort by stage order in UI, not in naming"
+      reference: "Canonical naming standards"
+    
+    sample_schema:
+      name: "sample"
+      purpose: "Store sample data from all endpoints"
+      requirement: "One table per endpoint (220 endpoints = 220 tables)"
+      reference: "Prepare stage discovers all endpoints and creates samples"
+  
+  # Notebook Structure & Formatting
+  notebook_structure:
+    header_format:
+      style: "SPECTRA-branded markdown"
+      includes: ["title", "purpose", "outputs", "inputs"]
+      branding: "SPECTRA-grade with emojis"
+      emoji_requirement: "Stage-appropriate emoji (not generic link emoji)"
+      emoji_examples:
+        source: "clipboard (represents contract definition)"
+        prepare: "TBD"
+        extract: "TBD"
+        clean: "TBD"
+        transform: "TBD"
+        refine: "TBD"
+        analyse: "TBD"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+      canonical: "sourceZephyr.Notebook/notebook_content.py"
+    
+    cell_structure:
+      pattern: "7-stage lifecycle"
+      cells:
+        - "Parameters"
+        - "Context"
+        - "Initialise"
+        - "Execute"
+        - "Validate"
+        - "Record"
+        - "Finalise"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+    
+    code_style:
+      language: "Python/PySpark"
+      docstrings: "required"
+      type_hints: "required"
+      error_handling: "SPECTRA-grade with custom exceptions"
+      logging: "ASCII-only, structured format"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+    
+    magic_commands:
+      rule: "MUST be in isolated cells with no other code or comments"
+      current_usage: "Only %run spectraSDK (temporary - will move to environment wheel file)"
+      future: "Remove magic run, load SDK from environment wheel file"
+      critical: "This is a common mistake - must be enforced"
+    
+    comments:
+      style: "Simple numbered comments with title and description"
+      format: "# 1. Title - Description of what this section does"
+      avoid: "=== SPECTRA ===" style caps (not SPECTRA-grade)"
+      requirement: "Every section comment must have description, not just title"
+      examples:
+        good: "# 1. Context - Loads notebook session with variables and configuration"
+        bad: "# CONTEXT"
+        bad: "# === SPECTRA CONTEXT ==="
+  
+  # Development Workflow
+  development_workflow:
+    build_phase:
+      approach: "Build with all code inline, one code block per step"
+      structure: "7 code blocks (Parameters, Context, Initialise, Execute, Validate, Record, Finalise)"
+      purpose: "Easy debugging, can see all modules and complexity"
+      requirement: "All modules visible during development"
+    
+    production_phase:
+      approach: "Move all modules to SDK, minimize notebook to interface"
+      structure: "Simple 7-stage pattern with SDK calls"
+      purpose: "Clean interface, no code clutter, easy to understand"
+      requirement: "Notebook becomes simple visual interface"
+      transition: "Only after debugging and validation complete"
+  
+  # Module Naming Standards
+  module_naming:
+    pattern: "verb + at least 3 words"
+    requirement: "Must be descriptive and scoped"
+    avoid: "Single word modules (too ambiguous)"
+    examples:
+      good: "execute_source_stage_helpers"
+      good: "validate_schema_structure"
+      bad: "helpers"
+      bad: "utils"
+    reference: "SPECTRA naming standards"
+  
+  # Stage Contracts
+  stage_contracts:
+    source:
+      outputs:
+        - "source.endpoints"
+        - "source.credentials"
+        - "source.portfolio"
+        - "source.config"
+      principle: "Provides everything Prepare stage needs, nothing more"
+      efficiency: "Each stage should be as efficient as possible"
+    
+    prepare:
+      inputs:
+        - "source.endpoints"
+        - "source.credentials"
+        - "source.portfolio"
+        - "source.config"
+      outputs:
+        - "prepare.schema"  # Metadata-driven schema (canon for whole pipeline)
+        - "sample.{endpoint}"  # One table per endpoint (220 endpoints = 220 tables)
+      principle: "Main output is schema - the canon for the whole pipeline"
+  
+  # Prepare Stage Process
+  prepare_stage:
+    discovery_process:
+      step_1: "Scan whole API infrastructure, bring in every endpoint"
+      step_2: "Test every endpoint to know it works"
+      step_3: "Understand dependencies and order (what needs to run first)"
+      step_4: "Discover all data behind endpoints, put in sample schema"
+      step_5: "Build perfect schema from samples"
+    
+    sample_creation:
+      requirement: "One table per endpoint in sample schema"
+      example: "220 endpoints = 220 tables in sample schema"
+      purpose: "Understand data structure, quirks, types, names"
+      question: "Is this the most efficient way? (needs validation)"
+    
+    schema_building:
+      discovers:
+        - "What data looks like"
+        - "If data follows expected structure"
+        - "Data quirks"
+        - "Structure type (scalar, record, array)"
+        - "Data type for each field"
+        - "Field names"
+      intelligence:
+        - "Infer target field names from content"
+        - "Apply naming standards automatically"
+        - "Handle custom fields (e.g., 'custom field 12345' → proper name)"
+        - "Map to perfect star schema"
+    
+    star_schema_intelligence:
+      requirement: "Transform stage maps to star schema (not Prepare)"
+      rationale: "Transform builds the star schema, so it should also map to it"
+      purpose: "Transform stage decides which entities become dimensions, facts, bridges"
+      note: "Prepare only discovers schema structure, Transform maps and builds"
+  
+  # Extract Stage
+  extract_stage:
+    purpose: "Make calls to all endpoints required for data (not every endpoint)"
+    selection: "Based on schema from Prepare stage - what endpoints needed for perfect output"
+    note: "Some endpoints provide similar data - don't need all, need the right ones"
+    
+    jira_comparison:
+      jira_approach: "Single call to get issues, other endpoints used here and there"
+      zephyr_endpoints:
+        - "requirements"  # Most mature, most data, most enriched
+        - "executions"  # Most mature, most data, most enriched
+        - "testcases"  # Most mature, most data, most enriched
+      note: "These were the three main endpoints, most mature"
+    
+    file_structure:
+      location: "Files area of lakehouse"
+      pattern: "Date structure + project structure"
+      format: "Raw JSON"
+      purpose: "Perfect for raw zone, historical data, can go back as far as needed"
+      reference: "Jira logic works really well, no need to change"
+  
+  # Clean Stage (Combined with Transform from Jira)
+  clean_stage:
+    purpose: "Combines old Clean + Transform from Jira"
+    
+    process:
+      step_1: "Take JSON from files area"
+      step_2: "Separate each top-level struct (scalar, record, array)"
+      step_3: "Save each top-level struct as its own table in clean zone"
+      step_4: "Include identifier of record (e.g., issueId, jiraKey for Jira)"
+      step_5: "Flatten based on structure type (record vs array vs object)"
+      step_6: "Rename and type every column"
+    
+    output:
+      structure: "Multiple tables, one per entity"
+      grain: "One row per record (or multiple rows if array/object)"
+      columns:
+        - "recordId"  # e.g., issueId
+        - "recordKey"  # e.g., jiraKey
+        - "entity fields"  # Flattened entity data
+      requirement: "Everything ready for Transform stage"
+    
+    flattening:
+      record: "Flatten in certain way (record-specific)"
+      array: "Flatten in certain way (array-specific)"
+      object: "Flatten in certain way (object-specific)"
+      principle: "Isolate data so flattening doesn't affect other data"
+      result: "Can have multiple rows per record within each entity table"
+  
+  # Transform Stage (New Role - Dimensional Model)
+  transform_stage:
+    purpose: "Transform clean tables into dimensions, facts, and bridges"
+    note: "This used to be Refine's job in Jira, now Transform's job"
+    
+    dimensions:
+      creation: "De-duplicate clean table, remove record ID"
+      structure:
+        - "dimensionId"  # Primary key
+        - "fieldName"  # Dimension attribute
+        - "supporting data"  # Other dimension attributes
+      requirement: "Nice small table"
+      scd_type_2: "Add date when dimension name changes for historical accuracy"
+      question: "How to handle historical data?"
+        options:
+          - "Whole historical dataset in clean, filter to latest in dimension"
+          - "Separate historical data into another table"
+          - "Isolate current vs historical, combine when needed for analysis"
+      requirement: "Need SPECTRA-grade solution for historical data"
+    
+    bridges:
+      creation: "Remove everything except record ID and dimension ID"
+      deduplication: "Deduplicate on both IDs"
+      result: "Beautiful list of IDs that act as bridge"
+    
+    facts:
+      structure: "Only IDs and scalars"
+      principle: "Fact tables are only IDs and scalars"
+      dates: "Dates are IDs (dimension keys)"
+      text_fields: "Text fields become degenerate dimensions (not in fact table)"
+      requirement: "Keep fact tables as efficient as possible"
+      naming: "Rename appropriately with FACT prefix (camelCase)"
+    
+    naming:
+      dimensions: "DIM prefix (camelCase)"
+      facts: "FACT prefix (camelCase)"
+      bridges: "BRIDGE prefix (camelCase)"
+  
+  # Refine Stage (New Role - Enrichment)
+  refine_stage:
+    purpose: "Enrichment layer"
+    activities:
+      - "Enrich fact tables with record-level flags"
+      - "Add groupings within dimensions"
+    note: "Used to be dimensional modeling, now just enrichment"
+  
+  # Analyse Stage
+  analyse_stage:
+    purpose: "Deals with analysis"
+    activities:
+      - "Semantic model itself"
+      - "Measures"
+      - "DAX calculations"
+      - "Machine learning experiments (future)"
+      - "Data Activator (future)"
+  
+  # Logging & Warnings
+  logging:
+    location: "Tables/log/{stage}log"
+    format: "ASCII-only, structured"
+    pattern: "== >> OK !! (no Unicode/emoji in logs)"
+    emojis: "✅ for success, ⚠️ for warnings"
+    
+    warnings:
+      handling: "Fix problems or suppress if known quirk"
+      example: "Registration failed, log.source, invalid root directory - must be files or tables, got tab"
+      requirement: "Part of build process should fix problems or suppress known quirks"
+  
+  # Table Naming Conventions
+  table_naming:
+    schema_prefix: false  # No underscore prefix (prepare.schema, not prepare._schema)
+    log_location: "Tables/log/{stage}log"  # Centralised log schema
+    sample_location: "Tables/sample/{entity}"  # Sample data location
+    reference: "docs/prepare/PREPARE-ALIGNMENT-CHANGES.md"
+  
+  # Variable Access Patterns
+  variable_access:
+    credentials: "session.variables.get_secret('API_TOKEN')"
+    context: "session.ctx.get('full_url')"
+    avoid: "session.vars.get()"  # Deprecated pattern
+    reference: "docs/prepare/PREPARE-ALIGNMENT-CHANGES.md"
+  
+  # British English
+  language:
+    spelling: "British English"
+    examples:
+      - "organise" (not organize)
+      - "optimise" (not optimize)
+      - "colour" (not color)
+      - "centre" (not center)
+    reference: ".cursorrules"
+
+# Standards References
+standards:
+  notebook_formatting: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+  playbook_structure: "docs/prepare/PLAYBOOK-STRUCTURE-ANALYSIS.md"
+  schema_design: "docs/prepare/SCHEMA-ENTITY-FIX.md"
+  prepare_purpose: "docs/prepare/PREPARE-STAGE-PURPOSE.md"
+  british_english: ".cursorrules"
+  spectra_grade: "Core/standards/SPECTRA-GRADE-DEFINITION.md"
+
+# Pipeline Engine Instructions
+pipeline_engine_instructions:
+  read_preferences: true
+  apply_standards: true
+  generate_links: true  # Pipeline engine provides links to standards
+  validate_against_preferences: true
+  capture_gaps: true  # Detect when preferences not met
+  fix_issues: true  # Fix problems or suppress known quirks during build
+
+# Commentary Capture
+commentary:
+  source: "user_voice_review_2025-12-11"
+  format: "conversational → structured"
+  mapping: "commentary → preferences → standards"
+  updates: "preferences file updated from comprehensive workspace review"
+
+# Open Questions
+open_questions:
+  historical_data_handling:
+    question: "How should we handle historical data in dimensions?"
+    options:
+      - "Whole historical dataset in clean, filter to latest in dimension"
+      - "Separate historical data into another table"
+      - "Isolate current vs historical, combine when needed"
+    requirement: "Need SPECTRA-grade solution"
+  
+  sample_efficiency:
+    question: "Is 220 tables in sample schema (one per endpoint) the most efficient way?"
+    requirement: "Needs validation"

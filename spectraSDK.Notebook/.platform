@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "spectraSDK",
+    "description": "SPECTRA Fabric SDK - Embedded notebook for Fabric runtime"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "36a76622-c00e-aeaf-4d12-c0312005c3a8"
+  }
+}

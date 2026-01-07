@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-12-08T19:18:02.593691",
+  "project_id": 45,
+  "experiments": {
+    "release": {
+      "success": true,
+      "id": 146,
+      "error": "SUCCESS",
+      "level": 0,
+      "dependencies": []
+    },
+    "requirement_folder": {
+      "success": true,
+      "id": 704,
+      "error": "SUCCESS",
+      "level": 0,
+      "dependencies": []
+    },
+    "testcase_folder": {
+      "success": false,
+      "id": null,
+      "error": "HTTP 400: For input string: \"null\"",
+      "level": 0,
+      "dependencies": []
+    },
+    "cycle": {
+      "success": false,
+      "id": null,
+      "error": "HTTP 400: Operation failed. The Release with ID146 and nameDiscovery Test Release 20251208-191802 is locked. Please try again later.",
+      "level": 1,
+      "dependencies": [
+        "release"
+      ],
+      "note": "Failed even with 60s delay"
+    },
+    "testcase": {
+      "success": false,
+      "id": null,
+      "error": "Blocked by testcase_folder failure",
+      "level": 1,
+      "dependencies": [
+        "testcase_folder"
+      ]
+    },
+    "requirement": {
+      "success": true,
+      "id": 705,
+      "level": 1,
+      "dependencies": [
+        "requirement_folder"
+      ]
+    },
+    "execution": {
+      "success": false,
+      "id": null,
+      "error": "Missing dependencies",
+      "level": 2,
+      "dependencies": [
+        "cycle",
+        "testcase"
+      ]
+    },
+    "allocation": {
+      "success": false,
+      "id": null,
+      "error": "Missing dependencies",
+      "level": 2,
+      "dependencies": [
+        "requirement",
+        "testcase"
+      ]
+    }
+  },
+  "dependency_graph": {
+    "requirement": [
+      "requirement_folder"
+    ]
+  },
+  "creation_order": [
+    "release",
+    "requirement_folder",
+    "requirement"
+  ],
+  "blockers": [
+    {
+      "entity": "testcase_folder",
+      "error": "All attempts failed - API broken"
+    }
+  ]
+}

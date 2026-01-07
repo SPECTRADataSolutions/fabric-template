@@ -1,0 +1,265 @@
+{
+  "timestamp": "2025-12-08T18:42:00.136065",
+  "project_id": 45,
+  "summary": {
+    "total_tested": 4,
+    "passed": 0,
+    "failed": 1,
+    "blocked": 3,
+    "skipped": 1
+  },
+  "entities": {
+    "releases": {
+      "entity_type": "releases",
+      "timestamp": "2025-12-08T18:42:00.142568",
+      "baseline": {
+        "status": "PASS",
+        "count": 10,
+        "data": [
+          {
+            "id": 128,
+            "name": "Release 1 - Draft Status",
+            "description": "Comprehensive release data for schema discovery - Draft status",
+            "startDate": 1733529600000,
+            "releaseStartDate": "12/07/2024",
+            "endDate": 1765065600000,
+            "releaseEndDate": "12/07/2025",
+            "createdDate": 1765199989000,
+            "status": 0,
+            "projectId": 45,
+            "orderId": 2,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 131,
+            "name": "The Death Star Project - Phase 1",
+            "description": "Galactic Empire's ultimate weapon development project. Phase 1 focuses on core reactor design, superlaser integration, and structural framework. This release tracks all test execution for the moon-sized battle station's initial construction phase.",
+            "startDate": 1733529600000,
+            "releaseStartDate": "12/07/2024",
+            "endDate": 1765065600000,
+            "releaseEndDate": "12/07/2025",
+            "createdDate": 1765200190000,
+            "status": 0,
+            "projectId": 45,
+            "orderId": 3,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 132,
+            "name": "Release 1 - Draft Status",
+            "description": "Comprehensive release data for schema discovery - Draft status",
+            "startDate": 1733529600000,
+            "releaseStartDate": "12/07/2024",
+            "endDate": 1765065600000,
+            "releaseEndDate": "12/07/2025",
+            "createdDate": 1765206536000,
+            "status": 0,
+            "projectId": 45,
+            "orderId": 4,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 133,
+            "name": "Release 2 - Active Status",
+            "description": "Comprehensive release data for schema discovery - Active status",
+            "startDate": 1733616000000,
+            "releaseStartDate": "12/08/2024",
+            "endDate": 1765152000000,
+            "releaseEndDate": "12/08/2025",
+            "createdDate": 1765206538000,
+            "status": 1,
+            "projectId": 45,
+            "orderId": 5,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 134,
+            "name": "Release 3 - Completed Status",
+            "description": "Comprehensive release data for schema discovery - Completed status",
+            "startDate": 1733443200000,
+            "releaseStartDate": "12/06/2024",
+            "endDate": 1764979200000,
+            "releaseEndDate": "12/06/2025",
+            "createdDate": 1765206539000,
+            "status": 2,
+            "projectId": 45,
+            "orderId": 6,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 135,
+            "name": "API Validation Test Release",
+            "description": "Automated validation test release",
+            "startDate": 1765152000000,
+            "releaseStartDate": "12/08/2025",
+            "createdDate": 1765218508000,
+            "projectId": 45,
+            "orderId": 7,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 136,
+            "name": "API Validation Test Release",
+            "description": "Automated validation test release",
+            "startDate": 1765152000000,
+            "releaseStartDate": "12/08/2025",
+            "createdDate": 1765218546000,
+            "projectId": 45,
+            "orderId": 8,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 137,
+            "name": "API Validation Test Release",
+            "description": "Automated validation test release",
+            "startDate": 1765152000000,
+            "releaseStartDate": "12/08/2025",
+            "createdDate": 1765218792000,
+            "projectId": 45,
+            "orderId": 9,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 138,
+            "name": "API Validation Test Release",
+            "description": "Automated validation test release",
+            "startDate": 1765152000000,
+            "releaseStartDate": "12/08/2025",
+            "createdDate": 1765219228000,
+            "projectId": 45,
+            "orderId": 10,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          },
+          {
+            "id": 139,
+            "name": "API Validation Test Release",
+            "description": "Automated validation test release",
+            "startDate": 1765152000000,
+            "releaseStartDate": "12/08/2025",
+            "createdDate": 1765219274000,
+            "projectId": 45,
+            "orderId": 11,
+            "globalRelease": true,
+            "projectRelease": false,
+            "hasChild": false,
+            "syncEnabled": false
+          }
+        ]
+      },
+      "create": {
+        "status": "PASS",
+        "entity_id": 140,
+        "data": {
+          "id": 140,
+          "name": "API Validation Test Release",
+          "description": "Automated validation test release",
+          "startDate": 1765152000000,
+          "releaseStartDate": "12/08/2025",
+          "createdDate": 1765219322181,
+          "projectId": 45,
+          "orderId": 12,
+          "globalRelease": true,
+          "projectRelease": false,
+          "hasChild": false,
+          "syncEnabled": false
+        }
+      },
+      "validate": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE"
+      },
+      "comparison": null,
+      "overall_status": "PARTIAL"
+    },
+    "cycles": {
+      "entity_type": "cycles",
+      "timestamp": "2025-12-08T18:42:05.754702",
+      "baseline": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "count": null
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    },
+    "requirements": {
+      "entity_type": "requirements",
+      "timestamp": "2025-12-08T18:42:15.828343",
+      "baseline": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "count": null
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    },
+    "testcases": {
+      "entity_type": "testcases",
+      "timestamp": "2025-12-08T18:42:26.132150",
+      "baseline": {
+        "status": "PASS",
+        "count": 0,
+        "data": []
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    }
+  },
+  "schemas": {},
+  "errors": [],
+  "hierarchy_issues": [
+    {
+      "entity": "executions",
+      "reason": "No cycle or testcase available",
+      "blocked_by": [
+        "cycles",
+        "testcases"
+      ]
+    }
+  ]
+}

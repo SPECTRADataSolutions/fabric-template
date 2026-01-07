@@ -1,0 +1,128 @@
+# Manual Overrides for Array Structures
+# 
+# These overrides provide known array structures that weren't discoverable
+# from test project (empty arrays) or broken APIs.
+#
+# Source: API documentation, UI exploration, logical inference from field names
+
+overrides:
+  
+  # cycle.cyclePhases - Array of phase objects
+  cyclePhases:
+    reason: "Empty array in test data - structure from API docs"
+    entity: cyclePhase              # Singular!
+    structureType: array
+    rawField:
+      - id
+      - name
+      - startDate
+      - endDate
+      - isActive                    # Logical field (phases can be active/inactive)
+    targetField:
+      - cyclePhaseId
+      - cyclePhaseName
+      - cyclePhaseStartDate
+      - cyclePhaseEndDate
+      - cyclePhaseIsActive
+    dataType:
+      - array<int64>
+      - array<text>
+      - array<date>
+      - array<date>
+      - array<bool>
+    dimensionName: dimCyclePhase
+    bridgeName: bridgeCyclePhase
+    notes: "Phases within a test cycle. Can be empty for cycles without phases."
+  
+  # requirement.requirements - Nested requirement tree (array of requirement objects)
+  requirements:
+    reason: "Nested structure - requirements can contain child requirements"
+    entity: requirement             # Singular!
+    structureType: array
+    rawField:
+      - id
+      - name
+      - description
+      - releaseIds                  # Nested array!
+    targetField:
+      - requirementId
+      - requirementName
+      - requirementDescription
+      - requirementReleaseIds
+    dataType:
+      - array<int64>
+      - array<text>
+      - array<text>
+      - array<array<int64>>         # Nested array!
+    dimensionName: dimRequirement
+    bridgeName: bridgeRequirementTree
+    notes: "Hierarchical requirement tree. requirements[] contains child requirements."
+  
+  # requirement.releaseIds - Array of release IDs (scalar array)
+  releaseIds:
+    reason: "Scalar array - release IDs"
+    entity: releaseId               # Singular!
+    structureType: array
+    rawField:
+      - releaseIds                  # The field itself (array of integers)
+    targetField:
+      - releaseId
+    dataType:
+      - array<int64>
+    dimensionName: dimRelease
+    bridgeName: bridgeRequirementRelease
+    notes: "Releases associated with this requirement."
+  
+  # requirement.categories - Array of category objects (likely)
+  categories:
+    reason: "Empty array in test data - structure inferred from name"
+    entity: category                # Singular!
+    structureType: array
+    rawField:
+      - id
+      - name
+    targetField:
+      - categoryId
+      - categoryName
+    dataType:
+      - array<int64>
+      - array<text>
+    dimensionName: dimCategory
+    bridgeName: bridgeRequirementCategory
+    notes: "Requirement categorization. Empty in test data - needs validation."
+    confidence: low
+
+# Singularization fixes
+singularization_rules:
+  cyclePhases: cyclePhase      # Fix: cyclePhas → cyclePhase
+  requirements: requirement
+  releaseIds: releaseId
+  categories: category
+  releases: release
+
+# Field grouping (Jira-style logical organization)
+field_groups:
+  identity:
+    sortOrder: 1
+    description: "Primary identifiers (ID, name, key)"
+  timestamps:
+    sortOrder: 2
+    description: "Date and time fields"
+  relationships:
+    sortOrder: 3
+    description: "Foreign keys, arrays, references to other entities"
+  status:
+    sortOrder: 4
+    description: "Status, state, flags"
+  metadata:
+    sortOrder: 5
+    description: "Descriptions, notes, auxiliary data"
+  attributes:
+    sortOrder: 6
+    description: "Other attributes"
+
+
+
+
+
+

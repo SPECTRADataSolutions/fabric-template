@@ -1,0 +1,24 @@
+# Local Fabric Runtime - Test Dependencies
+# Install: pip install -r requirements-test.txt
+
+# Testing framework
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-xdist==3.5.0  # Parallel test execution
+
+# PySpark + Delta Lake (local Spark)
+pyspark==3.5.0
+delta-spark==3.0.0
+
+# Data processing
+pandas==2.1.4
+pyarrow==14.0.1
+
+# Mocking
+pytest-mock==3.12.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+

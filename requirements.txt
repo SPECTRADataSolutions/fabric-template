@@ -1,0 +1,30 @@
+# Zephyr Pipeline Development Dependencies
+# For local testing of Fabric notebooks
+
+# Core dependencies (should match Fabric runtime)
+requests>=2.31.0
+python-dotenv>=1.0.0  # For loading .env credentials in local testing
+
+# Optional but recommended for local testing
+pyspark>=3.4.0        # For testing DataFrame logic locally
+delta-spark>=2.4.0    # For Delta Lake format (if testing locally)
+pandas>=2.0.0         # Alternative to Spark for local testing
+jupyter>=1.0.0        # For interactive notebook testing
+jupyterlab>=4.0.0     # Modern notebook interface
+
+# SPECTRA framework (if not already installed)
+# Install from local path: pip install -e ../framework
+
+# Development tools
+pytest>=7.4.0         # For unit testing
+ruff>=0.1.0           # For linting
+
+# Installation:
+#   pip install -r requirements.txt
+#
+# Or install only essentials:
+#   pip install requests python-dotenv
+#
+# For Jupyter testing:
+#   pip install requests python-dotenv jupyter pandas
+

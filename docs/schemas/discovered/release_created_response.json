@@ -1,0 +1,17 @@
+{
+  "id": 117,
+  "name": "Schema Discovery Release",
+  "description": "Temporary release for schema discovery - will be deleted",
+  "startDate": 1764982074307,
+  "releaseStartDate": "12/06/2025",
+  "endDate": 1772758074307,
+  "releaseEndDate": "03/06/2026",
+  "createdDate": 1764982075624,
+  "status": 0,
+  "projectId": 45,
+  "orderId": 5,
+  "globalRelease": false,
+  "projectRelease": false,
+  "hasChild": false,
+  "syncEnabled": false
+}

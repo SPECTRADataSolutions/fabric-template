@@ -1,0 +1,154 @@
+# Dependabot Configuration
+#
+# This file configures automated dependency updates via GitHub Dependabot.
+# Place this file at: .github/dependabot.yml
+#
+# Dependabot will:
+# - Check for outdated dependencies weekly
+# - Open pull requests with updates
+# - Group related updates together
+# - Apply labels for easy filtering
+#
+# Documentation: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+  # Python dependencies (pip)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "SPECTRACoreSolutions/engineering"
+    assignees:
+      - "SPECTRACoreSolutions/engineering"
+    labels:
+      - "dependencies"
+      - "python"
+      - "automated"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    # Group updates by type
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    # Ignore specific packages (if needed)
+    # ignore:
+    #   - dependency-name: "package-name"
+    #     versions: ["1.x"]
+
+  # JavaScript/Node.js dependencies (npm)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "SPECTRACoreSolutions/engineering"
+    assignees:
+      - "SPECTRACoreSolutions/engineering"
+    labels:
+      - "dependencies"
+      - "javascript"
+      - "automated"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    versioning-strategy: increase
+    # Group updates by type
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+      # Group framework updates separately
+      framework-updates:
+        patterns:
+          - "react*"
+          - "@types/react*"
+          - "next"
+          - "astro"
+          - "vue"
+          - "svelte"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "SPECTRACoreSolutions/engineering"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "automated"
+    commit-message:
+      prefix: "chore(actions)"
+      include: "scope"
+    # Group all GitHub Actions updates together
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # Docker (if using Dockerfiles)
+  # Uncomment if your repo uses Docker
+  # - package-ecosystem: "docker"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "09:00"
+  #     timezone: "Europe/London"
+  #   open-pull-requests-limit: 3
+  #   reviewers:
+  #     - "SPECTRACoreSolutions/engineering"
+  #   labels:
+  #     - "dependencies"
+  #     - "docker"
+  #     - "automated"
+
+  # Terraform (if using Terraform)
+  # Uncomment if your repo uses Terraform
+  # - package-ecosystem: "terraform"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "09:00"
+  #     timezone: "Europe/London"
+  #   open-pull-requests-limit: 3
+  #   reviewers:
+  #     - "SPECTRACoreSolutions/engineering"
+  #   labels:
+  #     - "dependencies"
+  #     - "terraform"
+  #     - "automated"
+

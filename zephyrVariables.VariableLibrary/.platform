@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "VariableLibrary",
+    "displayName": "zephyrVariables",
+    "description": "Fabric variable library that provides Zephyr secrets and parameters (for example DXC_ZEPHYR_API_TOKEN) to the pipeline; managed by the Data Platform team; see clients/spectra.yaml for the binding."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8caf489d-7a58-8cc9-4d68-598a75134ec5"
+  }
+}

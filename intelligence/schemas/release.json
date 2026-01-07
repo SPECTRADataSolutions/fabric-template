@@ -1,0 +1,77 @@
+{
+  "entity": "release",
+  "sample_data": {
+    "id": 148,
+    "name": "API Intelligence Probe - Release 20251209134246",
+    "description": "Auto-generated for schema discovery",
+    "startDate": 1765238400000,
+    "releaseStartDate": "12/09/2025",
+    "createdDate": 1765287767372,
+    "projectId": 45,
+    "orderId": 3,
+    "globalRelease": true,
+    "projectRelease": false,
+    "hasChild": false,
+    "syncEnabled": false
+  },
+  "schema": {
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "startDate": {
+        "type": "integer"
+      },
+      "releaseStartDate": {
+        "type": "string"
+      },
+      "createdDate": {
+        "type": "integer"
+      },
+      "projectId": {
+        "type": "integer"
+      },
+      "orderId": {
+        "type": "integer"
+      },
+      "globalRelease": {
+        "type": "boolean"
+      },
+      "projectRelease": {
+        "type": "boolean"
+      },
+      "hasChild": {
+        "type": "boolean"
+      },
+      "syncEnabled": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "createdDate",
+      "description",
+      "globalRelease",
+      "hasChild",
+      "id",
+      "name",
+      "orderId",
+      "projectId",
+      "projectRelease",
+      "releaseStartDate",
+      "startDate",
+      "syncEnabled"
+    ]
+  },
+  "endpoint": "/release",
+  "method": "POST",
+  "status": "\u2705 Working",
+  "notes": "BLOCKER-003: Locks for >60s after creation"
+}

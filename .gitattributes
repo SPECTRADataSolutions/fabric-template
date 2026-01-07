@@ -1,0 +1,7 @@
+# Ensure Fabric notebook sources use CRLF line endings when checked out
+*.Notebook/notebook-content.py text eol=crlf
+
+# Keep platform metadata as plain text (line ending not critical)
+*.Notebook/.platform text
+*.DataPipeline/.platform text
+*.DataPipeline/pipeline-content.json text

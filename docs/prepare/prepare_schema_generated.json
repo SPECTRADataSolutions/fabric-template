@@ -1,0 +1,901 @@
+[
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "id",
+    "structureType": "scalar",
+    "rawField": [
+      "id"
+    ],
+    "targetField": [
+      "id"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: id",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "name",
+    "structureType": "scalar",
+    "rawField": [
+      "name"
+    ],
+    "targetField": [
+      "name"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: name",
+    "notes": null,
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "description",
+    "structureType": "scalar",
+    "rawField": [
+      "description"
+    ],
+    "targetField": [
+      "description"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: description",
+    "notes": null,
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "startDate",
+    "structureType": "scalar",
+    "rawField": [
+      "startDate"
+    ],
+    "targetField": [
+      "startDate"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: startDate",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "releaseStartDate",
+    "structureType": "scalar",
+    "rawField": [
+      "releaseStartDate"
+    ],
+    "targetField": [
+      "releaseStartDate"
+    ],
+    "dataType": [
+      "date"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: releaseStartDate",
+    "notes": null,
+    "initialDataType": "date",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "endDate",
+    "structureType": "scalar",
+    "rawField": [
+      "endDate"
+    ],
+    "targetField": [
+      "endDate"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: endDate",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "releaseEndDate",
+    "structureType": "scalar",
+    "rawField": [
+      "releaseEndDate"
+    ],
+    "targetField": [
+      "releaseEndDate"
+    ],
+    "dataType": [
+      "date"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: releaseEndDate",
+    "notes": null,
+    "initialDataType": "date",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "createdDate",
+    "structureType": "scalar",
+    "rawField": [
+      "createdDate"
+    ],
+    "targetField": [
+      "createdDate"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: createdDate",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "status",
+    "structureType": "scalar",
+    "rawField": [
+      "status"
+    ],
+    "targetField": [
+      "status"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: status",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "projectId",
+    "structureType": "scalar",
+    "rawField": [
+      "projectId"
+    ],
+    "targetField": [
+      "projectId"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: projectId",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "orderId",
+    "structureType": "scalar",
+    "rawField": [
+      "orderId"
+    ],
+    "targetField": [
+      "orderId"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: orderId",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "globalRelease",
+    "structureType": "scalar",
+    "rawField": [
+      "globalRelease"
+    ],
+    "targetField": [
+      "globalRelease"
+    ],
+    "dataType": [
+      "bool"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: globalRelease",
+    "notes": null,
+    "initialDataType": "bool",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "projectRelease",
+    "structureType": "scalar",
+    "rawField": [
+      "projectRelease"
+    ],
+    "targetField": [
+      "projectRelease"
+    ],
+    "dataType": [
+      "bool"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: projectRelease",
+    "notes": null,
+    "initialDataType": "bool",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "hasChild",
+    "structureType": "scalar",
+    "rawField": [
+      "hasChild"
+    ],
+    "targetField": [
+      "hasChild"
+    ],
+    "dataType": [
+      "bool"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: hasChild",
+    "notes": null,
+    "initialDataType": "bool",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "release",
+    "entitySortOrder": 2,
+    "fieldId": "syncEnabled",
+    "structureType": "scalar",
+    "rawField": [
+      "syncEnabled"
+    ],
+    "targetField": [
+      "syncEnabled"
+    ],
+    "dataType": [
+      "bool"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "release field: syncEnabled",
+    "notes": null,
+    "initialDataType": "bool",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "id",
+    "structureType": "scalar",
+    "rawField": [
+      "id"
+    ],
+    "targetField": [
+      "id"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: id",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "environment",
+    "structureType": "scalar",
+    "rawField": [
+      "environment"
+    ],
+    "targetField": [
+      "environment"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: environment",
+    "notes": null,
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "build",
+    "structureType": "scalar",
+    "rawField": [
+      "build"
+    ],
+    "targetField": [
+      "build"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: build",
+    "notes": null,
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "name",
+    "structureType": "scalar",
+    "rawField": [
+      "name"
+    ],
+    "targetField": [
+      "name"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: name",
+    "notes": null,
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "startDate",
+    "structureType": "scalar",
+    "rawField": [
+      "startDate"
+    ],
+    "targetField": [
+      "startDate"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: startDate",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "endDate",
+    "structureType": "scalar",
+    "rawField": [
+      "endDate"
+    ],
+    "targetField": [
+      "endDate"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: endDate",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "cycleStartDate",
+    "structureType": "scalar",
+    "rawField": [
+      "cycleStartDate"
+    ],
+    "targetField": [
+      "cycleStartDate"
+    ],
+    "dataType": [
+      "date"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: cycleStartDate",
+    "notes": null,
+    "initialDataType": "date",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "cycleEndDate",
+    "structureType": "scalar",
+    "rawField": [
+      "cycleEndDate"
+    ],
+    "targetField": [
+      "cycleEndDate"
+    ],
+    "dataType": [
+      "date"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: cycleEndDate",
+    "notes": null,
+    "initialDataType": "date",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "status",
+    "structureType": "scalar",
+    "rawField": [
+      "status"
+    ],
+    "targetField": [
+      "status"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: status",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "revision",
+    "structureType": "scalar",
+    "rawField": [
+      "revision"
+    ],
+    "targetField": [
+      "revision"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: revision",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "releaseId",
+    "structureType": "scalar",
+    "rawField": [
+      "releaseId"
+    ],
+    "targetField": [
+      "releaseId"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: releaseId",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "cyclePhases",
+    "structureType": "array",
+    "rawField": [
+      "cyclePhases"
+    ],
+    "targetField": [
+      "cyclePhases"
+    ],
+    "dataType": [
+      "text"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle array: cyclePhases",
+    "notes": "Empty array - type inferred as text",
+    "initialDataType": "text",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "createdOn",
+    "structureType": "scalar",
+    "rawField": [
+      "createdOn"
+    ],
+    "targetField": [
+      "createdOn"
+    ],
+    "dataType": [
+      "int64"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: createdOn",
+    "notes": null,
+    "initialDataType": "int64",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  },
+  {
+    "group": "core",
+    "groupSortOrder": 1,
+    "entity": "cycle",
+    "entitySortOrder": 3,
+    "fieldId": "hasChild",
+    "structureType": "scalar",
+    "rawField": [
+      "hasChild"
+    ],
+    "targetField": [
+      "hasChild"
+    ],
+    "dataType": [
+      "bool"
+    ],
+    "isInApiIssue": true,
+    "isInChangelog": false,
+    "isNullable": true,
+    "defaultValue": null,
+    "description": "cycle field: hasChild",
+    "notes": null,
+    "initialDataType": "bool",
+    "type": null,
+    "columnOrder": null,
+    "piiLevel": null,
+    "isInFactIssue": null,
+    "keyField": null,
+    "dimensionName": null,
+    "bridgeName": null
+  }
+]

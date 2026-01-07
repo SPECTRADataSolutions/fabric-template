@@ -1,0 +1,8 @@
+{
+  "entity": "projects",
+  "extracted_at": "2025-12-12T18:47:01.998219",
+  "status": "success",
+  "endpoint": "/project/details",
+  "count": 38,
+  "error": null
+}

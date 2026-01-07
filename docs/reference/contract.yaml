@@ -1,0 +1,224 @@
+version: "1.0.0"
+
+sourceSystem:
+  name: "Zephyr Enterprise"
+  key: "zephyr"
+  variant: "zephyr_enterprise"
+  type: "api"
+  description: "Spectra pipeline for unified test management analytics across Zephyr Enterprise."
+
+endpoints:
+  host: "velonetic.yourzephyr.com"
+  baseUrl: "https://velonetic.yourzephyr.com/flex/services/rest"
+  documentationUrl: "https://zephyrenterprisev3.docs.apiary.io"
+  supportUrl: "https://support.smartbear.com/zephyr-enterprise/"
+  documentationRegister: "docs/source-register.md"
+  # See docs/source-register.md for comprehensive documentation links
+
+authentication:
+  method: "apiToken"
+
+interfaces:
+  transport: "HTTPS"
+  paginationStyle: "offset"
+  paginationParams:
+    offsetParam: "firstresult" # Zero-based starting point (0 = first record)
+    limitParam: "maxresults" # Maximum number of items per request
+  rateLimit:
+    burst: 60 # Conservative - no rate limiting observed in testing (120 requests, 0 rate limit errors)
+    sustainedPerMinute: 300 # Conservative - tested at 1-5 req/sec successfully
+    observed: "No rate limiting detected during 120+ sequential API calls (2025-12-02)"
+  retries:
+    strategy: "exponentialBackoff"
+    maxAttempts: 3
+    backoffSeconds: [1, 2, 4]
+  observability:
+    requestIdHeader: "X-Zephyr-RequestId"
+    statusEndpoint: "https://status.smartbear.com/"
+
+objects:
+  - name: "projects"
+    endpoint: "/project/details"
+    method: "GET"
+    primaryKey: "id"
+    supportsIncremental: false
+    recordCount: 37
+    description: "Project catalogue - top level of hierarchy. All projects accessible."
+    alternatives:
+      - "/project/normal" # Alternative endpoint
+      - "/project/lite" # Lightweight version
+    validated: "2025-12-02"
+    
+  - name: "releases"
+    endpoint: "/release"
+    method: "GET"
+    primaryKey: "id"
+    supportsIncremental: true
+    incrementalField: "lastModifiedOn"
+    recordCount: 77
+    description: "Release metadata across all projects. Also available per-project via /release/project/{projectId}"
+    hierarchical: true
+    parentEndpoint: "/release/project/{projectId}"
+    parentKey: "projectId"
+    validated: "2025-12-02"
+    
+  - name: "cycles"
+    endpoint: "/cycle/release/{releaseId}"
+    method: "GET"
+    primaryKey: "id"
+    supportsIncremental: true
+    incrementalField: "lastModifiedOn"
+    recordCount: 84
+    description: "Test cycles per release. HIERARCHICAL - requires releaseId."
+    hierarchical: true
+    requiredParameter: "releaseId"
+    parentObject: "releases"
+    validated: "2025-12-02"
+    
+  - name: "executions"
+    endpoint: "/execution"
+    method: "GET"
+    primaryKey: "id"
+    supportsIncremental: true
+    incrementalField: "lastModifiedOn"
+    recordCount: "50,000-100,000 (estimated)"
+    queryParams:
+      required: ["cycleid"]
+    description: "Test execution facts - PRIMARY DATA SOURCE. HIERARCHICAL - requires cycleId. Contains nested test case data."
+    hierarchical: true
+    requiredParameter: "cycleid"
+    parentObject: "cycles"
+    pagination: true
+    paginationStructure:
+      type: "object"
+      fields: ["firstResult", "pageNumber", "results", "type"]
+    nestedObjects:
+      - "tcrTreeTestcase" # Test case details nested in execution
+    validated: "2025-12-02"
+
+limitations:
+  deprecated:
+    - endpoint: "/testcase/requirement/{testcaseid}"
+      status: "HTTP 410 Gone"
+      message: "API officially deprecated by Zephyr - requirements traceability not available"
+      impact: "Cannot build test-to-requirement coverage reports"
+      workaround: "Manual mapping or external requirements system"
+      
+  serviceIssues:
+    - endpoint: "/defect/{defectId}"
+      status: "Timeout (>10s)"
+      testedWith: "bugId=5409341"
+      message: "Defect endpoint consistently times out even with valid defectId"
+      impact: "Cannot link executions to defect details"
+      workaround: "Integrate with Jira for defect tracking"
+    
+    - endpoint: "/execution/teststepresult"
+      status: "Timeout (>10s)"
+      message: "Test step results endpoints timeout"
+      impact: "Cannot get step-level granularity (limited to execution-level facts)"
+      workaround: "Use execution-level metrics only"
+  
+  notNeeded:
+    - category: "Admin/Automation"
+      count: 10
+      reason: "Automation job and admin utility endpoints - not required for dimensional model"
+    
+    - category: "Malformed/Not Found"
+      count: 9
+      reason: "Endpoints return 404 or have malformed URLs - likely deprecated or version-specific"
+    
+    - category: "Access Restricted"
+      count: 1
+      endpoint: "/user/validZbotUsers"
+      reason: "Requires admin-level permissions"
+
+operations:
+  scheduling:
+    defaultCadence: "hourly"
+    allowedWindows:
+      - "00:00-06:00 UTC"
+      - "18:00-23:00 UTC"
+    blackoutTriggers:
+      - "vendor-maintenance"
+      - "credential-rotation"
+  storage:
+    landingZone: "abfss://raw@fabric.dfs.core.windows.net/zephyr/source"
+    retentionDays: 30
+    encryption: "fabric-managed"
+  controls:
+    checksum: "sha256"
+    schemaContracts: true
+    auditLog: "Delta tables in Fabric workspace (Tables/log/_<stage>log)"
+
+artifacts:
+  icon:
+    repoPath: "assets/icons/"
+    lightFilename: "zephyr_light.svg"
+    darkFilename: "zephyr_dark.svg"
+
+  repo:
+    githubOrg: "SPECTRADataSolutions"
+    githubOrgUrl: "https://github.com/SPECTRADataSolutions"
+    repoName: "zephyr"
+    visibility: "internal"
+    description: "Zephyr is the Spectra pipeline for unified test management analytics, built around the seven-stage Spectra methodology. It provides structured extraction, transformation and modelling of Zephyr data for reliable reporting, automation and AI-driven insights."
+    gitignore: "python"
+    license: "none"
+
+  fabric:
+    workspaceName: "zephyr"
+    description: "Zephyr Enterprise workspace orchestrates ingestion, modelling, and delivery for zephyr using the SPECTRA methodology."
+    capacityName: ""
+    admins:
+      - "mark@spectradatasolutions.com"
+      - "alana@spectradatasolutions.com"
+    gitIntegration:
+      repo: "https://github.com/SPECTRADataSolutions/zephyr"
+      branch: "dev"
+
+  environment:
+    name: "SpectraFramework_zephyr"
+    description: "Spectra framework runtime for zephyr"
+    path: "forge"
+
+  lakehouse:
+    name: "zephyrLakehouse"
+    description: "Lakehouse for zephyr raw + curated data"
+    id: "5cb93b81-8923-a984-4c5b-a9ec9325ae26"
+
+governance:
+  owner: "SPECTRA Data Solutions"
+  status: "validated"
+  contractFile: "contract.yaml"
+  createdAt: "2025-11-18T12:00:00Z"
+  lastUpdatedAt: "2025-12-02T18:00:00Z"
+
+validation:
+  sourceStage:
+    completedDate: "2025-12-02"
+    endpointsTested: 120
+    endpointsPassing: 84
+    endpointsFailing: 36
+    successRate: "70.0%"
+    apiCallsMade: 92
+    extractionErrors: 0
+    sampleDataExtracted: true
+    hierarchicalAccessProven: true
+    dimensionalModelValidated: true
+    reports:
+      - "docs/api-discovery/ENDPOINT-TEST-SUMMARY.md"
+      - "docs/api-discovery/HIERARCHICAL-ACCESS-PROVEN.md"
+      - "docs/api-discovery/SAMPLE-100-EXTRACTION-REPORT.md"
+      - "docs/api-discovery/ENDPOINT-CATALOG-DIMENSIONAL-MAPPING.md"
+      - "docs/api-discovery/FINAL-ENDPOINT-DIAGNOSTIC.md"
+    artifacts:
+      - "docs/api-discovery/sample-100-extraction/dimProject.csv (37 rows)"
+      - "docs/api-discovery/sample-100-extraction/dimRelease.csv (44 rows)"
+      - "docs/api-discovery/sample-100-extraction/dimCycle.csv (84 rows)"
+      - "docs/api-discovery/sample-100-extraction/dimTestCase.csv (10 rows)"
+      - "docs/api-discovery/sample-100-extraction/factTestExecution.csv (100 rows)"
+
+deployments:
+  defaultTenant: "spectra"
+  clientConfigsPath: "deployments/<tenant>/config.yaml"
+  note: "Pipeline developed in Spectra tenant by default; use deployment configs per tenant (e.g., deployments/dxc/config.yaml)."

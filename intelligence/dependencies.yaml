@@ -1,0 +1,89 @@
+metadata:
+  generated_at: '2025-12-09'
+  source: 'Phase 4: Relate'
+  method: networkx graph analysis
+  is_dag: true
+  total_entities: 9
+  total_dependencies: 7
+dependencies:
+  project:
+    depends_on: []
+    required_by:
+    - testcase_folder
+    dependency_count: 0
+    dependent_count: 1
+  release:
+    depends_on: []
+    required_by:
+    - cycle
+    dependency_count: 0
+    dependent_count: 1
+  requirement_folder:
+    depends_on: []
+    required_by:
+    - requirement
+    dependency_count: 0
+    dependent_count: 1
+  requirement:
+    depends_on:
+    - requirement_folder
+    required_by: []
+    dependency_count: 1
+    dependent_count: 0
+  cycle:
+    depends_on:
+    - release
+    required_by:
+    - execution
+    dependency_count: 1
+    dependent_count: 1
+  testcase_folder:
+    depends_on:
+    - project
+    required_by:
+    - testcase
+    dependency_count: 1
+    dependent_count: 1
+  testcase:
+    depends_on:
+    - testcase_folder
+    required_by:
+    - allocation
+    - execution
+    dependency_count: 1
+    dependent_count: 2
+  execution:
+    depends_on:
+    - testcase
+    - cycle
+    required_by: []
+    dependency_count: 2
+    dependent_count: 0
+  allocation:
+    depends_on:
+    - testcase
+    required_by: []
+    dependency_count: 1
+    dependent_count: 0
+hierarchy:
+  level_0:
+  - project
+  - release
+  - requirement_folder
+  level_1:
+  - testcase_folder
+  - cycle
+  - requirement
+  level_2:
+  - testcase
+  level_3:
+  - allocation
+  - execution
+independent_entities:
+- project
+- release
+- requirement_folder
+leaf_entities:
+- requirement
+- execution
+- allocation

@@ -1,0 +1,473 @@
+{
+  "timestamp": "2025-12-08T18:28:25.758275",
+  "project_id": 45,
+  "summary": {
+    "total_tested": 4,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 3,
+    "skipped": 1
+  },
+  "entities": {
+    "releases": {
+      "entity_type": "releases",
+      "timestamp": "2025-12-08T18:28:25.759276",
+      "baseline": {
+        "status": "PASS",
+        "count": 1,
+        "data": {
+          "id": 45,
+          "name": "Project Test Repository",
+          "createdDate": 1715682374000,
+          "status": 0,
+          "projectId": 22,
+          "orderId": 1,
+          "globalRelease": false,
+          "projectRelease": true,
+          "hasChild": false,
+          "syncEnabled": false
+        }
+      },
+      "create": {
+        "status": "PASS",
+        "entity_id": 135,
+        "data": {
+          "id": 135,
+          "name": "API Validation Test Release",
+          "description": "Automated validation test release",
+          "startDate": 1765152000000,
+          "releaseStartDate": "12/08/2025",
+          "createdDate": 1765218508304,
+          "projectId": 45,
+          "orderId": 7,
+          "globalRelease": true,
+          "projectRelease": false,
+          "hasChild": false,
+          "syncEnabled": false
+        }
+      },
+      "validate": {
+        "status": "PASS",
+        "data": {
+          "id": 135,
+          "name": "API Validation Test Release",
+          "description": "Automated validation test release",
+          "startDate": 1765152000000,
+          "releaseStartDate": "12/08/2025",
+          "createdDate": 1765218508000,
+          "projectId": 45,
+          "orderId": 7,
+          "globalRelease": true,
+          "projectRelease": false,
+          "hasChild": false,
+          "syncEnabled": false
+        },
+        "schema": {
+          "id": {
+            "type": "int",
+            "nullable": false,
+            "sample_value": "135"
+          },
+          "name": {
+            "type": "str",
+            "nullable": false,
+            "sample_value": "API Validation Test Release"
+          },
+          "description": {
+            "type": "str",
+            "nullable": false,
+            "sample_value": "Automated validation test release"
+          },
+          "startDate": {
+            "type": "int",
+            "nullable": false,
+            "sample_value": "1765152000000"
+          },
+          "releaseStartDate": {
+            "type": "str",
+            "nullable": false,
+            "sample_value": "12/08/2025"
+          },
+          "createdDate": {
+            "type": "int",
+            "nullable": false,
+            "sample_value": "1765218508000"
+          },
+          "projectId": {
+            "type": "int",
+            "nullable": false,
+            "sample_value": "45"
+          },
+          "orderId": {
+            "type": "int",
+            "nullable": false,
+            "sample_value": "7"
+          },
+          "globalRelease": {
+            "type": "bool",
+            "nullable": false,
+            "sample_value": "True"
+          },
+          "projectRelease": {
+            "type": "bool",
+            "nullable": false,
+            "sample_value": "False"
+          },
+          "hasChild": {
+            "type": "bool",
+            "nullable": false,
+            "sample_value": "False"
+          },
+          "syncEnabled": {
+            "type": "bool",
+            "nullable": false,
+            "sample_value": "False"
+          }
+        }
+      },
+      "comparison": {
+        "fields_added_by_api": [
+          "id",
+          "createdDate",
+          "orderId",
+          "hasChild",
+          "syncEnabled"
+        ],
+        "fields_modified_by_api": [
+          {
+            "field": "startDate",
+            "sent": "2025-12-08",
+            "received": 1765152000000
+          },
+          {
+            "field": "releaseStartDate",
+            "sent": "2025-12-08",
+            "received": "12/08/2025"
+          }
+        ],
+        "fields_missing_in_response": [
+          "releaseEndDate"
+        ]
+      },
+      "overall_status": "PASS"
+    },
+    "cycles": {
+      "entity_type": "cycles",
+      "timestamp": "2025-12-08T18:28:27.429096",
+      "baseline": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "count": null
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    },
+    "requirements": {
+      "entity_type": "requirements",
+      "timestamp": "2025-12-08T18:28:37.834275",
+      "baseline": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "count": null
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    },
+    "testcases": {
+      "entity_type": "testcases",
+      "timestamp": "2025-12-08T18:28:47.799527",
+      "baseline": {
+        "status": "PASS",
+        "count": 1,
+        "data": {
+          "id": 45,
+          "tcrCatalogTreeId": 28,
+          "revision": 0,
+          "stateFlag": 0,
+          "lastModifiedOn": 1712246377000,
+          "versionNumber": 2,
+          "createDatetime": 1706116409000,
+          "createdById": 8,
+          "modifiedById": 8,
+          "testcase": {
+            "customProperties": {},
+            "customProcessedProperties": {},
+            "id": 364,
+            "name": "013 A - SUBSEQUENT ADVICE,  SINGLE CARRIER, LLOYDS BUREAU",
+            "description": "",
+            "lastModifiedOn": 1712246377000,
+            "creationDate": 1706486400000,
+            "createDatetime": 1712246377000,
+            "tcCreationDate": "01/29/2024",
+            "comments": "",
+            "isComplex": false,
+            "estimatedTime": 600000,
+            "writerId": 0,
+            "creatorId": 8,
+            "lastUpdaterId": 8,
+            "oldId": 35,
+            "automated": false,
+            "customFieldProcessed": false,
+            "customFieldValues": [],
+            "testcaseSequence": {
+              "seqNumber": 31
+            },
+            "testcaseId": 31,
+            "versionNumber": 2,
+            "projectId": 3,
+            "testcaseType": "SHARED",
+            "requirementIds": [
+              193,
+              161,
+              168,
+              78,
+              79,
+              175,
+              176,
+              145,
+              182,
+              150,
+              183,
+              185,
+              187,
+              189
+            ],
+            "requirementIdsNew": [
+              {
+                "id": 970,
+                "requirementId": 176,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 981,
+                "requirementId": 193,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 978,
+                "requirementId": 168,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 977,
+                "requirementId": 182,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 971,
+                "requirementId": 79,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 975,
+                "requirementId": 175,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 980,
+                "requirementId": 183,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 979,
+                "requirementId": 145,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 972,
+                "requirementId": 161,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 968,
+                "requirementId": 189,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 974,
+                "requirementId": 187,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 973,
+                "requirementId": 78,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 969,
+                "requirementId": 150,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              },
+              {
+                "id": 976,
+                "requirementId": 185,
+                "testcaseId": 31,
+                "createDatetime": 1706543554000,
+                "modifiedDatetime": 1706543554000,
+                "createdById": 8,
+                "modifiedById": 8
+              }
+            ],
+            "creatorName": "Gary Donoghue",
+            "automatedDefault": false,
+            "testcaseShared": true
+          },
+          "projectId": 3,
+          "releaseId": 5,
+          "isDerivedFromBDD": false,
+          "orderId": 52,
+          "maxVersionNumber": 2,
+          "projectIdParam": 3,
+          "original": true
+        }
+      },
+      "create": {
+        "status": "FAIL",
+        "error": "HTTP NO_RESPONSE",
+        "error_body": "No response"
+      },
+      "validate": null,
+      "comparison": null,
+      "overall_status": "BLOCKED"
+    }
+  },
+  "schemas": {
+    "releases": {
+      "id": {
+        "type": "int",
+        "nullable": false,
+        "sample_value": "135"
+      },
+      "name": {
+        "type": "str",
+        "nullable": false,
+        "sample_value": "API Validation Test Release"
+      },
+      "description": {
+        "type": "str",
+        "nullable": false,
+        "sample_value": "Automated validation test release"
+      },
+      "startDate": {
+        "type": "int",
+        "nullable": false,
+        "sample_value": "1765152000000"
+      },
+      "releaseStartDate": {
+        "type": "str",
+        "nullable": false,
+        "sample_value": "12/08/2025"
+      },
+      "createdDate": {
+        "type": "int",
+        "nullable": false,
+        "sample_value": "1765218508000"
+      },
+      "projectId": {
+        "type": "int",
+        "nullable": false,
+        "sample_value": "45"
+      },
+      "orderId": {
+        "type": "int",
+        "nullable": false,
+        "sample_value": "7"
+      },
+      "globalRelease": {
+        "type": "bool",
+        "nullable": false,
+        "sample_value": "True"
+      },
+      "projectRelease": {
+        "type": "bool",
+        "nullable": false,
+        "sample_value": "False"
+      },
+      "hasChild": {
+        "type": "bool",
+        "nullable": false,
+        "sample_value": "False"
+      },
+      "syncEnabled": {
+        "type": "bool",
+        "nullable": false,
+        "sample_value": "False"
+      }
+    }
+  },
+  "errors": [],
+  "hierarchy_issues": [
+    {
+      "entity": "executions",
+      "reason": "No cycle or testcase available",
+      "blocked_by": [
+        "cycles",
+        "testcases"
+      ]
+    }
+  ]
+}

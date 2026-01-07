@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-12-02 16:24:42",
+  "base_url": "https://velonetic.yourzephyr.com/flex/services/rest/latest",
+  "category": "core",
+  "total_tested": 1,
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "results": [
+    {
+      "path": "/release",
+      "resource": "Get all releases for all projects with Access [/release]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 77,
+        "duration": 0.3792226314544678,
+        "path": "/release"
+      }
+    }
+  ]
+}

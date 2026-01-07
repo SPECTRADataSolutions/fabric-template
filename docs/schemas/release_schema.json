@@ -1,0 +1,17 @@
+{
+  "id": 106,
+  "name": "BUAT",
+  "description": "",
+  "startDate": 1743375600000,
+  "releaseStartDate": "03/31/2025",
+  "endDate": 1767139200000,
+  "releaseEndDate": "12/31/2025",
+  "createdDate": 1741969927000,
+  "status": 0,
+  "projectId": 44,
+  "orderId": 2,
+  "globalRelease": false,
+  "projectRelease": false,
+  "hasChild": false,
+  "syncEnabled": false
+}

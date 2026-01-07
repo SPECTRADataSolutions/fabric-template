@@ -1,0 +1,10 @@
+{
+  "entity": "testcase_folder",
+  "sample_data": null,
+  "schema": null,
+  "endpoint": "/testcasetree",
+  "method": "POST",
+  "status": "\u274c Broken",
+  "notes": "BLOCKER-002: API rejects valid payloads (HTTP 400)",
+  "error": "{\n  \"errorMsg\" : \"For input string: \\\"null\\\"\",\n  \"errorCode\" : \"101z01\"\n}"
+}

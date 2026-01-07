@@ -1,0 +1,126 @@
+# SPECTRA Pipeline Engine Preferences
+# Generated from user commentary and standards review
+# This file guides the pipeline engine in building pipelines exactly as desired
+
+version: "1.0.0"
+source: "zephyr"
+last_updated: "2025-12-11"
+status: "active"
+
+# Preference Categories
+preferences:
+  
+  # Notebook Structure & Formatting
+  notebook_structure:
+    header_format:
+      style: "SPECTRA-branded markdown"
+      includes: ["title", "purpose", "outputs"]
+      branding: "SPECTRA-grade with emojis"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+    
+    cell_structure:
+      pattern: "7-stage lifecycle"
+      cells:
+        - "Parameters"
+        - "Context"
+        - "Initialise"
+        - "Execute"
+        - "Validate"
+        - "Record"
+        - "Finalise"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+    
+    code_style:
+      language: "Python/PySpark"
+      docstrings: "required"
+      type_hints: "required"
+      error_handling: "SPECTRA-grade with custom exceptions"
+      logging: "ASCII-only, structured format"
+      reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+  
+  # Table Naming Conventions
+  table_naming:
+    schema_prefix: false  # No underscore prefix (prepare.schema, not prepare._schema)
+    log_location: "Tables/log/{stage}log"  # Centralised log schema
+    sample_location: "Tables/sample/{entity}"  # Sample data location
+    reference: "docs/prepare/PREPARE-ALIGNMENT-CHANGES.md"
+  
+  # Playbook Structure
+  playbook_structure:
+    pattern: "hybrid"  # Orchestration + granular playbooks
+    orchestration: "{stage}.000-orchestrate-{stage}-stage.md"
+    granular: "{stage}.{number}-{description}.md"
+    atomicity: "single responsibility, independently executable"
+    purpose: "pipeline construction, not runtime execution"
+    reference: "docs/prepare/PLAYBOOK-STRUCTURE-ANALYSIS.md"
+  
+  # Variable Access Patterns
+  variable_access:
+    credentials: "session.variables.get_secret('API_TOKEN')"
+    context: "session.ctx.get('full_url')"
+    avoid: "session.vars.get()"  # Deprecated pattern
+    reference: "docs/prepare/PREPARE-ALIGNMENT-CHANGES.md"
+  
+  # Logging Standards
+  logging:
+    location: "Tables/log/{stage}log"
+    format: "ASCII-only, structured"
+    pattern: "== >> OK !! (no Unicode/emoji in logs)"
+    reference: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+  
+  # British English
+  language:
+    spelling: "British English"
+    examples:
+      - "organise" (not organize)
+      - "optimise" (not optimize)
+      - "colour" (not color)
+      - "centre" (not center)
+    reference: ".cursorrules"
+  
+  # Schema Design
+  schema_design:
+    entity_pattern: "one row per entity (or entity+structureType)"
+    entity_field: "canonical source entity name (e.g., 'cycle', not 'cycleId')"
+    fields_as_arrays: true  # rawField, targetField, dataType as arrays
+    structure_types: ["scalar", "record", "array"]
+    reference: "docs/prepare/SCHEMA-ENTITY-FIX.md"
+  
+  # API Integration
+  api_integration:
+    endpoint_catalog: "source.endpoints table"
+    sample_fetching: "Prepare stage fetches from API (not from Source data)"
+    intelligence_usage: "Use intelligence for fetch order and dependencies"
+    reference: "docs/prepare/PREPARE-STAGE-PURPOSE.md"
+  
+  # Quality Gates
+  quality_gates:
+    validation: "required at each stage"
+    evidence: ".spectra/evidence/{stage}/{playbook}/{date}/"
+    standards: "SPECTRA-grade (zero tech debt)"
+    reference: "Core/standards/SPECTRA-GRADE-DEFINITION.md"
+
+# Standards References
+standards:
+  notebook_formatting: "docs/standards/NOTEBOOK-FORMATTING-STANDARD.md"
+  playbook_structure: "docs/prepare/PLAYBOOK-STRUCTURE-ANALYSIS.md"
+  schema_design: "docs/prepare/SCHEMA-ENTITY-FIX.md"
+  prepare_purpose: "docs/prepare/PREPARE-STAGE-PURPOSE.md"
+  british_english: ".cursorrules"
+  spectra_grade: "Core/standards/SPECTRA-GRADE-DEFINITION.md"
+
+# Pipeline Engine Instructions
+pipeline_engine_instructions:
+  read_preferences: true
+  apply_standards: true
+  generate_links: true  # Pipeline engine provides links to standards
+  validate_against_preferences: true
+  capture_gaps: true  # Detect when preferences not met
+
+# Commentary Capture
+commentary:
+  source: "user_voice_review"
+  format: "conversational → structured"
+  mapping: "commentary → preferences → standards"
+  updates: "preferences file updated from commentary"
+

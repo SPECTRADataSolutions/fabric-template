@@ -1,0 +1,706 @@
+metadata:
+  generated_at: '2025-12-09'
+  source: 'Phase 2: Catalog'
+  method: Transformed from docs/endpoints.json
+  total_endpoints: 228
+  unique_entities: 36
+  methods_breakdown:
+    GET: 120
+    PUT: 32
+    POST: 62
+    DELETE: 12
+    /testcase/search/allocate/bulk/requirement: 1
+    /testcase/search/delete/bulk?releaseId={releaseid}: 1
+catalog:
+- entity: POST
+  endpoint_count: 1
+  methods:
+    /testcase/search/delete/bulk?releaseId={releaseid}:
+    - path: POST
+      description: Search and Map the Testcase
+- entity: admin
+  endpoint_count: 11
+  methods:
+    GET:
+    - path: /admin/preference/admin
+      description: Get All Preferences - Admin
+    - path: /admin/app
+      description: Get All Applications
+    - path: /admin/preference/lov/all
+      description: Get list of values
+    - path: /admin/preference/all
+      description: Get All Preferences
+    - path: /admin/preference/anonymous
+      description: Get Anonymous Preferences
+    - path: /admin/backup/schedule
+      description: Get Daily Back-up Schedule
+    - path: /admin/ldap/default/settings
+      description: Get All user preferences
+    - path: /admin/preference{?key}
+      description: Get Preference by key
+    - path: /admin/preference/item/usage{?preferencename}{?value}{?id}
+      description: Get Preference Item Usage
+    - path: /admin/user/preference
+      description: Get All user preferences
+    PUT:
+    - path: /admin/preference
+      description: Update a given Preference
+- entity: advancesearch
+  endpoint_count: 7
+  methods:
+    GET:
+    - path: /advancesearch/testexecutions/{altid}{?maxresults}
+      description: Search test executions for given altId
+    - path: /advancesearch/reindex/health
+      description: Check Indexing Health
+    POST:
+    - path: /advancesearch/
+      description: Search via filters
+    - path: /advancesearch/zql
+      description: Search via filters
+    - path: /advancesearch/zql
+      description: Search via filters
+    - path: /advancesearch/zql
+      description: Search via filters
+    PUT:
+    - path: /advancesearch/reindex/{pid}
+      description: Reindex specific project by id
+- entity: assignmenttree
+  endpoint_count: 4
+  methods:
+    POST:
+    - path: /assignmenttree/{cyclephaseid}/assign/byschedule{?maxresults}{?scheduleids}{?maintainassignments}{?parenttreeid}{?includehierarchy}{?isCreateWithLatestVersion}
+      description: Create free form release testschedule
+    - path: /assignmenttree/{cyclephaseid}/assign/bytree/{parenttreeid}{?includehierarchy}{?dtoResponse}
+      description: Create freeForm testcase
+    - path: /assignmenttree/{cyclephaseid}/assign/bysearch/{parenttreeid}{?searchquery}{?maxresults}{?testcaseid}{?zql}{?activeprojectid}{?includehierarchy}
+      description: Create testcase free form using search
+    PUT:
+    - path: /assignmenttree/{cyclephaseid}/bulk/tree/{treeid}/from/{fromid}/to/{toid}{?cascade}{?easmode}
+      description: Change multiple assignments
+- entity: attachment
+  endpoint_count: 2
+  methods:
+    GET:
+    - path: /attachment/{id}
+      description: Get Attachment Details by id
+    - path: /attachment{?itemid}{?type}{?isLink}
+      description: Get attachment details
+- entity: automation
+  endpoint_count: 3
+  methods:
+    GET:
+    - path: /automation/schedule{?schedulejobid}
+      description: get Scheduled job via scheduled job id
+    POST:
+    - path: /automation/job/delete
+      description: Delete job using job id
+    - path: /automation/job/detail
+      description: Configure new Job
+- entity: cycle
+  endpoint_count: 18
+  methods:
+    DELETE:
+    - path: /cycle/{id}
+      description: Delete Cycle
+    - path: /cycle/{cycleid}/phase/{cyclephaseid}
+      description: Delete Cycle Phase
+    GET:
+    - path: /cycle/assignments/{releaseid}{?allexecutions}
+      description: Calculate assignments for release
+    - path: /cycle/{cycleid}
+      description: Get Cycle by ID
+    - path: /cycle/cycleName/{releaseid}{?orderBy}{?cycleName}
+      description: Get Cycle names for release
+    - path: /cycle/phase/name{?ids}
+      description: Get all cyclePhase Names
+    - path: /cycle/release/{releaseid}
+      description: Get Cycle for release
+    - path: /cycle/status/count/{releaseid}
+      description: get status count for releaseid
+    POST:
+    - path: /cycle/clone/{cycleid}{?deep}{?copyassignments}
+      description: Clone a Cycle
+    - path: /cycle/cyclephase/clone/{cyclephaseid}
+      description: Clone a CyclePhase
+    - path: /cycle/copy/{sourcecyclephaseid}/to/{targetcycleid}
+      description: copy a CyclePhase
+    - path: /cycle/
+      description: Create a New Cycle
+    - path: /cycle/{cycleid}/phase{?scheduleId}
+      description: Create Cycle Phase
+    - path: /cycle/{cycleid}/phase{?scheduleId}
+      description: Create Cycle Phase
+    - path: /cycle/move/{sourcecyclephaseid}/to/{targetcycleid}
+      description: Move a CyclePhase
+    PUT:
+    - path: /cycle/toggle/{cycleId}/{value}
+      description: get status count for releaseid
+    - path: /cycle/{cycleId}
+      description: Update a Cycle
+    - path: /cycle/{cycleid}/phase
+      description: Update Cycle Phase
+- entity: defect
+  endpoint_count: 2
+  methods:
+    GET:
+    - path: /defect/{defectId}?projectId={projectId}
+      description: Get defect by ID
+    POST:
+    - path: /defect/
+      description: Create defect in the system.
+- entity: defectmapping
+  endpoint_count: 1
+  methods:
+    POST:
+    - path: /defectmapping/
+      description: Save defect schedule
+- entity: execution
+  endpoint_count: 21
+  methods:
+    DELETE:
+    - path: /execution{?ids}
+      description: Delete / Unassign test schedules
+    - path: /execution/{cyclephaseid}/testcase{?testcaseids}{?tcrCatalogTreeId}{?filterTcName}
+      description: Delete / Unassign frozen test cases and schedules
+    GET:
+    - path: /execution/path{?scheduleid}{?assigneeuserid}
+      description: Get node path
+    - path: /execution/{id}
+      description: To get Schedule by ID
+    - path: /execution/ids{?ids}
+      description: To schedule by schedule IDs
+    - path: /execution/expanded{?ids}{?stepresults}{?resulthistory}
+      description: To schedule by schedule ids
+    - path: /execution/user/project{?projectid}{?createdby}{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?orderByAsc}{?offset}{?pagesize}
+      description: Get Schedules by Criteria
+    - path: /execution{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?isascorder}{?offset}{?includeanyoneuser}{?pagesize}{?is_cfield}
+      description: Get Schedules by Criteria
+    - path: /execution/byfilter{?testcaseid}{?releaseid}{?rtsid}{?order}{?isascorder}{?offset}{?pagesize}
+      description: Get Teststep results by IDs
+    - path: /execution/teststepresult/bytctid{?tctid}
+      description: Get teststep results by ID's
+    - path: /execution/teststepresult/{id}
+      description: Get Test Step Result
+    - path: /execution/teststepresult{?sids}{?cyclephaseid}
+      description: Get test step results by criteria
+    POST:
+    - path: /execution/
+      description: Create schedules values
+    - path: /execution/modify
+      description: Modify schedules values
+    - path: /execution/updateteststatus
+      description: Update Test Execution Status
+    - path: /execution/teststepresult/saveorupdate
+      description: Save or Update Test step result
+    PUT:
+    - path: /execution/assign
+      description: Assign/Reassign schedules values
+    - path: /execution/bulk{?scheduleids}{?status}{?testerid}{?tcrCatalogTreeId}{?allExecutions}{?includeanyoneuser}
+      description: Execute testcases
+    - path: /execution/statusandattachment/{id}{?status}
+      description: To update execution details, attachment and status
+    - path: /execution/{id}{?status}{?testerid}{?time}{?allExecutions}{?includeanyoneuser}
+      description: To update execution details
+    - path: /execution
+      description: Update Schedules Values
+- entity: executionchangehistory
+  endpoint_count: 1
+  methods:
+    GET:
+    - path: //executionchangehistory{?releaseTestScheduleId}{?isascorder}{?offset}{?pagesize}
+      description: Get Testcase usage history details
+- entity: externalGroup
+  endpoint_count: 3
+  methods:
+    GET:
+    - path: /externalGroup/search{?name}{?pagesize}
+      description: Search groups in LDAP or crowd
+    POST:
+    - path: /externalGroup/importGroupsAndUsers
+      description: Import groups and users from the list
+    PUT:
+    - path: /externalGroup/sync
+      description: Sync groups and users from the list
+- entity: externalrequirement
+  endpoint_count: 1
+  methods:
+    POST:
+    - path: /externalrequirement/importall{?projectId}
+      description: Import External Requirement Based on Filter or JQL
+- entity: field
+  endpoint_count: 12
+  methods:
+    GET:
+    - path: /field/fieldtype
+      description: Get all the field's type metadata.
+    - path: /field/metadata{?visible}
+      description: Get customfield metadata
+    - path: /field/{id}
+      description: Get Field by Id
+    - path: /field/name{?name}{?projectid}
+      description: Get Field by dispaly name
+    - path: /field{?name}
+      description: Get Field by fieldName
+    - path: /field/importfields/{entityName}
+      description: Get Importable Fields By Entity
+    - path: /field/ids{?ids}
+      description: Get list of CustomFields
+    - path: /field/project/{id}
+      description: Get list of project specific CustomFields
+    - path: /field/entity/{entityname}{?includsystemfield}
+      description: Get fields by entity
+    - path: /field/validate{?id}{?entityname}{?searchfieldname}
+      description: Validating field in the system.
+    POST:
+    - path: /field/
+      description: Add Custom Field
+    PUT:
+    - path: /field/cascade
+      description: Update Cascade
+- entity: fieldmap
+  endpoint_count: 1
+  methods:
+    POST:
+    - path: /fieldmap/
+      description: create field map
+- entity: fileWatcher
+  endpoint_count: 2
+  methods:
+    GET:
+    - path: /fileWatcher/watcher{?schedulejobid}
+      description: get Scheduled job via scheduled job id
+    POST:
+    - path: /fileWatcher/watcher
+      description: Schedule job for ZBlast
+- entity: gadget
+  endpoint_count: 1
+  methods:
+    GET:
+    - path: /gadget/{dashboardId}
+      description: Get all requirement node and requirement name by release id
+- entity: global-repository
+  endpoint_count: 1
+  methods:
+    GET:
+    - path: /global-repository/project
+      description: Get All projects that allowed access to current global reporsitory
+        user
+- entity: group
+  endpoint_count: 2
+  methods:
+    POST:
+    - path: /group/
+      description: Create group in the System
+    PUT:
+    - path: /group
+      description: Update group in the System
+- entity: import
+  endpoint_count: 2
+  methods:
+    POST:
+    - path: /import/
+      description: Add new import job
+    PUT:
+    - path: /import/execute/{id}/{action}
+      description: Execute import job by id
+- entity: info
+  endpoint_count: 1
+  methods:
+    GET:
+    - path: /info/license
+      description: Get License Information.
+- entity: license
+  endpoint_count: 3
+  methods:
+    GET:
+    - path: /license/
+      description: Get License Information
+    - path: /license/detail
+      description: Get License Detail Information
+    - path: /license/peak/detail?licensetype={licensetype}
+      description: License Peak Usage Detail
+- entity: parsertemplate
+  endpoint_count: 5
+  methods:
+    DELETE:
+    - path: /parsertemplate/{id}
+      description: Delete Template
+    GET:
+    - path: /parsertemplate/{TemplateId}
+      description: Get Template
+    - path: /parsertemplate
+      description: Get List of Templates
+    POST:
+    - path: /parsertemplate/
+      description: Create Template
+    PUT:
+    - path: /parsertemplate/{templateId}
+      description: Update Template
+- entity: project
+  endpoint_count: 19
+  methods:
+    GET:
+    - path: /project/details
+      description: Get All Normal Project Details
+    - path: /project/normal
+      description: Get All Normal project
+    - path: /project/all/leads
+      description: Get lead for all projects
+    - path: /project/{id}{?isLite}
+      description: Get Project by ID
+    - path: /project/user/{UserID}?isLite=false&adminUser=false
+      description: Get Project by User ID
+    - path: /project/project/{UserID}
+      description: Get allocated Projects
+    - path: /project/count/allprojects
+      description: Get Project Team Count for all projects
+    - path: /project/count/allusers
+      description: Get Project Team Count for all users
+    - path: /project/allocated/projects
+      description: Get Project Team  for Allocated Projects
+    - path: /project/projectteam/{pid}
+      description: Get Project team for project
+    - path: /project{?userId}{?isLite}
+      description: Get All projects by UserId
+    - path: /project/lite
+      description: Get All projects
+    - path: /project/shared
+      description: Get All Shared projects
+    - path: /project/sharedprojects/{projectid}
+      description: Get Shared projects
+    - path: /project/sharedtoprojects/{projectid}
+      description: Get Shared projects shared to given project
+    POST:
+    - path: /project/
+      description: Create Project
+    - path: /project/{projectId}/migrate{?externalStorageId}
+      description: Project storage migration
+    PUT:
+    - path: /project
+      description: Assign User to the Project
+    - path: /project/{projectId}/migration/retry
+      description: Retry failed attachment migration
+- entity: release
+  endpoint_count: 5
+  methods:
+    GET:
+    - path: /release/paged/project/{projectid}{?pagesize}{?offset}{?order}{?isascorder}{?isVisible}
+      description: Get releases for a project through page and offset
+    - path: /release/{releaseid}
+      description: Get Release by Release ID
+    - path: /release
+      description: Get all releases for all projects with Access
+    - path: /release/project/{projectid}
+      description: Get releases for a project
+    POST:
+    - path: /release/
+      description: Create New Release
+- entity: requirement
+  endpoint_count: 3
+  methods:
+    POST:
+    - path: /requirement/
+      description: Create new requirement
+    - path: /requirement/bulk
+      description: Bulk Update Requirement
+    PUT:
+    - path: /requirement/{id}
+      description: Update Requirement
+- entity: requirementtree
+  endpoint_count: 1
+  methods:
+    POST:
+    - path: /requirementtree/add/
+      description: Create new requirement tree
+- entity: role
+  endpoint_count: 2
+  methods:
+    POST:
+    - path: /role/
+      description: Add role
+    PUT:
+    - path: /role/permission{?roleid}
+      description: Save or assign role permissions
+- entity: system
+  endpoint_count: 7
+  methods:
+    GET:
+    - path: /system/info/cache/info
+      description: Get All list of Caches
+    - path: /system/info/channelinfo
+      description: Get Channel Information
+    - path: /system/info/license
+      description: Get License Information
+    - path: /system/info/servertime
+      description: Get License Information
+    - path: /system/info/stats
+      description: Get License Information
+    POST:
+    - path: /system/info/cache/clear{?clearall}{?cachename}
+      description: Clear the Specified Cache
+    PUT:
+    - path: /system/info/downloadzbot
+      description: Download Zbot
+- entity: tcuh
+  endpoint_count: 1
+  methods:
+    GET:
+    - path: /tcuh/testcase/{id}{?isascorder}{?order}{?offset}{?pagesize}
+      description: Get Testcase usage history details
+- entity: testcase
+  endpoint_count: 45
+  methods:
+    /testcase/search/allocate/bulk/requirement:
+    - path: /testcase/search/update/bulk?releaseId={releaseid}
+      description: Search and Edit the Testcase
+    DELETE:
+    - path: /testcase/{id}
+      description: Delete Testcase
+    - path: /testcase{?tcrCatalogTreeId}
+      description: Delete Multiple Testcase Tree Linkage
+    - path: /testcase/{testcaseVersionId}/teststep/{tctId}
+      description: Delete teststep
+    GET:
+    - path: /testcase/requirement/{testcaseid}
+      description: Get Requirement Summary by Testcase ID
+    - path: /testcase/tags
+      description: Get all tags
+    - path: /testcase/tags/{releaseid}{?fetchall}
+      description: Get all tags
+    - path: /testcase/name{?tcid}
+      description: Get all Testcase Names by Testcase IDs
+    - path: /testcase/count{?tcrcatalogtreeid}{?releaseid}
+      description: Get Count Of Testcases By Phase
+    - path: /testcase/count/ids{?treeids}
+      description: Get Count Of Testcases By Phase ids.
+    - path: /testcase/count/{releaseid}
+      description: Get Count Of Testcases By Phase ids.
+    - path: /testcase/cumulative{?releaseid}{?requirementid}
+      description: Cumulative Testcase by Release ID and Requirement ID.
+    - path: /testcase/cumulative/data{?releaseid}{?requirementid}
+      description: Get Cumulative Testcase by Release ID and Requirement ID.
+    - path: /testcase/count/discrete/{releaseid}
+      description: Testcase count per node
+    - path: /testcase/path{?testcaseid}{?tctid}
+      description: Get Traceable Path from Root
+    - path: /testcase/pathbyrelease{?testcaseid}{?releaseid}
+      description: Get Traceable Path from Root
+    - path: /testcase/planning/{treeId}{?offset}{?pagesize}{?order}{?isascorder}{?tcname}
+      description: Get Testcase by Criteria
+    - path: /testcase/{testcaseId}
+      description: Get Testcase by ID
+    - path: /testcase/nodes{?treeids}
+      description: Get Testcases by Tree IDs
+    - path: /testcase/detail/{id}
+      description: Get Testcase details by ID
+    - path: /testcase/altid{?altids}
+      description: Get Testcase by ID
+    - path: /testcase/byrequirement{?requirementid}{?breadcrumb}{?releaseid}
+      description: Get Testcase Summary by Requirement ID
+    - path: /testcase/versions{?testcaseid}
+      description: Get all testcase version by testcase id
+    - path: /testcase{?offset}{?pagesize}{?releaseid}{?keyword}{?zqlquery}
+      description: Get Testcase by Criteria
+    - path: /testcase/tree/{treeid}{?offset}{?pagesize}{?order}{?isascorder}{?dbsearch}{?frozen}{?is_cfield}
+      description: Get Testcase by Tree ID
+    - path: /testcase/{testcaseVersionId}/teststep{?isfetchstepversion}{?versionId}
+      description: Get teststep
+    POST:
+    - path: /testcase/allocate/requirement/{testcaseid}{?releaseid}
+      description: Allocate Requirements to testcase Id
+    - path: /testcase/allocate/requirement{?releaseid}{?tcrCatalogTreeId}
+      description: Allocate Requirements to testcase Ids
+    - path: /testcase/clone/on/{releaseid}/to/{targettreeid}{?sourceitemids}{?link}{?cloneAllDetails}
+      description: Clone Testcase
+    - path: /testcase/bulk{?scheduleId}{?nobulkcommit}
+      description: Create bulk Testcase
+    - path: /testcase/
+      description: Create Testcase
+    - path: /testcase/createnewversion/{id}
+      description: create new version of testcase
+    - path: /testcase/mapby/altid
+      description: Map Testcase to Requirement
+    - path: /testcase/move/from/{sourceentryid}/to/{targetentryid}{?sourceitemids}
+      description: Move Testcases
+    - path: /testcase/share/on/{releaseid}/to/{targettreeid}{?sourceitemids}{?showinfomessage}{?link}
+      description: Share Testcase
+    - path: /testcase/{testcaseVersionId}/teststep/detail/{tctId}
+      description: Create teststep
+    - path: /testcase/{testcaseVersionId}/teststep/detail/{tctId}
+      description: Create teststep
+    PUT:
+    - path: /testcase/search/update/bulk?releaseId={releaseid}
+      description: Search and Edit the Testcase
+    - path: /testcase/bulk{?externalid}{?priority}{?tag}{?comments}{?scriptpath}{?scriptid}{?scriptname}{?automated}{?estimatedtime}{?testcaseid}
+      description: Bulk Update Testcase values
+    - path: /testcase/update/bulk{?tcrCatalogTreeId}
+      description: Bulk Update Testcase values
+    - path: /testcase/flag/{flag}{?testcaseids}{?tcrCatalogTreeId}
+      description: Update Flag status by Tree Testcase ID
+    - path: /testcase/{id}{?forceCreateNewVersion}
+      description: Update Testcase values
+    - path: /testcase/{tctId}/replacewithversion/{testcaseVersionId}{?releaseid}
+      description: Update Testcase With Version
+    - path: /testcase{?forceCreateNewVersion}
+      description: Update Testcase values
+    - path: /testcase/{testcaseVersionId}/teststep/detail/{testcaseTreeId}
+      description: Update teststep
+- entity: testcasetree
+  endpoint_count: 14
+  methods:
+    DELETE:
+    - path: /testcasetree/{id}
+      description: Delete Testcase Tree
+    GET:
+    - path: /testcasetree/phases/execution/{releaseid}
+      description: Get Execution Tree by releaseid
+    - path: /testcasetree/hierarchy/{treeid}
+      description: Get TCR hierarchy
+    - path: /testcasetree/{tctId}
+      description: Get Testcase Tree
+    - path: /testcasetree/phases/{releaseid}
+      description: Get Testcase Tree by releaseid
+    - path: /testcasetree/projectrepository/{projectid}
+      description: Get Project Repository Testcase Tree by projectid
+    - path: /testcasetree/lite{?type}{?releaseid}{?revisionid}{?parentid}{?isShared}{?limit}{?offset}
+      description: Get tree by criteria
+    POST:
+    - path: /testcasetree/copy/{nodeid}/{sourcereleaseid}/to/{targetparentid}/{targetreleaseid}
+      description: Copy Testcase tree node to another target node
+    - path: /testcasetree{?parentid}{?assignedusers}
+      description: Create Tree node
+    - path: /testcasetree/move/{nodeid}/to/{targetid}
+      description: Move Testcase tree
+    - path: /testcasetree/move/{nodeid}/{sourcereleaseid}/to/{targetid}/{targetreleaseid}
+      description: Move Testcase tree to other Release
+    - path: /testcasetree/share/{nodeid}/{sourcereleaseid}/to/{targetparentid}/{targetreleaseid}
+      description: Share Testcase tree node to another target node
+    PUT:
+    - path: /testcasetree/assignuser/{id}{?name}{?description}{?assignedusers}
+      description: Update tree node values
+    - path: /testcasetree/{treeId}
+      description: Update tree node values
+- entity: ui
+  endpoint_count: 4
+  methods:
+    GET:
+    - path: /ui/users{?offset}{?pagesize}{?hidedisabledusers}{?order}{?isascorder}{?isLoggedIn}
+      description: Get user Grid view
+    - path: /ui/searchGroups{?text}{?offset}{?pagesize}{?order}{?isascorder}{?hidedisabledgroups}
+      description: Get group Grid view
+    - path: /ui/searchProjects{?text}{?offset}{?pagesize}{?order}{?isascorder}{?includeglobalproject}{?isProjectAdmin}
+      description: Get project Grid view
+    POST:
+    - path: /ui/auditLogs{?offset}{?pagesize}{?order}{?isascorder}
+      description: Get audit logs Grid view
+- entity: upload-file
+  endpoint_count: 7
+  methods:
+    GET:
+    - path: /upload-file/automation/schedule/get-latest-job-progress{?jobid}
+      description: Get latest Scheduled Automation Job Progress
+    - path: /upload-file/automation/file-upload-job/list{?releaseId}{?projectId}
+      description: All scheduled jobs by project id and release id
+    POST:
+    - path: /upload-file/automation/cancel/{scheduleId}
+      description: Cancel job by id
+    - path: /upload-file/automation/create-and-execute-job
+      description: Create/execute a job
+    - path: /upload-file/automation/create-job-detail
+      description: Create new Job
+    - path: /upload-file/automation/execute-job
+      description: Schedule/execute job for File Upload
+    - path: /upload-file/automation/update-execute-job
+      description: Update/execute a job
+- entity: user
+  endpoint_count: 11
+  methods:
+    DELETE:
+    - path: /user/logout
+      description: Logout User from System
+    GET:
+    - path: /user/current{?auditLog}
+      description: Get Current Logged-In Users
+    - path: /user/defect
+      description: Get Defect Users present in System.
+    - path: /user/filter{?includeDashboardUser}
+      description: Get All Users Present in the System.
+    - path: /user/loggedin/count{?skipdefectuser}
+      description: Getting all the Logged-In in User count
+    - path: /user/{id}{?isLite}
+      description: Get User by ID
+    - path: /user{?hidedisabledusers}
+      description: Get All Users Present in the System.
+    - path: /user/project/{projectid}{?isLite}{?adminUser}
+      description: Get User by Project ID
+    - path: /user/validZbotUsers{?projectId}
+      description: Get valid users for Zbot.
+    POST:
+    - path: /user/
+      description: Create User in the System
+    PUT:
+    - path: /user/{id}
+      description: Update User
+- entity: usertoken
+  endpoint_count: 4
+  methods:
+    DELETE:
+    - path: /usertoken/all
+      description: delete all token
+    - path: /usertoken/{id}
+      description: delete token
+    GET:
+    - path: /usertoken
+      description: Get all token
+    POST:
+    - path: /usertoken/
+      description: generate token
+authentication:
+  type: Bearer Token
+  header: 'Authorization: Bearer {token}'
+  notes: All endpoints require authentication except public endpoints
+pagination:
+  supported: true
+  parameters:
+  - maxresults
+  - offset
+  - startindex
+  notes: Most GET endpoints support pagination
+rate_limits:
+  documented: false
+  observed: null
+  notes: No official rate limit documentation found
+core_entities:
+  project:
+    endpoints: []
+    primary_path: /project
+    notes: Top-level container
+  release:
+    endpoints: []
+    primary_path: /release
+    notes: 'BLOCKER-003: Locks for >60s after creation'
+  cycle:
+    endpoints: []
+    primary_path: /cycle
+    notes: Requires unlocked release
+  testcase:
+    endpoints: []
+    primary_path: /testcase
+    notes: Requires tcrCatalogTreeId (folder ID)
+  testcasetree:
+    endpoints: []
+    primary_path: /testcasetree
+    notes: 'BLOCKER-002: Folder creation broken (HTTP 400)'
+  requirement:
+    endpoints: []
+    primary_path: /requirement
+    notes: 'BLOCKER-001: POST /requirement broken (HTTP 500)'
+  requirementtree:
+    endpoints: []
+    primary_path: /requirementtree/add
+    notes: Workaround for requirement creation
+  execution:
+    endpoints: []
+    primary_path: /execution
+    notes: Links testcase to cycle

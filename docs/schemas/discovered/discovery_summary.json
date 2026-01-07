@@ -1,0 +1,53 @@
+{
+  "discovery_date": "2025-12-06T00:47:58.332544",
+  "project_id": 45,
+  "project_name": "SpectraTestProject",
+  "entities_created": {
+    "releases": 1,
+    "cycles": 1,
+    "testcases": 0,
+    "executions": 0
+  },
+  "created_entities": {
+    "project_id": 45,
+    "releases": [
+      {
+        "id": 117,
+        "name": "Schema Discovery Release",
+        "endpoint": "/release",
+        "payload": {
+          "name": "Schema Discovery Release",
+          "description": "Temporary release for schema discovery - will be deleted",
+          "projectId": 45,
+          "startDate": 1764982074307,
+          "endDate": 1772758074307,
+          "status": 0
+        }
+      }
+    ],
+    "cycles": [
+      {
+        "id": 199,
+        "name": "Schema Discovery Cycle",
+        "endpoint": "/cycle",
+        "payload": {
+          "name": "Schema Discovery Cycle",
+          "description": "Temporary cycle for schema discovery - will be deleted",
+          "releaseId": 117,
+          "startDate": 1764982074307,
+          "endDate": 1772758074307,
+          "status": 0,
+          "environment": "Discovery",
+          "build": "1.0"
+        }
+      }
+    ],
+    "testcases": [],
+    "executions": []
+  },
+  "schema_files": {
+    "release": "release_created_response.json",
+    "cycle": "cycle_created_response.json",
+    "testcase": null
+  }
+}

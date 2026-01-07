@@ -1,0 +1,215 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "a744c881-065a-8e92-4cbb-2f6620f5ce36",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "mode": {
+              "value": {
+                "value": "@pipeline().parameters.mode",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "project": {
+              "value": {
+                "value": "@pipeline().parameters.project",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "bootstrap": {
+              "value": {
+                "value": "@pipeline().parameters.bootstrap",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "rebuild": {
+              "value": {
+                "value": "@pipeline().parameters.rebuild",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "test": {
+              "value": {
+                "value": "@pipeline().parameters.test",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "debug": {
+              "value": {
+                "value": "@pipeline().parameters.debug",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "backfill": {
+              "value": {
+                "value": "@pipeline().parameters.backfill",
+                "type": "Expression"
+              },
+              "type": "bool"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "sourceZephyr",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "2797eaec-7a04-a62b-4b96-ce0e0249b31b",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "mode": {
+              "value": {
+                "value": "@pipeline().parameters.mode",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "project": {
+              "value": {
+                "value": "@pipeline().parameters.project",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "bootstrap": {
+              "value": {
+                "value": "@pipeline().parameters.bootstrap",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "rebuild": {
+              "value": {
+                "value": "@pipeline().parameters.rebuild",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "test": {
+              "value": {
+                "value": "@pipeline().parameters.test",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "debug": {
+              "value": {
+                "value": "@pipeline().parameters.debug",
+                "type": "Expression"
+              },
+              "type": "bool"
+            },
+            "backfill": {
+              "value": {
+                "value": "@pipeline().parameters.backfill",
+                "type": "Expression"
+              },
+              "type": "bool"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "prepareZephyr",
+        "dependsOn": [
+          {
+            "activity": "sourceZephyr",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "mode": {
+        "type": "string",
+        "defaultValue": "run"
+      },
+      "project": {
+        "type": "int",
+        "defaultValue": 0
+      },
+      "bootstrap": {
+        "type": "bool",
+        "defaultValue": true
+      },
+      "rebuild": {
+        "type": "bool",
+        "defaultValue": false
+      },
+      "backfill": {
+        "type": "bool",
+        "defaultValue": false
+      },
+      "test": {
+        "type": "bool",
+        "defaultValue": false
+      },
+      "debug": {
+        "type": "bool",
+        "defaultValue": false
+      }
+    },
+    "libraryVariables": {
+      "zephyrVariables_SOURCE_SYSTEM": {
+        "type": "String",
+        "variableName": "SOURCE_SYSTEM",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_SOURCE_NAME": {
+        "type": "String",
+        "variableName": "SOURCE_NAME",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_STAGE": {
+        "type": "String",
+        "variableName": "STAGE",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_NOTEBOOK_NAME": {
+        "type": "String",
+        "variableName": "NOTEBOOK_NAME",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_BASE_URL": {
+        "type": "String",
+        "variableName": "BASE_URL",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_BASE_PATH": {
+        "type": "String",
+        "variableName": "BASE_PATH",
+        "libraryName": "zephyrVariables"
+      },
+      "zephyrVariables_API_TOKEN": {
+        "type": "String",
+        "variableName": "API_TOKEN",
+        "libraryName": "zephyrVariables"
+      }
+    },
+    "concurrency": 5
+  }
+}

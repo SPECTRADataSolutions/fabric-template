@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 Documentation
+    url: https://github.com/SPECTRADataSolutions/zephyr/blob/main/README.md
+    about: View the Zephyr pipeline documentation
+  - name: 🐛 Bug Registry
+    url: https://github.com/SPECTRADataSolutions/zephyr/blob/main/docs/bug-and-blocker-registry.md
+    about: View all known bugs and blockers
+

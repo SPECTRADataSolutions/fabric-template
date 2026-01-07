@@ -1,0 +1,1013 @@
+constraints:
+  metadata:
+    generated_at: '2025-12-09'
+    method: Consolidated from bug registry and discoveries
+    source: 'Phase 6: Uncover'
+    summary:
+      blocked_entities:
+      - testcase
+      - execution
+      - allocation
+      critical_issues: 2
+      total_blockers: 3
+      total_bugs: 1
+      total_inconsistencies: 2
+      total_quirks: 3
+      total_undocumented: 2
+      working_entities:
+      - project
+      - release
+      - requirement_folder
+      - requirement
+      - cycle
+      working_workarounds: 2
+  quirks:
+    api_inconsistencies:
+    - entity: requirement
+      id: INCONSISTENCY-001
+      issue: POST /requirement is broken, must use POST /requirementtree/add
+      notes: Folder and requirement creation use same endpoint, differentiated by
+        parentId presence
+      title: Requirement Creation Uses Folder Endpoint
+    - entity: multiple
+      examples:
+        cycle: Requires epoch milliseconds (int)
+        release: Accepts 'YYYY-MM-DD' string
+      id: INCONSISTENCY-002
+      issue: Some endpoints accept 'YYYY-MM-DD', others require epoch milliseconds
+      notes: No consistent date format across API
+      title: Date Format Inconsistency
+    blockers:
+    - date_discovered: '2025-12-08'
+      endpoint: POST /requirement
+      entity: requirement
+      id: BLOCKER-001
+      impact: Cannot create requirements via documented API
+      issue: 'Returns HTTP 500: ''Cannot invoke java.lang.Long.longValue() because
+        id is null'''
+      reported_to_vendor: false
+      severity: critical
+      title: Requirement Creation API Broken
+      workaround:
+        method: Use POST /requirementtree/add with parentId
+        notes: Must create requirement_folder first, then use parentId
+        status: ✅ Working
+    - blocks:
+      - testcase
+      - execution
+      - allocation
+      date_discovered: '2025-12-08'
+      endpoint: POST /testcasetree
+      entity: testcase_folder
+      id: BLOCKER-002
+      impact: Cannot create testcase folders, blocks all testcase/execution/allocation
+        creation
+      issue: 'Returns HTTP 400: ''For input string: null'''
+      reported_to_vendor: false
+      severity: critical
+      title: Testcase Folder API Broken
+      workaround:
+        method: Manual creation in UI required
+        notes: 'Tried 4 variations (omit parentId, parentId: null, parentId: 0, no
+          parentId field) - all failed'
+        status: ⚠️ Manual only
+    - date_discovered: '2025-12-08'
+      endpoint: POST /release
+      entity: release
+      id: BLOCKER-003
+      impact: Cannot create cycles immediately after release creation
+      issue: Newly created releases are locked for >60 seconds, preventing cycle creation
+      reported_to_vendor: false
+      severity: high
+      title: Release Lock Duration >60 Seconds
+      workaround:
+        method: Use existing (old) releases for cycle creation
+        notes: Tested 15s, 30s, 60s delays - all failed. Old releases work immediately.
+        status: ✅ Working
+    bugs:
+    - date_discovered: '2025-12-08'
+      endpoint: GET /release/{id}
+      entity: release
+      id: BUG-007
+      impact: Cannot validate release creation via GET
+      issue: Returns HTTP 403 Forbidden even with valid API token
+      reported_to_vendor: false
+      severity: medium
+      title: Release GET by ID Returns HTTP 403
+      workaround:
+        method: Skip GET validation for releases
+        notes: Assume creation succeeded if POST returns 200/201
+        status: ✅ Working
+    quirks:
+    - date_discovered: '2025-12-08'
+      entity: requirement
+      id: QUIRK-001
+      impact: Must use timestamps or UUIDs in requirement names
+      issue: API rejects duplicate requirement names even across different test runs
+      severity: low
+      title: Requirement Names Must Be Unique Across All Runs
+      workaround:
+        method: Include timestamp in requirement name
+        notes: Use datetime.now().strftime('%Y%m%d%H%M%S') in name
+        status: ✅ Working
+    - date_discovered: '2025-12-08'
+      entity: cycle
+      id: QUIRK-002
+      impact: Must use existing releases or wait >60s
+      issue: Cannot create cycle with newly created release (locked)
+      severity: medium
+      title: Cycle Creation Requires Unlocked Release
+      workaround:
+        method: Query for existing releases and use oldest one
+        notes: Oldest releases are most likely unlocked
+        status: ✅ Working
+    - date_discovered: '2025-12-08'
+      entity: testcase
+      id: QUIRK-003
+      impact: Blocked by BLOCKER-002 (folder creation broken)
+      issue: Cannot create testcase without tcrCatalogTreeId
+      severity: medium
+      title: Testcase Requires tcrCatalogTreeId (Folder ID)
+      workaround:
+        method: None - depends on folder API fix
+        notes: Must fix folder API first
+        status: ❌ Blocked
+    undocumented_behavior:
+    - behavior: Releases are locked after creation for >60 seconds
+      entity: release
+      id: UNDOCUMENTED-001
+      notes: Not mentioned in API documentation
+      title: Release Lock Mechanism
+    - behavior: 'API rejects parentId: null despite documentation suggesting it''s
+        valid for root folders'
+      entity: testcase_folder
+      id: UNDOCUMENTED-002
+      notes: Documentation doesn't clarify how to create root folders
+      title: Folder API parentId Rejection
+dependencies:
+  dependencies:
+    allocation:
+      dependency_count: 1
+      dependent_count: 0
+      depends_on:
+      - testcase
+      required_by: []
+    cycle:
+      dependency_count: 1
+      dependent_count: 1
+      depends_on:
+      - release
+      required_by:
+      - execution
+    execution:
+      dependency_count: 2
+      dependent_count: 0
+      depends_on:
+      - testcase
+      - cycle
+      required_by: []
+    project:
+      dependency_count: 0
+      dependent_count: 1
+      depends_on: []
+      required_by:
+      - testcase_folder
+    release:
+      dependency_count: 0
+      dependent_count: 1
+      depends_on: []
+      required_by:
+      - cycle
+    requirement:
+      dependency_count: 1
+      dependent_count: 0
+      depends_on:
+      - requirement_folder
+      required_by: []
+    requirement_folder:
+      dependency_count: 0
+      dependent_count: 1
+      depends_on: []
+      required_by:
+      - requirement
+    testcase:
+      dependency_count: 1
+      dependent_count: 2
+      depends_on:
+      - testcase_folder
+      required_by:
+      - allocation
+      - execution
+    testcase_folder:
+      dependency_count: 1
+      dependent_count: 1
+      depends_on:
+      - project
+      required_by:
+      - testcase
+  hierarchy:
+    level_0:
+    - project
+    - release
+    - requirement_folder
+    level_1:
+    - testcase_folder
+    - cycle
+    - requirement
+    level_2:
+    - testcase
+    level_3:
+    - allocation
+    - execution
+  independent_entities:
+  - project
+  - release
+  - requirement_folder
+  leaf_entities:
+  - requirement
+  - execution
+  - allocation
+  metadata:
+    generated_at: '2025-12-09'
+    is_dag: true
+    method: networkx graph analysis
+    source: 'Phase 4: Relate'
+    total_dependencies: 7
+    total_entities: 9
+entities:
+  cycle:
+    endpoint: /cycle
+    field_count: 14
+    fields:
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.id
+      entity: cycleId
+      fieldId: id
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - id
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - cycleId
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: cycle.environment
+      entity: environment
+      fieldId: environment
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - environment
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - environment
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: cycle.build
+      entity: build
+      fieldId: build
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - build
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - build
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: cycle.name
+      entity: cycleName
+      fieldId: name
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - name
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - cycleName
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.startDate
+      entity: startDate
+      fieldId: startDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - startDate
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - startDate
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.endDate
+      entity: endDate
+      fieldId: endDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - endDate
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - endDate
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: cycle.cycleStartDate
+      entity: cycleStartDate
+      fieldId: cycleStartDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - cycleStartDate
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - cycleStartDate
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: cycle.cycleEndDate
+      entity: cycleEndDate
+      fieldId: cycleEndDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - cycleEndDate
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - cycleEndDate
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.status
+      entity: status
+      fieldId: status
+      group: status
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - status
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - status
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.revision
+      entity: revision
+      fieldId: revision
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - revision
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - revision
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.releaseId
+      entity: releaseId
+      fieldId: releaseId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - releaseId
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - releaseId
+    - apiStatus: ✅ Working
+      dataType:
+      - array<text>
+      description: cycle.cyclePhases array of text
+      entity: cyclePhas
+      fieldId: cyclePhases
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - cyclePhases
+      sourceEndpoint: /cycle
+      structureType: array
+      targetField:
+      - cyclePhas
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: cycle.createdOn
+      entity: createdOn
+      fieldId: createdOn
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - createdOn
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - createdOn
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: cycle.hasChild
+      entity: hasChild
+      fieldId: hasChild
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Requires unlocked release. Use existing releases.
+      rawField:
+      - hasChild
+      sourceEndpoint: /cycle
+      structureType: scalar
+      targetField:
+      - hasChild
+    method: POST
+    notes: Requires unlocked release. Use existing releases.
+    status: ✅ Working
+  release:
+    endpoint: /release
+    field_count: 12
+    fields:
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: release.id
+      entity: releaseId
+      fieldId: id
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - id
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - releaseId
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: release.name
+      entity: releaseName
+      fieldId: name
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - name
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - releaseName
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: release.description
+      entity: description
+      fieldId: description
+      group: metadata
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - description
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - description
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: release.startDate
+      entity: startDate
+      fieldId: startDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - startDate
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - startDate
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: release.releaseStartDate
+      entity: releaseStartDate
+      fieldId: releaseStartDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - releaseStartDate
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - releaseStartDate
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: release.createdDate
+      entity: createdDate
+      fieldId: createdDate
+      group: timestamps
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - createdDate
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - createdDate
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: release.projectId
+      entity: projectId
+      fieldId: projectId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - projectId
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - projectId
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: release.orderId
+      entity: orderId
+      fieldId: orderId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - orderId
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - orderId
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: release.globalRelease
+      entity: globalRelease
+      fieldId: globalRelease
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - globalRelease
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - globalRelease
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: release.projectRelease
+      entity: projectRelease
+      fieldId: projectRelease
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - projectRelease
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - projectRelease
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: release.hasChild
+      entity: hasChild
+      fieldId: hasChild
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - hasChild
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - hasChild
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: release.syncEnabled
+      entity: syncEnabled
+      fieldId: syncEnabled
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-003: Locks for >60s after creation'
+      rawField:
+      - syncEnabled
+      sourceEndpoint: /release
+      structureType: scalar
+      targetField:
+      - syncEnabled
+    method: POST
+    notes: 'BLOCKER-003: Locks for >60s after creation'
+    status: ✅ Working
+  requirement:
+    endpoint: /requirementtree/add
+    field_count: 10
+    fields:
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - int64
+      description: requirement.id
+      entity: requirementId
+      fieldId: id
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - id
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - requirementId
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - text
+      description: requirement.name
+      entity: requirementName
+      fieldId: name
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - name
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - requirementName
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - text
+      description: requirement.description
+      entity: description
+      fieldId: description
+      group: metadata
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - description
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - description
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - int64
+      description: requirement.projectId
+      entity: projectId
+      fieldId: projectId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - projectId
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - projectId
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - int64
+      description: requirement.parentId
+      entity: parentId
+      fieldId: parentId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - parentId
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - parentId
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - array<text>
+      description: requirement.categories array of text
+      entity: category
+      fieldId: categories
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - categories
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - category
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - array<text>
+      description: requirement.requirements array of text
+      entity: requirement
+      fieldId: requirements
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - requirements
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - requirement
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - int64
+      description: requirement.lastModifiedOn
+      entity: lastModifiedOn
+      fieldId: lastModifiedOn
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - lastModifiedOn
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - lastModifiedOn
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - array<text>
+      description: requirement.releaseIds array of text
+      entity: releaseId
+      fieldId: releaseIds
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - releaseIds
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - releaseId
+    - apiStatus: ✅ Working (workaround)
+      dataType:
+      - bool
+      description: requirement.hasChild
+      entity: hasChild
+      fieldId: hasChild
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+        parentId.'
+      rawField:
+      - hasChild
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - hasChild
+    method: POST
+    notes: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add with
+      parentId.'
+    status: ✅ Working (workaround)
+  requirement_folder:
+    endpoint: /requirementtree/add
+    field_count: 9
+    fields:
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: requirement_folder.id
+      entity: requirement_folderId
+      fieldId: id
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - id
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - requirement_folderId
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: requirement_folder.name
+      entity: requirement_folderName
+      fieldId: name
+      group: identity
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - name
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - requirement_folderName
+    - apiStatus: ✅ Working
+      dataType:
+      - text
+      description: requirement_folder.description
+      entity: description
+      fieldId: description
+      group: metadata
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - description
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - description
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: requirement_folder.projectId
+      entity: projectId
+      fieldId: projectId
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - projectId
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - projectId
+    - apiStatus: ✅ Working
+      dataType:
+      - array<text>
+      description: requirement_folder.categories array of text
+      entity: category
+      fieldId: categories
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - categories
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - category
+    - apiStatus: ✅ Working
+      dataType:
+      - array<text>
+      description: requirement_folder.requirements array of text
+      entity: requirement
+      fieldId: requirements
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - requirements
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - requirement
+    - apiStatus: ✅ Working
+      dataType:
+      - int64
+      description: requirement_folder.lastModifiedOn
+      entity: lastModifiedOn
+      fieldId: lastModifiedOn
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - lastModifiedOn
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - lastModifiedOn
+    - apiStatus: ✅ Working
+      dataType:
+      - array<text>
+      description: requirement_folder.releaseIds array of text
+      entity: releaseId
+      fieldId: releaseIds
+      group: relationships
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - releaseIds
+      sourceEndpoint: /requirementtree/add
+      structureType: array
+      targetField:
+      - releaseId
+    - apiStatus: ✅ Working
+      dataType:
+      - bool
+      description: requirement_folder.hasChild
+      entity: hasChild
+      fieldId: hasChild
+      group: attributes
+      isNullable: true
+      isRequired: false
+      notes: Works perfectly
+      rawField:
+      - hasChild
+      sourceEndpoint: /requirementtree/add
+      structureType: scalar
+      targetField:
+      - hasChild
+    method: POST
+    notes: Works perfectly
+    status: ✅ Working
+  testcase_folder:
+    endpoint: /testcasetree
+    field_count: 0
+    fields: []
+    method: POST
+    notes: 'BLOCKER-002: API rejects valid payloads (HTTP 400)'
+    status: ❌ Broken
+metadata:
+  changes:
+  - Added rawField/targetField/dataType arrays
+  - Fixed entity semantic (target dimension, not source)
+  - Removed fieldName (redundant with fieldId)
+  - Added flattening specifications
+  - Added field grouping
+  enriched_at: '2025-12-10'
+  pattern: Jira L6 Proven Pattern
+  version: '2.0'

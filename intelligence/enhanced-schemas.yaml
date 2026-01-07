@@ -1,0 +1,700 @@
+metadata:
+  enhancement: Added Jira-style structure metadata
+  fields_added:
+  - structureType
+  - rawField
+  - targetField
+  - dataType
+  generated_at: '2025-12-10'
+  source: enhance_schema_with_structure.py
+schemas:
+  cycle:
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: id
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - id
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - id
+  - dataType:
+    - text
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: environment
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - environment
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - environment
+  - dataType:
+    - text
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: build
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - build
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - build
+  - dataType:
+    - text
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: name
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - name
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - name
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: startDate
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - startDate
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - startDate
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: endDate
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - endDate
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - endDate
+  - dataType:
+    - text
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: cycleStartDate
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - cycleStartDate
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - cycleStartDate
+  - dataType:
+    - text
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: cycleEndDate
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - cycleEndDate
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - cycleEndDate
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: status
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - status
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - status
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: revision
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - revision
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - revision
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: releaseId
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - releaseId
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - releaseId
+  - dataType:
+    - array<unknown>
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: cyclePhases
+    fieldType: array
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - cyclePhases
+    sourceEndpoint: /cycle
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - cyclePhases
+  - dataType:
+    - int64
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: createdOn
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - createdOn
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - createdOn
+  - dataType:
+    - bool
+    description: Requires unlocked release. Use existing releases.
+    entity: cycle
+    fieldName: hasChild
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - hasChild
+    sourceEndpoint: /cycle
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - hasChild
+  release:
+  - dataType:
+    - int64
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: id
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - id
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - id
+  - dataType:
+    - text
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: name
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - name
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - name
+  - dataType:
+    - text
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: description
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - description
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - description
+  - dataType:
+    - int64
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: startDate
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - startDate
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - startDate
+  - dataType:
+    - text
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: releaseStartDate
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - releaseStartDate
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - releaseStartDate
+  - dataType:
+    - int64
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: createdDate
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - createdDate
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - createdDate
+  - dataType:
+    - int64
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: projectId
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - projectId
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - projectId
+  - dataType:
+    - int64
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: orderId
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - orderId
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - orderId
+  - dataType:
+    - bool
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: globalRelease
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - globalRelease
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - globalRelease
+  - dataType:
+    - bool
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: projectRelease
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - projectRelease
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - projectRelease
+  - dataType:
+    - bool
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: hasChild
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - hasChild
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - hasChild
+  - dataType:
+    - bool
+    description: 'BLOCKER-003: Locks for >60s after creation'
+    entity: release
+    fieldName: syncEnabled
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - syncEnabled
+    sourceEndpoint: /release
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - syncEnabled
+  requirement:
+  - dataType:
+    - int64
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: id
+    fieldType: integer
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - id
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - id
+  - dataType:
+    - text
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: name
+    fieldType: string
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - name
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - name
+  - dataType:
+    - text
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: description
+    fieldType: string
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - description
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - description
+  - dataType:
+    - int64
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: projectId
+    fieldType: integer
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - projectId
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - projectId
+  - dataType:
+    - int64
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: parentId
+    fieldType: integer
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - parentId
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - parentId
+  - dataType:
+    - array<unknown>
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: categories
+    fieldType: array
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - categories
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - categories
+  - dataType:
+    - array<unknown>
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: requirements
+    fieldType: array
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - requirements
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - requirements
+  - dataType:
+    - int64
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: lastModifiedOn
+    fieldType: integer
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - lastModifiedOn
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - lastModifiedOn
+  - dataType:
+    - array<unknown>
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: releaseIds
+    fieldType: array
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - releaseIds
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - releaseIds
+  - dataType:
+    - bool
+    description: 'BLOCKER-001: POST /requirement broken. Using /requirementtree/add
+      with parentId.'
+    entity: requirement
+    fieldName: hasChild
+    fieldType: boolean
+    intelligenceStatus: ✅ Working (workaround)
+    isRequired: true
+    rawField:
+    - hasChild
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - hasChild
+  requirement_folder:
+  - dataType:
+    - int64
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: id
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - id
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - id
+  - dataType:
+    - text
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: name
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - name
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - name
+  - dataType:
+    - text
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: description
+    fieldType: string
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - description
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - description
+  - dataType:
+    - int64
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: projectId
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - projectId
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - projectId
+  - dataType:
+    - array<unknown>
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: categories
+    fieldType: array
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - categories
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - categories
+  - dataType:
+    - array<unknown>
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: requirements
+    fieldType: array
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - requirements
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - requirements
+  - dataType:
+    - int64
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: lastModifiedOn
+    fieldType: integer
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - lastModifiedOn
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - lastModifiedOn
+  - dataType:
+    - array<unknown>
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: releaseIds
+    fieldType: array
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - releaseIds
+    sourceEndpoint: /requirementtree/add
+    structureNotes: 'Array field - element type: unknown'
+    structureType: array
+    targetField:
+    - releaseIds
+  - dataType:
+    - bool
+    description: Works perfectly
+    entity: requirement_folder
+    fieldName: hasChild
+    fieldType: boolean
+    intelligenceStatus: ✅ Working
+    isRequired: true
+    rawField:
+    - hasChild
+    sourceEndpoint: /requirementtree/add
+    structureNotes: null
+    structureType: scalar
+    targetField:
+    - hasChild
+  testcase_folder: []

@@ -1,0 +1,144 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+  workflow_dispatch: # Allow manual triggers
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov pytest-timeout pytest-mock
+          pip install pyspark requests
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+      
+      - name: Run pytest with coverage
+        run: |
+          pytest --cov=spectraSDK.Notebook \
+                 --cov=sourceZephyr.Notebook \
+                 --cov-report=term-missing \
+                 --cov-report=html:tests/coverage \
+                 --cov-report=json:tests/coverage.json \
+                 --cov-report=xml:tests/coverage.xml \
+                 --junit-xml=tests/junit.xml \
+                 -v
+      
+      - name: Check coverage threshold
+        run: |
+          # Extract overall coverage percentage
+          COVERAGE=$(python -c "import json; data=json.load(open('tests/coverage.json')); print(data['totals']['percent_covered'])")
+          echo "Coverage: $COVERAGE%"
+          
+          # Fail if below 75%
+          if (( $(echo "$COVERAGE < 75" | bc -l) )); then
+            echo "❌ Coverage $COVERAGE% is below 75% threshold"
+            exit 1
+          else
+            echo "✅ Coverage $COVERAGE% meets threshold"
+          fi
+      
+      - name: Upload coverage reports as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-reports-${{ matrix.python-version }}
+          path: |
+            tests/coverage/
+            tests/coverage.json
+            tests/coverage.xml
+            tests/junit.xml
+      
+      - name: Deploy coverage to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' && matrix.python-version == '3.11'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./tests/coverage
+          destination_dir: zephyr/coverage
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'docs: update Zephyr coverage report'
+      
+      - name: Comment PR with coverage
+        if: github.event_name == 'pull_request'
+        uses: py-cov-action/python-coverage-comment-action@v3
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
+          MINIMUM_GREEN: 90
+          MINIMUM_ORANGE: 75
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      
+      - name: Install linting tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black isort mypy pylint
+      
+      - name: Run Black (formatting check)
+        run: black --check . || echo "⚠️ Black formatting check failed (non-blocking)"
+        continue-on-error: true
+      
+      - name: Run isort (import sorting check)
+        run: isort --check-only . || echo "⚠️ isort check failed (non-blocking)"
+        continue-on-error: true
+      
+      - name: Run Flake8 (linting)
+        run: flake8 spectraSDK.Notebook sourceZephyr.Notebook tests --max-line-length=120 || echo "⚠️ Flake8 linting failed (non-blocking)"
+        continue-on-error: true
+      
+      - name: Run Pylint (code quality)
+        run: pylint spectraSDK.Notebook sourceZephyr.Notebook --exit-zero || echo "⚠️ Pylint check failed (non-blocking)"
+        continue-on-error: true
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [test, lint]
+    if: always()
+    
+    steps:
+      - name: Notify on success
+        if: needs.test.result == 'success'
+        run: echo "✅ All tests passed!"
+      
+      - name: Notify on failure
+        if: needs.test.result == 'failure'
+        run: |
+          echo "❌ Tests failed!"
+          exit 1
+

@@ -1,0 +1,83 @@
+metadata:
+  generated_at: '2025-12-09'
+  source: 'Phase 5: Sequence'
+  method: networkx topological sort
+  total_entities: 9
+perfect_order:
+- project
+- release
+- requirement_folder
+- testcase_folder
+- cycle
+- requirement
+- testcase
+- allocation
+- execution
+constraints:
+  release:
+    wait_after_create: 10
+    reason: 'BLOCKER-003: Release locks for >60s after creation'
+    workaround: Use existing releases instead of creating new ones
+    severity: critical
+  testcase_folder:
+    status: broken
+    reason: 'BLOCKER-002: Folder API rejects valid payloads (HTTP 400)'
+    workaround: Manual creation required
+    severity: critical
+  requirement:
+    endpoint_override: /requirementtree/add
+    reason: 'BLOCKER-001: POST /requirement returns HTTP 500'
+    workaround: Use /requirementtree/add with parentId
+    severity: high
+  testcase:
+    status: blocked
+    reason: Depends on testcase_folder which is broken
+    severity: high
+  execution:
+    status: blocked
+    reason: Depends on testcase which is blocked
+    severity: high
+  allocation:
+    status: blocked
+    reason: Depends on testcase which is blocked
+    severity: high
+categories:
+  working: &id001
+  - release
+  - requirement_folder
+  - cycle
+  - requirement
+  broken:
+  - testcase_folder
+  blocked:
+  - testcase
+  - allocation
+  - execution
+  manual:
+  - project
+implementation_notes:
+  working_sequence:
+  - 1. project (manual creation in UI)
+  - 2. release (API works, but locks >60s - use existing releases)
+  - 3. requirement_folder (API works perfectly)
+  - '4. requirement (use workaround: /requirementtree/add with parentId)'
+  - 5. cycle (API works with unlocked release)
+  blocked_sequence:
+  - 6. testcase_folder (BROKEN - blocks all downstream)
+  - 7. testcase (blocked by folder)
+  - 8. allocation (blocked by testcase)
+  - 9. execution (blocked by testcase)
+  critical_path: testcase_folder must be fixed to unblock testcase → execution/allocation
+recommended_approach:
+  phase_1_working:
+    entities: *id001
+    status: ✅ Can automate now
+    notes: Use existing releases, requirement workaround
+  phase_2_blocked:
+    entities:
+    - testcase_folder
+    - testcase
+    - allocation
+    - execution
+    status: ❌ Requires API fix or manual creation
+    notes: Testcase folder API must be fixed by Zephyr

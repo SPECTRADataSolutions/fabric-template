@@ -1,0 +1,69 @@
+{
+  "project_id": 45,
+  "releases": [
+    {
+      "id": 142,
+      "name": "Release 1 - Draft Status 20251208-185927",
+      "template": {
+        "name": "Release 1 - Draft Status",
+        "description": "Comprehensive release data for schema discovery - Draft status",
+        "startDate": 1733529600000,
+        "endDate": 1765065600000,
+        "status": 0,
+        "globalRelease": false,
+        "projectRelease": true,
+        "syncEnabled": false
+      }
+    },
+    {
+      "id": 143,
+      "name": "Release 2 - Active Status 20251208-185937",
+      "template": {
+        "name": "Release 2 - Active Status",
+        "description": "Comprehensive release data for schema discovery - Active status",
+        "startDate": 1733616000000,
+        "endDate": 1765152000000,
+        "status": 1,
+        "globalRelease": false,
+        "projectRelease": true,
+        "syncEnabled": true
+      }
+    },
+    {
+      "id": 144,
+      "name": "Release 3 - Completed Status 20251208-185948",
+      "template": {
+        "name": "Release 3 - Completed Status",
+        "description": "Comprehensive release data for schema discovery - Completed status",
+        "startDate": 1733443200000,
+        "endDate": 1764979200000,
+        "status": 2,
+        "globalRelease": true,
+        "projectRelease": false,
+        "syncEnabled": false
+      }
+    }
+  ],
+  "cycles": [
+    {
+      "id": 206,
+      "name": "Cycle 3 - No Phases",
+      "releaseId": 142,
+      "template": {
+        "name": "Cycle 3 - No Phases",
+        "description": "Cycle with empty phase array",
+        "environment": "Development",
+        "build": "3.0.0-alpha",
+        "revision": 300,
+        "status": 2,
+        "startDate": 1733702400000,
+        "endDate": 1765238400000,
+        "cyclePhases": []
+      }
+    }
+  ],
+  "folders": [],
+  "testcases": [],
+  "executions": [],
+  "requirements": []
+}

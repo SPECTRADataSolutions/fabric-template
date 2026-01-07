@@ -1,0 +1,38 @@
+projectId,projectName,projectKey,projectDescription,projectLead,isShared,isActive
+44,1.BP2 Test Management,,,,False,True
+6,Acrisure,,Broker,,True,True
+7,AJ Gallagher,,Broker,,True,True
+8,Amwins,,,,True,True
+22,Antares (SVC Co),,,,True,True
+9,Aon Comm Risk,,Broker,,True,True
+12,Aon Re,,Broker,,True,True
+29,AXA Internal Broker,,,,True,True
+36,Beazley Internal Broker,,,,True,True
+3,Blueprint Two - London Markets Project,,Blueprint Two - London Markets Project,,True,True
+14,Bretton Woods,,Broker,,True,True
+31,Canopius Internal Broker,,,,True,True
+38,Cycle 2 - Controlled Testing Project,,Controlled Testing Project for Cycle 2,,False,True
+16,ES Risks,,Broker,,True,True
+17,Evolin,,Broker,,True,True
+43,EY Sandpit (Not to be used for live testing),,EY Sandpit (Not to be used for live testing),,False,True
+32,Faraday Internal Broker,,,,True,True
+18,Gallagher Re,,Broker,,True,True
+4,Global Sequence 2,,,,True,True
+5,Guy Carpenter,,Broker Project ,,True,True
+23,Hamilton Internal Broker,,,,True,True
+35,Hiscox Internal Broker,,,,True,True
+15,Howden,,,,True,True
+13,Lockton,,Broker,,True,True
+11,Marsh,,Broker,,True,True
+34,MS Amlin AUL Internal Broker,,,,True,True
+33,MS Amlin MSAM NV Internal Broker,,,,True,True
+26,QBE Internal Broker,,,,True,True
+25,Riverstone Internal Broker,,,,True,True
+1,Sample Project,,This is a sample project shipped with Zephyr. Please modify this one or create a new one for your projects.,,False,True
+30,Sompo Internal Broker,,,,True,True
+39,Test Management ,,BP2 test Management,,True,True
+24,TMK Internal Broker,,,,True,True
+37,Travelers Internal Broker,,,,True,True
+20,Vanguard QA ,,QA Team,,True,True
+40,Vendor Testing POC,,Vendor Testing - Proof of Concept,,False,True
+10,WTW,,Broker,,True,True

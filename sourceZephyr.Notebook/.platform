@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "sourceZephyr",
+    "description": "Source-stage scaffold for Zephyr ingestion."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a744c881-065a-8e92-4cbb-2f6620f5ce36"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "workflow_date": "2025-12-06T01:13:00.611980",
+  "project_id": 45,
+  "created_entities": {
+    "release_id": 117,
+    "cycle_id": 199,
+    "folder_id": null
+  },
+  "schema_files": {
+    "folder": null,
+    "requirement": null,
+    "testcase": null,
+    "execution": null
+  }
+}

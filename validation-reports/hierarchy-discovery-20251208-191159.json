@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-12-08T19:11:40.386384",
+  "project_id": 45,
+  "experiments": {
+    "release": {
+      "endpoint": "/release",
+      "payload": {
+        "projectId": 45,
+        "name": "Test Release 20251208-191140",
+        "description": "Minimal test release",
+        "startDate": "2025-12-08",
+        "globalRelease": true,
+        "projectRelease": false
+      },
+      "success": true,
+      "entity_id": 145,
+      "error": "SUCCESS",
+      "dependencies": "none"
+    },
+    "requirement_folder": {
+      "endpoint": "/requirementtree/add",
+      "payload": {
+        "projectId": 45,
+        "name": "Test Requirement Folder 20251208-191140",
+        "description": "Minimal test requirement folder"
+      },
+      "success": true,
+      "entity_id": 703,
+      "error": "SUCCESS",
+      "dependencies": "none"
+    },
+    "testcase_folder": {
+      "endpoint": "/testcasetree",
+      "payload": {
+        "projectId": 45,
+        "name": "Test Folder 20251208-191140",
+        "description": "Minimal test folder"
+      },
+      "success": false,
+      "entity_id": null,
+      "error": "HTTP 400: For input string: \"null\"",
+      "dependencies": "unknown"
+    },
+    "cycle": {
+      "endpoint": "/cycle",
+      "payload": {
+        "projectId": 45,
+        "releaseId": 145,
+        "name": "Test Cycle 20251208-191157",
+        "description": "Minimal test cycle",
+        "environment": "Test",
+        "build": "1.0.0",
+        "status": 0,
+        "startDate": 1765221117487,
+        "endDate": 1767139200000
+      },
+      "success": false,
+      "entity_id": null,
+      "error": "HTTP 400: Operation failed. The Release with ID145 and nameTest Release 20251208-191140 is locked. Please try again later.",
+      "dependencies": "release (but still failed)"
+    }
+  },
+  "dependency_graph": {},
+  "creation_order": [
+    "release",
+    "requirement_folder"
+  ]
+}

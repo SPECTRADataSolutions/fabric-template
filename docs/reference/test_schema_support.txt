@@ -1,0 +1,56 @@
+# Test Schema Support in Each Lakehouse
+# Copy/paste these blocks into a notebook attached to each test lakehouse
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Test Block (run once per lakehouse)
+# ══════════════════════════════════════════════════════════════════════════════
+
+print("Testing schema support...")
+print(f"Lakehouse: {spark.conf.get('trident.lakehouse.name', 'Unknown')}")
+print(f"ID: {spark.conf.get('trident.lakehouse.id', 'Unknown')}")
+print()
+
+# Test 1: Try to create a schema
+try:
+    spark.sql("CREATE SCHEMA IF NOT EXISTS testschema")
+    print("✅ CREATE SCHEMA: SUCCESS")
+except Exception as e:
+    print(f"❌ CREATE SCHEMA: FAILED - {str(e)[:150]}")
+
+# Test 2: Try to create a table with schema.table notation
+try:
+    from pyspark.sql import Row
+    df = spark.createDataFrame([Row(id=1, name="test")])
+    df.write.format("delta").mode("overwrite").save("Tables/test/data")
+    spark.sql("CREATE TABLE IF NOT EXISTS testschema.testtable USING DELTA LOCATION 'Tables/test/data'")
+    print("✅ schema.table registration: SUCCESS")
+except Exception as e:
+    print(f"❌ schema.table registration: FAILED - {str(e)[:150]}")
+
+# Test 3: Show all schemas
+try:
+    schemas = spark.sql("SHOW SCHEMAS").collect()
+    print(f"✅ SCHEMAS: {[s.namespace for s in schemas]}")
+except Exception as e:
+    print(f"❌ SHOW SCHEMAS: FAILED - {str(e)[:150]}")
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Created Lakehouses to Test:
+# ══════════════════════════════════════════════════════════════════════════════
+
+# testLakehouseA (089b7bad-de56-4b5a-9840-d9983efe2515)
+#   - No schema property in API call
+#   - Baseline test
+
+# testLakehouseB (85f13ac1-141b-444e-b385-0efdaf6dcb37)
+#   - Property: enableSchemas: true
+#   - Most likely candidate
+
+# testLakehouseC (45c692d0-58ea-40b3-818f-ae7fd017320a)
+#   - Property: schemaSupport: true
+#   - Alternative naming
+
+# testLakehouseD (d37b2ab0-dbe9-403d-bb25-9397255d8192)
+#   - Property: schemas: {enabled: true}
+#   - Nested property format
+

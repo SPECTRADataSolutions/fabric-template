@@ -1,0 +1,1146 @@
+ENDPOINTS_DATA = {
+  "source": "zephyrenterprisev3.apib",
+  "count": 228,
+  "endpoints": [
+    {
+      "resource": "Get All Preferences - Admin [/admin/preference/admin]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Applications  [/admin/app]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get list of values [/admin/preference/lov/all]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Preferences  [/admin/preference/all]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Anonymous Preferences  [/admin/preference/anonymous]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Daily Back-up Schedule [/admin/backup/schedule]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All user preferences  [/admin/ldap/default/settings]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Preference by key [/admin/preference{?key}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Preference Item Usage [/admin/preference/item/usage{?preferencename}{?value}{?id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All user preferences  [/admin/user/preference]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Update a given Preference [/admin/preference]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Change multiple assignments [/assignmenttree/{cyclephaseid}/bulk/tree/{treeid}/from/{fromid}/to/{toid}{?cascade}{?easmode}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Create free form release testschedule [/assignmenttree/{cyclephaseid}/assign/byschedule{?maxresults}{?scheduleids}{?maintainassignments}{?parenttreeid}{?includehierarchy}{?isCreateWithLatestVersion}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create freeForm testcase [/assignmenttree/{cyclephaseid}/assign/bytree/{parenttreeid}{?includehierarchy}{?dtoResponse}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create testcase free form using search [/assignmenttree/{cyclephaseid}/assign/bysearch/{parenttreeid}{?searchquery}{?maxresults}{?testcaseid}{?zql}{?activeprojectid}{?includehierarchy}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get Attachment Details by id [/attachment/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get attachment details [/attachment{?itemid}{?type}{?isLink}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Delete job using job id [/automation/job/delete]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "get Scheduled job via scheduled job id [/automation/schedule{?schedulejobid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Configure new Job [/automation/job/detail]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Cancel job by id [/upload-file/automation/cancel/{scheduleId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create/execute a job [/upload-file/automation/create-and-execute-job]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get latest Scheduled Automation Job Progress  [/upload-file/automation/schedule/get-latest-job-progress{?jobid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "All scheduled jobs by project id and release id  [/upload-file/automation/file-upload-job/list{?releaseId}{?projectId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create new Job [/upload-file/automation/create-job-detail]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Schedule/execute job for File Upload [/upload-file/automation/execute-job]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Update/execute a job [/upload-file/automation/update-execute-job]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Calculate assignments for release [/cycle/assignments/{releaseid}{?allexecutions}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Clone a Cycle  [/cycle/clone/{cycleid}{?deep}{?copyassignments}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Clone a CyclePhase [/cycle/cyclephase/clone/{cyclephaseid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "copy a CyclePhase [/cycle/copy/{sourcecyclephaseid}/to/{targetcycleid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create a New Cycle [/cycle/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create Cycle Phase [/cycle/{cycleid}/phase{?scheduleId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create Cycle Phase [/cycle/{cycleid}/phase{?scheduleId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete Cycle [/cycle/{id}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Delete Cycle Phase [/cycle/{cycleid}/phase/{cyclephaseid}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get Cycle by ID [/cycle/{cycleid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Cycle names for release [/cycle/cycleName/{releaseid}{?orderBy}{?cycleName}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all cyclePhase Names [/cycle/phase/name{?ids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Cycle for release [/cycle/release/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "get status count for releaseid [/cycle/status/count/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Move a CyclePhase [/cycle/move/{sourcecyclephaseid}/to/{targetcycleid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "get status count for releaseid [/cycle/toggle/{cycleId}/{value}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update a Cycle [/cycle/{cycleId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Cycle Phase [/cycle/{cycleid}/phase]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Save defect schedule [/defectmapping/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create defect in the system. [/defect/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get defect by ID [/defect/{defectId}?projectId={projectId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase usage history details [//executionchangehistory{?releaseTestScheduleId}{?isascorder}{?offset}{?pagesize}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Assign/Reassign schedules values [/execution/assign]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Execute testcases [/execution/bulk{?scheduleids}{?status}{?testerid}{?tcrCatalogTreeId}{?allExecutions}{?includeanyoneuser}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Create schedules values [/execution/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete / Unassign test schedules [/execution{?ids}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Delete / Unassign frozen test cases and schedules [/execution/{cyclephaseid}/testcase{?testcaseids}{?tcrCatalogTreeId}{?filterTcName}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get node path [/execution/path{?scheduleid}{?assigneeuserid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "To get Schedule by ID [/execution/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "To schedule by schedule IDs [/execution/ids{?ids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "To schedule by schedule ids [/execution/expanded{?ids}{?stepresults}{?resulthistory}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Schedules by Criteria [/execution/user/project{?projectid}{?createdby}{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?orderByAsc}{?offset}{?pagesize}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Schedules by Criteria [/execution{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?isascorder}{?offset}{?includeanyoneuser}{?pagesize}{?is_cfield}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Teststep results by IDs [/execution/byfilter{?testcaseid}{?releaseid}{?rtsid}{?order}{?isascorder}{?offset}{?pagesize}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Modify schedules values [/execution/modify]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "To update execution details, attachment and status [/execution/statusandattachment/{id}{?status}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "To update execution details [/execution/{id}{?status}{?testerid}{?time}{?allExecutions}{?includeanyoneuser}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Schedules Values [/execution]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Test Execution Status [/execution/updateteststatus]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Import External Requirement Based on Filter or JQL [/externalrequirement/importall{?projectId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Import groups and users from the list [/externalGroup/importGroupsAndUsers]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Search groups in LDAP or crowd [/externalGroup/search{?name}{?pagesize}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Sync groups and users from the list [/externalGroup/sync]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Add Custom Field [/field/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get all the field's type metadata. [/field/fieldtype]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get customfield metadata  [/field/metadata{?visible}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Field by Id [/field/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Field by dispaly name [/field/name{?name}{?projectid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Field by fieldName [/field{?name}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Importable Fields By Entity  [/field/importfields/{entityName}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get list of CustomFields [/field/ids{?ids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get list of project specific CustomFields [/field/project/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get fields by entity [/field/entity/{entityname}{?includsystemfield}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Update Cascade [/field/cascade]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Validating field in the system. [/field/validate{?id}{?entityname}{?searchfieldname}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "create field map  [/fieldmap/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "get Scheduled job via scheduled job id [/fileWatcher/watcher{?schedulejobid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Schedule job for ZBlast [/fileWatcher/watcher]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get all requirement node and requirement name by release id [/gadget/{dashboardId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All projects that allowed access to current global reporsitory user [/global-repository/project]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create group in the System [/group/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Update group in the System [/group]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Add new import job [/import/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Execute import job by id [/import/execute/{id}/{action}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Get License Information. [/info/license]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get License Information [/license/]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create Template  [/parsertemplate/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete Template  [/parsertemplate/{id}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get Template  [/parsertemplate/{TemplateId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get List of Templates  [/parsertemplate]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Update Template  [/parsertemplate/{templateId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Create Project [/project/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get All Normal Project Details [/project/details]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Normal project [/project/normal]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get lead for all projects [/project/all/leads]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project by ID [/project/{id}{?isLite}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project by User ID [/project/user/{UserID}?isLite=false&adminUser=false]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get allocated Projects [/project/project/{UserID}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project Team Count for all projects [/project/count/allprojects]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project Team Count for all users [/project/count/allusers]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project Team  for Allocated Projects [/project/allocated/projects]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project team for project [/project/projectteam/{pid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All projects by UserId [/project{?userId}{?isLite}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All projects  [/project/lite]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Shared projects  [/project/shared]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Shared projects  [/project/sharedprojects/{projectid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Shared projects shared to given project [/project/sharedtoprojects/{projectid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Assign User to the Project [/project]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Project storage migration [/project/{projectId}/migrate{?externalStorageId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Retry failed attachment migration [/project/{projectId}/migration/retry]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Create New Release [/release/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get releases for a project through page and offset [/release/paged/project/{projectid}{?pagesize}{?offset}{?order}{?isascorder}{?isVisible}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Release by Release ID [/release/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all releases for all projects with Access [/release]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get releases for a project [/release/project/{projectid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create new requirement [/requirement/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Update Requirement [/requirement/{id}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Bulk Update Requirement [/requirement/bulk]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create new requirement tree [/requirementtree/add/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Add role [/role/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Save or assign role permissions [/role/permission{?roleid}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Reindex specific project by id [/advancesearch/reindex/{pid}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Search via filters [/advancesearch/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Search via filters [/advancesearch/zql]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Search via filters [/advancesearch/zql]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Search via filters [/advancesearch/zql]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Search test executions for given altId [/advancesearch/testexecutions/{altid}{?maxresults}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Search and Edit the Testcase [/testcase/search/update/bulk?releaseId={releaseid}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Search and Edit the Testcase [/testcase/search/update/bulk?releaseId={releaseid}]",
+      "method": "/testcase/search/allocate/bulk/requirement",
+      "path": ""
+    },
+    {
+      "resource": "Search and Map the Testcase [POST]",
+      "method": "/testcase/search/delete/bulk?releaseId={releaseid}",
+      "path": ""
+    },
+    {
+      "resource": "Check Indexing Health [/advancesearch/reindex/health]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Clear the Specified Cache [/system/info/cache/clear{?clearall}{?cachename}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Download Zbot [/system/info/downloadzbot]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Get All list of Caches [/system/info/cache/info]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Channel Information [/system/info/channelinfo]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get License Information [/system/info/license]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get License Information [/system/info/servertime]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get License Information [/system/info/stats]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get License Detail Information [/license/detail]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "License Peak Usage Detail [/license/peak/detail?licensetype={licensetype}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get teststep results by ID's [/execution/teststepresult/bytctid{?tctid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Test Step Result [/execution/teststepresult/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get test step results by criteria [/execution/teststepresult{?sids}{?cyclephaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Save or Update Test step result [/execution/teststepresult/saveorupdate]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Allocate Requirements to testcase Id  [/testcase/allocate/requirement/{testcaseid}{?releaseid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Allocate Requirements to testcase Ids  [/testcase/allocate/requirement{?releaseid}{?tcrCatalogTreeId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Bulk Update Testcase values [/testcase/bulk{?externalid}{?priority}{?tag}{?comments}{?scriptpath}{?scriptid}{?scriptname}{?automated}{?estimatedtime}{?testcaseid}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Bulk Update Testcase values [/testcase/update/bulk{?tcrCatalogTreeId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Clone Testcase [/testcase/clone/on/{releaseid}/to/{targettreeid}{?sourceitemids}{?link}{?cloneAllDetails}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create bulk Testcase [/testcase/bulk{?scheduleId}{?nobulkcommit}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create Testcase [/testcase/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "create new version of testcase [/testcase/createnewversion/{id}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete Testcase  [/testcase/{id}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Delete Multiple Testcase Tree Linkage [/testcase{?tcrCatalogTreeId}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get Requirement Summary by Testcase ID [/testcase/requirement/{testcaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all tags [/testcase/tags]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all tags [/testcase/tags/{releaseid}{?fetchall}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all Testcase Names by Testcase IDs [/testcase/name{?tcid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase [/testcase/count{?tcrcatalogtreeid}{?releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/ids{?treeids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative{?releaseid}{?requirementid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative/data{?releaseid}{?requirementid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Testcase count per node [/testcase/count/discrete/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Traceable Path from Root [/testcase/path{?testcaseid}{?tctid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Traceable Path from Root [/testcase/pathbyrelease{?testcaseid}{?releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase by Criteria [/testcase/planning/{treeId}{?offset}{?pagesize}{?order}{?isascorder}{?tcname}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase by ID [/testcase/{testcaseId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcases by Tree IDs [/testcase/nodes{?treeids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase details by ID [/testcase/detail/{id}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase by ID [/testcase/altid{?altids}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase Summary by Requirement ID [/testcase/byrequirement{?requirementid}{?breadcrumb}{?releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get all testcase version by testcase id  [/testcase/versions{?testcaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase by Criteria [/testcase{?offset}{?pagesize}{?releaseid}{?keyword}{?zqlquery}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase by Tree ID [/testcase/tree/{treeid}{?offset}{?pagesize}{?order}{?isascorder}{?dbsearch}{?frozen}{?is_cfield}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Map Testcase to Requirement [/testcase/mapby/altid]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Move Testcases [/testcase/move/from/{sourceentryid}/to/{targetentryid}{?sourceitemids}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Share Testcase [/testcase/share/on/{releaseid}/to/{targettreeid}{?sourceitemids}{?showinfomessage}{?link}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Update Flag status by Tree Testcase ID  [/testcase/flag/{flag}{?testcaseids}{?tcrCatalogTreeId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Testcase values [/testcase/{id}{?forceCreateNewVersion}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Testcase With Version  [/testcase/{tctId}/replacewithversion/{testcaseVersionId}{?releaseid}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update Testcase values [/testcase{?forceCreateNewVersion}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Copy Testcase tree node to another target node [/testcasetree/copy/{nodeid}/{sourcereleaseid}/to/{targetparentid}/{targetreleaseid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create Tree node [/testcasetree{?parentid}{?assignedusers}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete Testcase Tree [/testcasetree/{id}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get Execution Tree by releaseid [/testcasetree/phases/execution/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get TCR hierarchy [/testcasetree/hierarchy/{treeid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase Tree [/testcasetree/{tctId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase Tree by releaseid [/testcasetree/phases/{releaseid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Project Repository Testcase Tree by projectid [/testcasetree/projectrepository/{projectid}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get tree by criteria [/testcasetree/lite{?type}{?releaseid}{?revisionid}{?parentid}{?isShared}{?limit}{?offset}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Move Testcase tree  [/testcasetree/move/{nodeid}/to/{targetid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Move Testcase tree to other Release [/testcasetree/move/{nodeid}/{sourcereleaseid}/to/{targetid}/{targetreleaseid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Share Testcase tree node to another target node [/testcasetree/share/{nodeid}/{sourcereleaseid}/to/{targetparentid}/{targetreleaseid}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Update tree node values [/testcasetree/assignuser/{id}{?name}{?description}{?assignedusers}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Update tree node values [/testcasetree/{treeId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Get Testcase usage history details [/tcuh/testcase/{id}{?isascorder}{?order}{?offset}{?pagesize}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create teststep [/testcase/{testcaseVersionId}/teststep/detail/{tctId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Create teststep [/testcase/{testcaseVersionId}/teststep/detail/{tctId}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Delete teststep [/testcase/{testcaseVersionId}/teststep/{tctId}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Get teststep [/testcase/{testcaseVersionId}/teststep{?isfetchstepversion}{?versionId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Update teststep [/testcase/{testcaseVersionId}/teststep/detail/{testcaseTreeId}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "Get audit logs Grid view [/ui/auditLogs{?offset}{?pagesize}{?order}{?isascorder}]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get user Grid view [/ui/users{?offset}{?pagesize}{?hidedisabledusers}{?order}{?isascorder}{?isLoggedIn}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get group Grid view [/ui/searchGroups{?text}{?offset}{?pagesize}{?order}{?isascorder}{?hidedisabledgroups}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get project Grid view [/ui/searchProjects{?text}{?offset}{?pagesize}{?order}{?isascorder}{?includeglobalproject}{?isProjectAdmin}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Create User in the System [/user/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get Current Logged-In Users [/user/current{?auditLog}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get Defect Users present in System. [/user/defect]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Users Present in the System. [/user/filter{?includeDashboardUser}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Getting all the Logged-In in User count [/user/loggedin/count{?skipdefectuser}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get User by ID [/user/{id}{?isLite}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get All Users Present in the System. [/user{?hidedisabledusers}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get User by Project ID [/user/project/{projectid}{?isLite}{?adminUser}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Get valid users for Zbot. [/user/validZbotUsers{?projectId}]",
+      "method": "GET",
+      "path": ""
+    },
+    {
+      "resource": "Logout User from System [/user/logout]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "Update User [/user/{id}]",
+      "method": "PUT",
+      "path": ""
+    },
+    {
+      "resource": "delete all token  [/usertoken/all]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "delete token  [/usertoken/{id}]",
+      "method": "DELETE",
+      "path": ""
+    },
+    {
+      "resource": "generate token  [/usertoken/]",
+      "method": "POST",
+      "path": ""
+    },
+    {
+      "resource": "Get all token  [/usertoken]",
+      "method": "GET",
+      "path": ""
+    }
+  ]
+}

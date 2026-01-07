@@ -1,0 +1,27 @@
+{
+  "extraction_date": "2025-12-02T17:19:11.190458",
+  "extraction_type": "sample_100_rows",
+  "base_url": "https://velonetic.yourzephyr.com/flex/services/rest/latest",
+  "limits": {
+    "max_projects": 100,
+    "max_releases": 100,
+    "max_cycles": 100,
+    "max_executions": 100
+  },
+  "statistics": {
+    "projects_extracted": 37,
+    "releases_extracted": 44,
+    "cycles_extracted": 84,
+    "executions_extracted": 100,
+    "test_cases_extracted": 10,
+    "api_calls": 92,
+    "errors": []
+  },
+  "files": {
+    "dimProject": 37,
+    "dimRelease": 44,
+    "dimCycle": 84,
+    "dimTestCase": 10,
+    "factTestExecution": 100
+  }
+}

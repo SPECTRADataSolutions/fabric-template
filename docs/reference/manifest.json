@@ -1,0 +1,226 @@
+{
+  "version": "0.2.0",
+  "pipelines": [
+    {
+      "name": "zephyr",
+      "activities": [
+        {
+          "id": "sourceZephyrNotebook",
+          "activityType": "notebook",
+          "stage": "Source",
+          "inputs": null,
+          "outputs": [
+            "sourceZephyrOutput"
+          ],
+          "config": {
+            "notebook": "sourceZephyr",
+            "parameters": {
+              "projectKey": "@pipeline().parameters.projectKey",
+              "baseUrl": "@pipeline().parameters.zephyrBaseUrl",
+              "basePath": "@pipeline().parameters.zephyrBasePath",
+              "apiToken": "@pipeline().parameters.zephyrApiToken"
+            },
+            "notes": "Fabric notebook to drive Zephyr Source stage; parameters bound via pipeline to variable library."
+          }
+        },
+        {
+          "id": "sourceProjects",
+          "activityType": "task",
+          "stage": "Source",
+          "inputs": null,
+          "outputs": ["projectCatalogue"],
+          "config": {
+            "system": "zephyr",
+            "endpoint": "/project",
+            "baseUrl": "https://velonetic.yourzephyr.com/flex/services/rest/latest",
+            "method": "GET",
+            "objects": ["projects"],
+            "primaryKey": "id",
+            "notes": "Bootstrap call that scopes every downstream object request.",
+            "docsRef": "https://zephyrenterprisev3.docs.apiary.io/#reference/projects",
+            "pagination": {
+              "style": "offset",
+              "offsetParam": "firstresult",
+              "limitParam": "maxresults",
+              "pageSize": 500
+            },
+            "auth": {
+              "method": "apiToken",
+              "credentialRef": "vault:zephyr-enterprise-token"
+            },
+            "expectedContracts": ["contract.yaml"],
+            "outputs": {
+              "projectCatalogue": {
+                "format": "json",
+                "landingZone": "fabric/raw/zephyr/source/projects"
+              }
+            }
+          }
+        },
+        {
+          "id": "sourceReleases",
+          "activityType": "task",
+          "stage": "Source",
+          "inputs": {
+            "projects": "sourceProjects.projectCatalogue"
+          },
+          "outputs": ["releaseEnvelope"],
+          "config": {
+            "system": "zephyr",
+            "endpoint": "/release",
+            "method": "GET",
+            "objects": ["releases"],
+            "primaryKey": "id",
+            "incrementalField": "lastModifiedOn",
+            "linkage": {
+              "foreignKey": "projectId",
+              "derivedFrom": "projects[*].id"
+            },
+            "observability": {
+              "metric": "releases_fetched",
+              "dimensions": ["projectId"]
+            },
+            "outputs": {
+              "releaseEnvelope": {
+                "format": "json",
+                "landingZone": "fabric/raw/zephyr/source/releases"
+              }
+            }
+          }
+        },
+        {
+          "id": "sourceCycles",
+          "activityType": "task",
+          "stage": "Source",
+          "inputs": {
+            "releases": "sourceReleases.releaseEnvelope"
+          },
+          "outputs": ["cycleEnvelope"],
+          "config": {
+            "system": "zephyr",
+            "endpoint": "/cycle",
+            "method": "GET",
+            "objects": ["cycles"],
+            "primaryKey": "id",
+            "incrementalField": "lastModifiedOn",
+            "linkage": {
+              "foreignKey": "releaseId",
+              "derivedFrom": "releases[*].id"
+            },
+            "outputs": {
+              "cycleEnvelope": {
+                "format": "json",
+                "landingZone": "fabric/raw/zephyr/source/cycles"
+              }
+            }
+          }
+        },
+        {
+          "id": "sourceExecutions",
+          "activityType": "task",
+          "stage": "Source",
+          "inputs": {
+            "cycles": "sourceCycles.cycleEnvelope"
+          },
+          "outputs": ["executionEnvelope"],
+          "config": {
+            "system": "zephyr",
+            "endpoint": "/execution",
+            "method": "GET",
+            "objects": ["executions"],
+            "primaryKey": "id",
+            "incrementalField": "lastTestedOn",
+            "linkage": {
+              "foreignKey": "cycleId",
+              "derivedFrom": "cycles[*].id"
+            },
+            "throttling": {
+              "maxRequestsPerMinute": 200,
+              "burst": 40
+            },
+            "outputs": {
+              "executionEnvelope": {
+                "format": "json",
+                "landingZone": "fabric/raw/zephyr/source/executions"
+              }
+            }
+          }
+        },
+        {
+          "id": "prepareBlueprint",
+          "activityType": "task",
+          "stage": "Prepare",
+          "inputs": {
+            "rawExecutions": "sourceExecutions.executionEnvelope"
+          },
+          "outputs": ["preparedCtx"],
+          "config": {
+            "todo": "parameter normalisation + contract hashing",
+            "owners": ["dataPlatform"],
+            "references": ["docs/source/procedures.md"]
+          }
+        },
+        {
+          "id": "extract",
+          "activityType": "task",
+          "stage": "Extract",
+          "inputs": {
+            "prepared": "prepareBlueprint.preparedCtx"
+          },
+          "outputs": ["rawRows"],
+          "config": {
+            "todo": "Structured landing into Fabric lakehouse"
+          }
+        },
+        {
+          "id": "clean",
+          "activityType": "task",
+          "stage": "Clean",
+          "inputs": {
+            "raw": "extract.rawRows"
+          },
+          "outputs": ["cleanRows"],
+          "config": {
+            "todo": "Null handling + duplicate culls"
+          }
+        },
+        {
+          "id": "transform",
+          "activityType": "task",
+          "stage": "Transform",
+          "inputs": {
+            "clean": "clean.cleanRows"
+          },
+          "outputs": ["modelledRows"],
+          "config": {
+            "todo": "Model Zephyr executions across Jira keys"
+          }
+        },
+        {
+          "id": "refine",
+          "activityType": "task",
+          "stage": "Refine",
+          "inputs": {
+            "modelled": "transform.modelledRows"
+          },
+          "outputs": ["refinedRows"],
+          "config": {
+            "todo": "Business enrichment + KPI alignment"
+          }
+        },
+        {
+          "id": "analyse",
+          "activityType": "task",
+          "stage": "Analyse",
+          "inputs": {
+            "data": "refine.refinedRows"
+          },
+          "outputs": ["insights"],
+          "config": {
+            "todo": "Wire into Fabric semantic model"
+          }
+        }
+      ]
+    }
+  ]
+}

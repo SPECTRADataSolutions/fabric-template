@@ -1,0 +1,29 @@
+{
+  "projectDto": {
+    "id": 45,
+    "version": 0,
+    "name": "SpectraTestProject",
+    "description": "Comprehensive test project for SPECTRA pipeline validation and integration testing. Created via API.",
+    "startDate": 1764979914622,
+    "projectStartDate": "12/06/2025",
+    "status": "2",
+    "showItem": false,
+    "newItem": false,
+    "members": [],
+    "projectGroups": [],
+    "sharedProjects": [],
+    "isolationLevel": 0,
+    "dashboardSecured": false,
+    "dashboardRestricted": false,
+    "createdOn": 1764979915893,
+    "shared": false,
+    "active": true,
+    "customProperties": {},
+    "globalProject": false,
+    "allowedGlobalProject": false,
+    "autoUpdateTestStatus": false,
+    "webhookId": 0,
+    "allowedInternalRequirements": false
+  },
+  "totalResources": 0
+}

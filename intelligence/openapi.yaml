@@ -1,0 +1,268 @@
+info:
+  description: Auto-generated OpenAPI spec from SPECTRA API Intelligence Framework
+  contact:
+    name: SPECTRA Data Solutions
+    url: https://github.com/SPECTRADataSolutions
+  title: Zephyr Enterprise API
+  version: 1.0.0
+servers:
+- url: https://velonetic.yourzephyr.com/flex/services/rest/latest
+  description: Zephyr Enterprise API
+paths:
+  /project:
+    get:
+      summary: List all projects
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/project'
+  /release:
+    get:
+      summary: List all releases
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/release'
+    post:
+      summary: Create release
+      security:
+      - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/release'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/release'
+  /requirementtree/add:
+    post:
+      summary: Create requirement
+      security:
+      - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/requirement'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/requirement'
+  /cycle:
+    get:
+      summary: List all cycles
+      security:
+      - BearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/cycle'
+    post:
+      summary: Create cycle
+      security:
+      - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cycle'
+      responses:
+        '201':
+          description: Created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cycle'
+openapi: 3.0.0
+components:
+  schemas:
+    cycle:
+      $schema: http://json-schema.org/schema#
+      type: object
+      properties:
+        id:
+          type: integer
+        environment:
+          type: string
+        build:
+          type: string
+        name:
+          type: string
+        startDate:
+          type: integer
+        endDate:
+          type: integer
+        cycleStartDate:
+          type: string
+        cycleEndDate:
+          type: string
+        status:
+          type: integer
+        revision:
+          type: integer
+        releaseId:
+          type: integer
+        cyclePhases:
+          type: array
+        createdOn:
+          type: integer
+        hasChild:
+          type: boolean
+      required:
+      - build
+      - createdOn
+      - cycleEndDate
+      - cyclePhases
+      - cycleStartDate
+      - endDate
+      - environment
+      - hasChild
+      - id
+      - name
+      - releaseId
+      - revision
+      - startDate
+      - status
+    release:
+      $schema: http://json-schema.org/schema#
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        startDate:
+          type: integer
+        releaseStartDate:
+          type: string
+        createdDate:
+          type: integer
+        projectId:
+          type: integer
+        orderId:
+          type: integer
+        globalRelease:
+          type: boolean
+        projectRelease:
+          type: boolean
+        hasChild:
+          type: boolean
+        syncEnabled:
+          type: boolean
+      required:
+      - createdDate
+      - description
+      - globalRelease
+      - hasChild
+      - id
+      - name
+      - orderId
+      - projectId
+      - projectRelease
+      - releaseStartDate
+      - startDate
+      - syncEnabled
+    requirement:
+      $schema: http://json-schema.org/schema#
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        projectId:
+          type: integer
+        parentId:
+          type: integer
+        categories:
+          type: array
+        requirements:
+          type: array
+        lastModifiedOn:
+          type: integer
+        releaseIds:
+          type: array
+        hasChild:
+          type: boolean
+      required:
+      - categories
+      - description
+      - hasChild
+      - id
+      - lastModifiedOn
+      - name
+      - parentId
+      - projectId
+      - releaseIds
+      - requirements
+    requirement_folder:
+      $schema: http://json-schema.org/schema#
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        projectId:
+          type: integer
+        categories:
+          type: array
+        requirements:
+          type: array
+        lastModifiedOn:
+          type: integer
+        releaseIds:
+          type: array
+        hasChild:
+          type: boolean
+      required:
+      - categories
+      - description
+      - hasChild
+      - id
+      - lastModifiedOn
+      - name
+      - projectId
+      - releaseIds
+      - requirements
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Token

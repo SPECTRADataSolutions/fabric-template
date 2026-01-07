@@ -1,0 +1,166 @@
+"""
+Zephyr Source Notebook Tests
+
+Uses fabric-test-kit to test Zephyr Source notebook locally.
+
+Install fabric-test-kit first:
+    cd Data/fabric-test-kit
+    pip install -e .
+"""
+
+import pytest
+from fabric_test_kit import (
+    create_local_spark,
+    stop_spark,
+    inject_fabric_mocks,
+    set_notebook_parameters,
+    clean_lakehouse,
+)
+
+
+@pytest.fixture
+def spark():
+    """Create local SparkSession for testing."""
+    spark = create_local_spark()
+    yield spark
+    stop_spark(spark)
+
+
+@pytest.fixture
+def fabric_mocks():
+    """Inject Fabric API mocks."""
+    mssparkutils, notebookutils = inject_fabric_mocks()
+    return mssparkutils, notebookutils
+
+
+@pytest.fixture(autouse=True)
+def clean_environment():
+    """Clean lakehouse before each test."""
+    clean_lakehouse()
+    yield
+    # Cleanup after test if needed
+
+
+@pytest.mark.smoke
+def test_mvp_quality_gate(spark, fabric_mocks):
+    """
+    MVP QUALITY GATE: This test passing = MVP complete.
+    
+    Success criteria:
+    - Notebook executes without errors
+    - Table created with 228 endpoints
+    - Execution time < 30 seconds
+    - Zero Fabric connection required
+    """
+    import time
+    
+    mssparkutils, notebookutils = fabric_mocks
+    
+    # Set notebook parameters
+    set_notebook_parameters(notebookutils, 
+        bootstrap=True, 
+        preview=True, 
+        debug=True
+    )
+    
+    # Execute notebook
+    start = time.time()
+    
+    exec_globals = {
+        'spark': spark,
+        'mssparkutils': mssparkutils,
+        'notebookutils': notebookutils,
+    }
+    
+    notebook_path = "../sourceZephyr.Notebook/notebook-content.py"
+    with open(notebook_path, 'r') as f:
+        exec(f.read(), exec_globals)
+    
+    duration = time.time() - start
+    
+    # Assert MVP success criteria
+    assert spark.catalog.tableExists("source.endpoints"), "endpoints table not created"
+    
+    df = spark.read.table("source.endpoints")
+    row_count = df.count()
+    assert row_count == 228, f"Expected 228 endpoints, got {row_count}"
+    
+    assert duration < 30, f"Test took {duration:.1f}s, expected < 30s"
+    
+    print(f"✅ MVP Quality Gate: PASS ({duration:.1f}s, {row_count} endpoints)")
+
+
+def test_bootstrap_mode(spark, fabric_mocks):
+    """Test notebook with bootstrap=True."""
+    mssparkutils, notebookutils = fabric_mocks
+    
+    set_notebook_parameters(notebookutils, 
+        bootstrap=True, 
+        preview=True, 
+        debug=True
+    )
+    
+    exec_globals = {
+        'spark': spark,
+        'mssparkutils': mssparkutils,
+        'notebookutils': notebookutils,
+    }
+    
+    notebook_path = "../sourceZephyr.Notebook/notebook-content.py"
+    with open(notebook_path, 'r') as f:
+        exec(f.read(), exec_globals)
+    
+    # Validate
+    assert spark.catalog.tableExists("source.endpoints")
+    df = spark.read.table("source.endpoints")
+    assert df.count() == 228
+
+
+@pytest.mark.slow
+def test_preview_mode(spark, fabric_mocks):
+    """Test notebook with preview=True (sample tables)."""
+    mssparkutils, notebookutils = fabric_mocks
+    
+    set_notebook_parameters(notebookutils, 
+        bootstrap=False,
+        preview=True,
+        debug=True
+    )
+    
+    exec_globals = {
+        'spark': spark,
+        'mssparkutils': mssparkutils,
+        'notebookutils': notebookutils,
+    }
+    
+    notebook_path = "../sourceZephyr.Notebook/notebook-content.py"
+    with open(notebook_path, 'r') as f:
+        exec(f.read(), exec_globals)
+    
+    # TODO: Add assertions for preview mode behavior
+
+
+@pytest.mark.slow
+def test_backfill_mode(spark, fabric_mocks):
+    """Test notebook with bootstrap=False (backfill mode)."""
+    mssparkutils, notebookutils = fabric_mocks
+    
+    set_notebook_parameters(notebookutils, 
+        bootstrap=False,
+        preview=False,
+        debug=True
+    )
+    
+    exec_globals = {
+        'spark': spark,
+        'mssparkutils': mssparkutils,
+        'notebookutils': notebookutils,
+    }
+    
+    notebook_path = "../sourceZephyr.Notebook/notebook-content.py"
+    with open(notebook_path, 'r') as f:
+        exec(f.read(), exec_globals)
+    
+    # TODO: Add assertions for backfill mode behavior
+
+

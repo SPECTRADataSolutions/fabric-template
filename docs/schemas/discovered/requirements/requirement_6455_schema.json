@@ -1,0 +1,31 @@
+{
+  "customProperties": {},
+  "customProcessedProperties": {},
+  "id": 6455,
+  "name": "REQ-DS-001: Planet Destruction Capability",
+  "priority": "1",
+  "url": "",
+  "details": "Death Star must be capable of destroying entire planets with single superlaser blast. The superlaser must achieve sufficient power output to completely disintegrate planet-sized targets (diameter up to 20,000 km) in a single firing sequence. Power generation systems must maintain stable output during charging and firing phases.\n\u00a0",
+  "createdOn": 1765152000000,
+  "reqCreationDate": "12/08/2025",
+  "createdBy": 40,
+  "lastModifiedBy": 40,
+  "lastModifiedOn": 1765201824000,
+  "createDatetime": 1765201668000,
+  "externalId": "REQ-DS-001",
+  "requirementType": 0,
+  "attachmentCount": 0,
+  "testcaseIds": [],
+  "testcaseVersionIds": [],
+  "releaseIds": [],
+  "requirementTreeIds": [
+    698
+  ],
+  "requirementReleaseTestcaseCountMapping": [],
+  "projectId": 45,
+  "customFieldProcessed": false,
+  "customFieldValues": [],
+  "releaseNames": [],
+  "isBddSupported": false,
+  "actualTestcaseIds": []
+}

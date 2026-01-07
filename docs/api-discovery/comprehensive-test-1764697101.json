@@ -1,0 +1,1460 @@
+{
+  "timestamp": "2025-12-02 17:36:49",
+  "base_url": "https://velonetic.yourzephyr.com/flex/services/rest/latest",
+  "total_tested": 120,
+  "passed": 84,
+  "failed": 36,
+  "skipped": 0,
+  "results": [
+    {
+      "resource": "Get All Preferences - Admin [/admin/preference/admin]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 76,
+        "duration": 0.35892629623413086,
+        "path": "/admin/preference/admin",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Applications  [/admin/app]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 23,
+        "duration": 0.04558372497558594,
+        "path": "/admin/app",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get list of values [/admin/preference/lov/all]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 65,
+        "duration": 0.046715497970581055,
+        "path": "/admin/preference/lov/all",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Preferences  [/admin/preference/all]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 212,
+        "duration": 0.05277705192565918,
+        "path": "/admin/preference/all",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Anonymous Preferences  [/admin/preference/anonymous]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 91,
+        "duration": 0.029574155807495117,
+        "path": "/admin/preference/anonymous",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Daily Back-up Schedule [/admin/backup/schedule]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04845714569091797,
+        "path": "/admin/backup/schedule",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All user preferences  [/admin/ldap/default/settings]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.039626121520996094,
+        "path": "/admin/ldap/default/settings",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Preference by key [/admin/preference{?key}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"name cannot be null.\",\n  \"errorCode\" : \"141z05\"\n}",
+        "path": "/admin/preference",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get Preference Item Usage [/admin/preference/item/usage{?preferencename}{?value}{?id}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"preferenceName cannot be null.\",\n  \"errorCode\" : \"141z05\"\n}",
+        "path": "/admin/preference/item/usage",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get All user preferences  [/admin/user/preference]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 212,
+        "duration": 0.04662728309631348,
+        "path": "/admin/user/preference",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Attachment Details by id [/attachment/{id}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/attachment/33017 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/attachment/33017",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get attachment details [/attachment{?itemid}{?type}{?isLink}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.038033485412597656,
+        "path": "/attachment",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "get Scheduled job via scheduled job id [/automation/schedule{?schedulejobid}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"schedule Job Id cannot be null.\",\n  \"errorCode\" : \"143z04\"\n}",
+        "path": "/automation/schedule",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get latest Scheduled Automation Job Progress  [/upload-file/automation/schedule/get-latest-job-progress{?jobid}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"id to load is required for loading\",\n  \"errorCode\" : \"143z05\"\n}",
+        "path": "/upload-file/automation/schedule/get-latest-job-progress",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "All scheduled jobs by project id and release id  [/upload-file/automation/file-upload-job/list{?releaseId}{?projectId}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"release id cannot be null.\",\n  \"errorCode\" : \"143z04\"\n}",
+        "path": "/upload-file/automation/file-upload-job/list",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "projectid": 1
+        },
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Calculate assignments for release [/cycle/assignments/{releaseid}{?allexecutions}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04997444152832031,
+        "path": "/cycle/assignments/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Cycle by ID [/cycle/{cycleid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.0513150691986084,
+        "path": "/cycle/32",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Cycle names for release [/cycle/cycleName/{releaseid}{?orderBy}{?cycleName}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/cycle/cycleName/1 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/cycle/cycleName/1",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get all cyclePhase Names [/cycle/phase/name{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/cycle/phase/name",
+        "substituted": false,
+        "query_params": {
+          "ids": "33017,33018,33019"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get Cycle for release [/cycle/release/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 5,
+        "duration": 0.0400540828704834,
+        "path": "/cycle/release/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "get status count for releaseid [/cycle/status/count/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.044129371643066406,
+        "path": "/cycle/status/count/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get defect by ID [/defect/{defectId}?projectId={projectId}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/defect/5409341 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/defect/5409341",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Testcase usage history details [//executionchangehistory{?releaseTestScheduleId}{?isascorder}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "//executionchangehistory",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get node path [/execution/path{?scheduleid}{?assigneeuserid}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"For input string: \\\"null\\\"\",\n  \"errorCode\" : \"Bad Request\"\n}",
+        "path": "/execution/path",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "To get Schedule by ID [/execution/{id}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.050144195556640625,
+        "path": "/execution/33017",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "To schedule by schedule IDs [/execution/ids{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/execution/ids",
+        "substituted": false,
+        "query_params": {
+          "ids": "33017,33018,33019"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "To schedule by schedule ids [/execution/expanded{?ids}{?stepresults}{?resulthistory}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/execution/expanded",
+        "substituted": false,
+        "query_params": {
+          "ids": "33017,33018,33019"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get Schedules by Criteria [/execution/user/project{?projectid}{?createdby}{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?orderByAsc}{?offset}{?pagesize}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/execution/user/project?releaseid=1&projectid=1 (Caused by ResponseError('too m",
+        "path": "/execution/user/project",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Schedules by Criteria [/execution{?testerid}{?parentid}{?cyclephaseid}{?releaseid}{?order}{?isascorder}{?offset}{?includeanyoneuser}{?pagesize}{?is_cfield}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 5,
+        "duration": 0.057282209396362305,
+        "path": "/execution",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1
+        }
+      }
+    },
+    {
+      "resource": "Get Teststep results by IDs [/execution/byfilter{?testcaseid}{?releaseid}{?rtsid}{?order}{?isascorder}{?offset}{?pagesize}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.038112640380859375,
+        "path": "/execution/byfilter",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "testcaseid": 80354
+        }
+      }
+    },
+    {
+      "resource": "Search groups in LDAP or crowd [/externalGroup/search{?name}{?pagesize}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/externalGroup/search (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/externalGroup/search",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get all the field's type metadata. [/field/fieldtype]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 16,
+        "duration": 0.04183554649353027,
+        "path": "/field/fieldtype",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get customfield metadata  [/field/metadata{?visible}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 9,
+        "duration": 0.040741920471191406,
+        "path": "/field/metadata",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Field by Id [/field/{id}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/field/33017 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/field/33017",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Field by dispaly name [/field/name{?name}{?projectid}]",
+      "success": false,
+      "data": {
+        "status_code": 204,
+        "error": "",
+        "path": "/field/name",
+        "substituted": false,
+        "query_params": {
+          "projectid": 1
+        },
+        "diagnosis": "HTTP 204 - Unknown issue"
+      }
+    },
+    {
+      "resource": "Get Field by fieldName [/field{?name}]",
+      "success": false,
+      "data": {
+        "status_code": 428,
+        "error": "{\n  \"errorMsg\" : \"fieldName cannot be null.\",\n  \"errorCode\" : \"Precondition Required\"\n}",
+        "path": "/field",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "HTTP 428 - Unknown issue"
+      }
+    },
+    {
+      "resource": "Get Importable Fields By Entity  [/field/importfields/{entityName}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 42,
+        "duration": 0.06981468200683594,
+        "path": "/field/importfields/testcase",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get list of CustomFields [/field/ids{?ids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/field/ids",
+        "substituted": false,
+        "query_params": {
+          "ids": "33017,33018,33019"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get list of project specific CustomFields [/field/project/{id}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04008603096008301,
+        "path": "/field/project/33017",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get fields by entity [/field/entity/{entityname}{?includsystemfield}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 34,
+        "duration": 0.04556608200073242,
+        "path": "/field/entity/testcase",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Validating field in the system. [/field/validate{?id}{?entityname}{?searchfieldname}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"entityName cannot be null.\",\n  \"errorCode\" : \"122z04\"\n}",
+        "path": "/field/validate",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "get Scheduled job via scheduled job id [/fileWatcher/watcher{?schedulejobid}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"id cannot be null.\",\n  \"errorCode\" : \"143z04\"\n}",
+        "path": "/fileWatcher/watcher",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get all requirement node and requirement name by release id [/gadget/{dashboardId}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 5,
+        "duration": 0.03869318962097168,
+        "path": "/gadget/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All projects that allowed access to current global reporsitory user [/global-repository/project]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.038584232330322266,
+        "path": "/global-repository/project",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get License Information. [/info/license]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03862929344177246,
+        "path": "/info/license",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get License Information [/license/]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04051518440246582,
+        "path": "/license/",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Template  [/parsertemplate/{TemplateId}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03896141052246094,
+        "path": "/parsertemplate/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get List of Templates  [/parsertemplate]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 9,
+        "duration": 0.04270505905151367,
+        "path": "/parsertemplate",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Normal Project Details [/project/details]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.04511451721191406,
+        "path": "/project/details",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Normal project [/project/normal]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.04092216491699219,
+        "path": "/project/normal",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get lead for all projects [/project/all/leads]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.037247419357299805,
+        "path": "/project/all/leads",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project by ID [/project/{id}{?isLite}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/project/33017 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/project/33017",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Project by User ID [/project/user/{UserID}?isLite=false&adminUser=false]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.05002236366271973,
+        "path": "/project/user/204",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get allocated Projects [/project/project/{UserID}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.03759932518005371,
+        "path": "/project/project/204",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project Team Count for all projects [/project/count/allprojects]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03979325294494629,
+        "path": "/project/count/allprojects",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project Team Count for all users [/project/count/allusers]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.039798736572265625,
+        "path": "/project/count/allusers",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project Team  for Allocated Projects [/project/allocated/projects]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04213595390319824,
+        "path": "/project/allocated/projects",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project team for project [/project/projectteam/{pid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 7,
+        "duration": 0.04162931442260742,
+        "path": "/project/projectteam/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All projects by UserId [/project{?userId}{?isLite}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.06217241287231445,
+        "path": "/project",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All projects  [/project/lite]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 37,
+        "duration": 0.0378880500793457,
+        "path": "/project/lite",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Shared projects  [/project/shared]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 33,
+        "duration": 0.04408144950866699,
+        "path": "/project/shared",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Shared projects  [/project/sharedprojects/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.039626121520996094,
+        "path": "/project/sharedprojects/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Shared projects shared to given project [/project/sharedtoprojects/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03691244125366211,
+        "path": "/project/sharedtoprojects/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get releases for a project through page and offset [/release/paged/project/{projectid}{?pagesize}{?offset}{?order}{?isascorder}{?isVisible}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.03869819641113281,
+        "path": "/release/paged/project/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Release by Release ID [/release/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03944540023803711,
+        "path": "/release/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get all releases for all projects with Access [/release]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 77,
+        "duration": 0.06142449378967285,
+        "path": "/release",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get releases for a project [/release/project/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.04259514808654785,
+        "path": "/release/project/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Search test executions for given altId [/advancesearch/testexecutions/{altid}{?maxresults}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.05292654037475586,
+        "path": "/advancesearch/testexecutions/LMT-186734",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Check Indexing Health [/advancesearch/reindex/health]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.4444305896759033,
+        "path": "/advancesearch/reindex/health",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All list of Caches [/system/info/cache/info]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.049123525619506836,
+        "path": "/system/info/cache/info",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Channel Information [/system/info/channelinfo]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/system/info/channelinfo",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get License Information [/system/info/license]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04004979133605957,
+        "path": "/system/info/license",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get License Information [/system/info/servertime]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": "non-json",
+        "duration": 0.04270815849304199,
+        "path": "/system/info/servertime"
+      }
+    },
+    {
+      "resource": "Get License Information [/system/info/stats]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.053462982177734375,
+        "path": "/system/info/stats",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get License Detail Information [/license/detail]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/license/detail",
+        "substituted": false,
+        "query_params": {},
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "License Peak Usage Detail [/license/peak/detail?licensetype={licensetype}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/license/peak/detail (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/license/peak/detail",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get teststep results by ID's [/execution/teststepresult/bytctid{?tctid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04005169868469238,
+        "path": "/execution/teststepresult/bytctid",
+        "substituted": false,
+        "query_params": {
+          "tctid": 23971
+        }
+      }
+    },
+    {
+      "resource": "Get Test Step Result [/execution/teststepresult/{id}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.047707319259643555,
+        "path": "/execution/teststepresult/33017",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get test step results by criteria [/execution/teststepresult{?sids}{?cyclephaseid}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/execution/teststepresult (Caused by ResponseError('too many 500 error response",
+        "path": "/execution/teststepresult",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Requirement Summary by Testcase ID [/testcase/requirement/{testcaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 410,
+        "error": "{\n  \"errorMsg\" : \"API is deprecated,kindly contact to customer support\",\n  \"errorCode\" : \"Gone\"\n}",
+        "path": "/testcase/requirement/80354",
+        "substituted": true,
+        "query_params": {},
+        "diagnosis": "HTTP 410 - Unknown issue"
+      }
+    },
+    {
+      "resource": "Get all tags [/testcase/tags]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 30,
+        "duration": 0.06036949157714844,
+        "path": "/testcase/tags",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get all tags [/testcase/tags/{releaseid}{?fetchall}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.037946462631225586,
+        "path": "/testcase/tags/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get all Testcase Names by Testcase IDs [/testcase/name{?tcid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03904533386230469,
+        "path": "/testcase/name",
+        "substituted": false,
+        "query_params": {
+          "tcid": 80354
+        }
+      }
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase [/testcase/count{?tcrcatalogtreeid}{?releaseid}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"org.hibernate.QueryException: could not resolve property: releaseId of: com.thed.model.versioning.TestcaseVersion [select count(tct.testcase.id) as count from com.thed.model.TCRCatal",
+        "path": "/testcase/count",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1
+        },
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/ids{?treeids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/testcase/count/ids",
+        "substituted": false,
+        "query_params": {
+          "treeids": "23971,23974,23975"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get Count Of Testcases By Phase ids. [/testcase/count/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 3,
+        "duration": 0.04183650016784668,
+        "path": "/testcase/count/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative{?releaseid}{?requirementid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.05784940719604492,
+        "path": "/testcase/cumulative",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "requirementid": 6099
+        }
+      }
+    },
+    {
+      "resource": "Get Cumulative Testcase by Release ID and Requirement ID. [/testcase/cumulative/data{?releaseid}{?requirementid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.05258941650390625,
+        "path": "/testcase/cumulative/data",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "requirementid": 6099
+        }
+      }
+    },
+    {
+      "resource": "Testcase count per node [/testcase/count/discrete/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.0442965030670166,
+        "path": "/testcase/count/discrete/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Traceable Path from Root [/testcase/path{?testcaseid}{?tctid}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/testcase/path?testcaseid=80354&tctid=23971 (Caused by ResponseError('too many ",
+        "path": "/testcase/path",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Traceable Path from Root [/testcase/pathbyrelease{?testcaseid}{?releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.045740604400634766,
+        "path": "/testcase/pathbyrelease",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "testcaseid": 80354
+        }
+      }
+    },
+    {
+      "resource": "Get Testcase by Criteria [/testcase/planning/{treeId}{?offset}{?pagesize}{?order}{?isascorder}{?tcname}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/testcase/planning/23971 (Caused by ResponseError('too many 500 error responses",
+        "path": "/testcase/planning/23971",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get Testcase by ID [/testcase/{testcaseId}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.05171704292297363,
+        "path": "/testcase/80354",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Testcases by Tree IDs [/testcase/nodes{?treeids}]",
+      "success": false,
+      "data": {
+        "status_code": 404,
+        "error": "",
+        "path": "/testcase/nodes",
+        "substituted": false,
+        "query_params": {
+          "treeids": "23971,23974,23975"
+        },
+        "diagnosis": "Endpoint not found - may require specific parameters or deprecated"
+      }
+    },
+    {
+      "resource": "Get Testcase details by ID [/testcase/detail/{id}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03824496269226074,
+        "path": "/testcase/detail/33017",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Testcase by ID [/testcase/altid{?altids}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.08831906318664551,
+        "path": "/testcase/altid",
+        "substituted": false,
+        "query_params": {
+          "altids": "LMT-186734"
+        }
+      }
+    },
+    {
+      "resource": "Get Testcase Summary by Requirement ID [/testcase/byrequirement{?requirementid}{?breadcrumb}{?releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04781341552734375,
+        "path": "/testcase/byrequirement",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1,
+          "requirementid": 6099
+        }
+      }
+    },
+    {
+      "resource": "Get all testcase version by testcase id  [/testcase/versions{?testcaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.037000179290771484,
+        "path": "/testcase/versions",
+        "substituted": false,
+        "query_params": {
+          "testcaseid": 80354
+        }
+      }
+    },
+    {
+      "resource": "Get Testcase by Criteria [/testcase{?offset}{?pagesize}{?releaseid}{?keyword}{?zqlquery}]",
+      "success": false,
+      "data": {
+        "status_code": 400,
+        "error": "{\n  \"errorMsg\" : \"Insufficient parameters. word and zqlquery both cannot be null\",\n  \"errorCode\" : \"Bad Request\"\n}",
+        "path": "/testcase",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1
+        },
+        "diagnosis": "Bad request - missing required parameters or invalid format"
+      }
+    },
+    {
+      "resource": "Get Testcase by Tree ID [/testcase/tree/{treeid}{?offset}{?pagesize}{?order}{?isascorder}{?dbsearch}{?frozen}{?is_cfield}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04059171676635742,
+        "path": "/testcase/tree/23971",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Execution Tree by releaseid [/testcasetree/phases/execution/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 4,
+        "duration": 0.04763031005859375,
+        "path": "/testcasetree/phases/execution/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get TCR hierarchy [/testcasetree/hierarchy/{treeid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 1,
+        "duration": 0.04758882522583008,
+        "path": "/testcasetree/hierarchy/23971",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Testcase Tree [/testcasetree/{tctId}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.0491030216217041,
+        "path": "/testcasetree/23971",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Testcase Tree by releaseid [/testcasetree/phases/{releaseid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.039626359939575195,
+        "path": "/testcasetree/phases/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Project Repository Testcase Tree by projectid [/testcasetree/projectrepository/{projectid}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04003763198852539,
+        "path": "/testcasetree/projectrepository/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get tree by criteria [/testcasetree/lite{?type}{?releaseid}{?revisionid}{?parentid}{?isShared}{?limit}{?offset}]",
+      "success": false,
+      "data": {
+        "status_code": 417,
+        "error": "{\n  \"errorMsg\" : \"release Id and type are mandatory.\",\n  \"errorCode\" : \"Expectation Failed\"\n}",
+        "path": "/testcasetree/lite",
+        "substituted": false,
+        "query_params": {
+          "releaseid": 1
+        },
+        "diagnosis": "HTTP 417 - Unknown issue"
+      }
+    },
+    {
+      "resource": "Get Testcase usage history details [/tcuh/testcase/{id}{?isascorder}{?order}{?offset}{?pagesize}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.03704977035522461,
+        "path": "/tcuh/testcase/33017",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get teststep [/testcase/{testcaseVersionId}/teststep{?isfetchstepversion}{?versionId}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04610943794250488,
+        "path": "/testcase/41213/teststep",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get user Grid view [/ui/users{?offset}{?pagesize}{?hidedisabledusers}{?order}{?isascorder}{?isLoggedIn}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 10,
+        "duration": 0.0621190071105957,
+        "path": "/ui/users",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get group Grid view [/ui/searchGroups{?text}{?offset}{?pagesize}{?order}{?isascorder}{?hidedisabledgroups}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 10,
+        "duration": 0.04367685317993164,
+        "path": "/ui/searchGroups",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get project Grid view [/ui/searchProjects{?text}{?offset}{?pagesize}{?order}{?isascorder}{?includeglobalproject}{?isProjectAdmin}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 38,
+        "duration": 0.053839683532714844,
+        "path": "/ui/searchProjects",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Current Logged-In Users [/user/current{?auditLog}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 0,
+        "duration": 0.04616069793701172,
+        "path": "/user/current",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get Defect Users present in System. [/user/defect]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 2,
+        "duration": 0.12070679664611816,
+        "path": "/user/defect",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get All Users Present in the System. [/user/filter{?includeDashboardUser}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 382,
+        "duration": 0.20859932899475098,
+        "path": "/user/filter",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Getting all the Logged-In in User count [/user/loggedin/count{?skipdefectuser}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": "non-json",
+        "duration": 0.03634762763977051,
+        "path": "/user/loggedin/count"
+      }
+    },
+    {
+      "resource": "Get User by ID [/user/{id}{?isLite}]",
+      "success": false,
+      "data": {
+        "error": "HTTPSConnectionPool(host='velonetic.yourzephyr.com', port=443): Max retries exceeded with url: /flex/services/rest/latest/user/33017 (Caused by ResponseError('too many 500 error responses'))",
+        "path": "/user/33017",
+        "diagnosis": "Exception: RetryError"
+      }
+    },
+    {
+      "resource": "Get All Users Present in the System. [/user{?hidedisabledusers}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 384,
+        "duration": 0.07373785972595215,
+        "path": "/user",
+        "substituted": false,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get User by Project ID [/user/project/{projectid}{?isLite}{?adminUser}]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 6,
+        "duration": 0.12209415435791016,
+        "path": "/user/project/1",
+        "substituted": true,
+        "query_params": {}
+      }
+    },
+    {
+      "resource": "Get valid users for Zbot. [/user/validZbotUsers{?projectId}]",
+      "success": false,
+      "data": {
+        "status_code": 403,
+        "error": "{\n  \"errorMsg\" : \"User does not have access to perform this operation\",\n  \"errorCode\" : \"Forbidden\"\n}",
+        "path": "/user/validZbotUsers",
+        "substituted": false,
+        "query_params": {
+          "projectid": 1
+        },
+        "diagnosis": "Access denied - insufficient permissions for this endpoint"
+      }
+    },
+    {
+      "resource": "Get all token  [/usertoken]",
+      "success": true,
+      "data": {
+        "status_code": 200,
+        "count": 3,
+        "duration": 0.03829693794250488,
+        "path": "/usertoken",
+        "substituted": false,
+        "query_params": {}
+      }
+    }
+  ]
+}

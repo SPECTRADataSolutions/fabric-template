@@ -1,0 +1,18 @@
+tenant: "spectra"
+workspace:
+  name: "zephyr"
+  id: "16490dde-33b4-446e-8120-c12b0a68ed88"
+lakehouse:
+  name: "zephyrLakehouse"
+  id: "5cb93b81-8923-a984-4c5b-a9ec9325ae26"  # logicalId from 5cb93b81-8923-a984-4c5b-a9ec9325ae26.Lakehouse/.platform
+pipeline:
+  name: "zephyrPipeline"
+  id: "be9d0663-d383-4fe6-a0aa-8ed4781e9e87"
+environmentVariables:
+  itemName: "zephyrVariables"
+  variables:
+    - "DXC_ZEPHYR_API_TOKEN"  # current secret name in this tenant; adjust per client if needed
+    - "DXC_ZEPHYR_BASE_URL"
+    - "DXC_ZEPHYR_BASE_PATH"
+notes: |
+  Update IDs/names here as playbooks complete in this tenant. Do not store secrets in this file.

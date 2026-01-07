@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "zephyrPipeline",
+    "description": "Data pipeline that runs Zephyr Source through Analyse using parameters projectKey, debugMode, fullRunMode, runTests; lands data and telemetry in the Zephyr lakehouse; guided by docs/source/procedures.md, manifest.json, source/source.plan.yaml, and clients/spectra.yaml."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "be9d0663-d383-4fe6-a0aa-8ed4781e9e87"
+  }
+}

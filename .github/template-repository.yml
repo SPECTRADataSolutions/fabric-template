@@ -1,0 +1,15 @@
+# GitHub Template Repository Configuration
+# This file marks this repository as a template repository
+
+name: SPECTRA Fabric Workspace Template
+description: SPECTRA-grade template for Microsoft Fabric workspaces with 7-stage pipeline methodology
+topics:
+  - fabric
+  - microsoft-fabric
+  - data-pipeline
+  - spectra
+  - data-engineering
+  - etl
+  - spark
+  - delta-lake
+

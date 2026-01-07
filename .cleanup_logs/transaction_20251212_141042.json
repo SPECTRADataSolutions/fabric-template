@@ -1,0 +1,1055 @@
+{
+  "timestamp": "2025-12-12T14:10:42.178096",
+  "moves": [
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "source-stage-standardization-roadmap.md",
+      "to": "docs/source-stage-standardization-roadmap.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": ".spectra\\preferences\\COMMENTARY-CAPTURE.md",
+      "to": "docs/reference/commentary-capture.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\activity-logging-design.md",
+      "to": "docs/architecture/activity-logging-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ACTIVITY-LOGGING-IMPLEMENTATION-COMPLETE.md",
+      "to": "memory/journal/2025-12-12-activity-logging-implementation-complete.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\activity-logging-spectra-grade.md",
+      "to": "docs/reference/activity-logging-spectra-grade.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\api-intelligence-implementation-plan-v2.md",
+      "to": "docs/api/api-intelligence-implementation-plan-v2.md",
+      "reason": "API documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\api-intelligence-implementation-plan.md",
+      "to": "docs/api/api-intelligence-implementation-plan.md",
+      "reason": "API documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\api-validation-findings.md",
+      "to": "docs/api/api-validation-findings.md",
+      "reason": "API documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\autonomous-hierarchy-discovery-complete.md",
+      "to": "memory/journal/2025-12-12-autonomous-hierarchy-discovery-complete.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\autonomous-pipeline-framework.md",
+      "to": "docs/reference/autonomous-pipeline-framework.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\AUTONOMY-BLOCKERS-AND-LIMITATIONS.md",
+      "to": "docs/reference/autonomy-blockers-and-limitations.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\BOT-TOKEN-DECISION.md",
+      "to": "docs/reference/bot-token-decision.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\bug-and-blocker-registry.md",
+      "to": "docs/troubleshooting/bug-and-blocker-registry.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\canonical-test-project-design.md",
+      "to": "docs/architecture/canonical-test-project-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\central-logging-service-design.md",
+      "to": "docs/architecture/central-logging-service-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\cleanup-implementation-plan.md",
+      "to": "docs/cleanup-implementation-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\cleanup-implementation-status.md",
+      "to": "memory/journal/2025-12-12-cleanup-implementation-status.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\COMPLETE-DISCORD-INVITE-URL.md",
+      "to": "memory/journal/2025-12-12-complete-discord-invite-url.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\comprehensive-test-data-reusability-analysis.md",
+      "to": "docs/reference/comprehensive-test-data-reusability-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\config-table-purpose.md",
+      "to": "docs/development/config-table-purpose.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\CREATE-DISCORD-DEVELOPER-TEAM.md",
+      "to": "docs/reference/create-discord-developer-team.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\create-project-hierarchy-guide.md",
+      "to": "docs/reference/create-project-hierarchy-guide.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\CREATE-WEBHOOK-FOR-ZEPHYR-CHANNEL.md",
+      "to": "docs/reference/create-webhook-for-zephyr-channel.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\critical-discovery-release-lock-duration.md",
+      "to": "docs/reference/critical-discovery-release-lock-duration.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-APP-STATUS-EXPLAINED.md",
+      "to": "memory/journal/2025-12-12-discord-app-status-explained.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-BOT-COMPLETE-CONFIGURATION-GUIDE.md",
+      "to": "memory/journal/2025-12-12-discord-bot-complete-configuration-guide.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-BOT-INTEGRATION-STATUS.md",
+      "to": "memory/journal/2025-12-12-discord-bot-integration-status.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-BOT-INVITE-URL.md",
+      "to": "docs/reference/discord-bot-invite-url.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-BOT-PERMISSIONS-EXPLAINED.md",
+      "to": "docs/reference/discord-bot-permissions-explained.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-CHANNEL-STRUCTURE.md",
+      "to": "docs/reference/discord-channel-structure.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-CONFIGURATION-CHECKLIST.md",
+      "to": "docs/development/discord-configuration-checklist.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-INSTALLATION-PAGE-REVIEW.md",
+      "to": "docs/development/discord-installation-page-review.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-NOTIFICATION-ENHANCEMENT.md",
+      "to": "docs/reference/discord-notification-enhancement.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-OAUTH2-PERMISSIONS-GUIDE.md",
+      "to": "docs/reference/discord-oauth2-permissions-guide.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\DISCORD-WEBHOOK-VS-BOT-TOKEN.md",
+      "to": "docs/reference/discord-webhook-vs-bot-token.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\discovery.md",
+      "to": "docs/reference/discovery.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ENDPOINT-DUPLICATES-ANALYSIS.md",
+      "to": "docs/reference/endpoint-duplicates-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ENDPOINT-DUPLICATES-ROOT-CAUSE.md",
+      "to": "docs/reference/endpoint-duplicates-root-cause.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-CLASS-HIERARCHY-DESIGN.md",
+      "to": "docs/architecture/error-class-hierarchy-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-CLASS-NAMING-OPTIONS.md",
+      "to": "docs/troubleshooting/error-class-naming-options.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-CLASS-NAMING-REVISED.md",
+      "to": "docs/troubleshooting/error-class-naming-revised.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-CLASSES-IMPLEMENTED.md",
+      "to": "docs/troubleshooting/error-classes-implemented.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-AND-QUARANTINING.md",
+      "to": "docs/troubleshooting/error-handling-and-quarantining.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-ARCHITECTURE.md",
+      "to": "docs/architecture/error-handling-architecture.md",
+      "reason": "architecture documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-CLASSES-IMPLEMENTED.md",
+      "to": "docs/troubleshooting/error-handling-classes-implemented.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-FINAL-DESIGN.md",
+      "to": "docs/architecture/error-handling-final-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-IMPLEMENTATION-PLAN.md",
+      "to": "docs/troubleshooting/error-handling-implementation-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-INTEGRATION-COMPLETE.md",
+      "to": "memory/journal/2025-12-12-error-handling-integration-complete.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-REUSABILITY-ANALYSIS.md",
+      "to": "docs/troubleshooting/error-handling-reusability-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-SMOKE-TEST.md",
+      "to": "docs/troubleshooting/error-handling-smoke-test.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-SPECTRA-GRADE-DESIGN.md",
+      "to": "docs/architecture/error-handling-spectra-grade-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ERROR-HANDLING-USING-EXISTING.md",
+      "to": "docs/troubleshooting/error-handling-using-existing.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\EXCEPTION-ERROR-REPORTING.md",
+      "to": "docs/troubleshooting/exception-error-reporting.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\fabric-artifacts.md",
+      "to": "docs/reference/fabric-artifacts.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\fabric-delta-table-query-options.md",
+      "to": "docs/reference/fabric-delta-table-query-options.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\fabric-notebook-creation-workflow.md",
+      "to": "docs/reference/fabric-notebook-creation-workflow.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\FABRIC-NOTEBOOK-MARKDOWN-DESIGN.md",
+      "to": "docs/architecture/fabric-notebook-markdown-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\feature-branch-plan.md",
+      "to": "docs/feature-branch-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\feature-branches-summary.md",
+      "to": "memory/journal/2025-12-12-feature-branches-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\fix-corrupted-notebooks.md",
+      "to": "docs/troubleshooting/fix-corrupted-notebooks.md",
+      "reason": "troubleshooting guide",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\FIX-DISCORD-BOT-TOKEN.md",
+      "to": "docs/troubleshooting/fix-discord-bot-token.md",
+      "reason": "troubleshooting guide",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\github-issues-setup.md",
+      "to": "docs/troubleshooting/github-issues-setup.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\github-project-structure.md",
+      "to": "docs/reference/github-project-structure.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\golden-test-project-design.md",
+      "to": "docs/architecture/golden-test-project-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\GRANT-BOT-CHANNEL-PERMISSIONS.md",
+      "to": "docs/reference/grant-bot-channel-permissions.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\HEADER-OPTIONS.md",
+      "to": "docs/reference/header-options.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\issue-to-playbook-mapping.md",
+      "to": "docs/troubleshooting/issue-to-playbook-mapping.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\jira-vs-zephyr-comparison.md",
+      "to": "docs/reference/jira-vs-zephyr-comparison.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\local-testing-guide.md",
+      "to": "docs/reference/local-testing-guide.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\main-branch-updated.md",
+      "to": "docs/reference/main-branch-updated.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\make-comprehensive-test-data-reusable.md",
+      "to": "docs/reference/make-comprehensive-test-data-reusable.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\missing-implementations.md",
+      "to": "docs/reference/missing-implementations.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\multi-runner-coordination.md",
+      "to": "docs/reference/multi-runner-coordination.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\multi-runner-quick-start.md",
+      "to": "docs/reference/multi-runner-quick-start.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\next-actions.md",
+      "to": "docs/reference/next-actions.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\next-steps-source-stage.md",
+      "to": "docs/reference/next-steps-source-stage.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\notebook-parameters-upgrade.md",
+      "to": "docs/migrations/notebook-parameters-upgrade.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\pipeline-configuration-strategy.md",
+      "to": "docs/development/pipeline-configuration-strategy.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\pipeline-validation-framework.md",
+      "to": "docs/reference/pipeline-validation-framework.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\pipeline-validation-mode.md",
+      "to": "docs/reference/pipeline-validation-mode.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\playbook-issue-integration.md",
+      "to": "docs/troubleshooting/playbook-issue-integration.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\prepare-stage-handoff.md",
+      "to": "docs/reference/prepare-stage-handoff.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\prepare-stage-sample-extraction-design.md",
+      "to": "docs/architecture/prepare-stage-sample-extraction-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\preview-samples-purpose.md",
+      "to": "docs/reference/preview-samples-purpose.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\preview-samples-vs-spectra-test-project.md",
+      "to": "docs/reference/preview-samples-vs-spectra-test-project.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\project-hierarchy-spectra-grade.md",
+      "to": "docs/reference/project-hierarchy-spectra-grade.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\project-structure-spectra-grade.md",
+      "to": "docs/reference/project-structure-spectra-grade.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\QUARANTINING-IMPLEMENTATION-COMPLETE.md",
+      "to": "memory/journal/2025-12-12-quarantining-implementation-complete.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\QUARANTINING-SPECTRA-GRADE-DESIGN.md",
+      "to": "docs/architecture/quarantining-spectra-grade-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\QUARANTINING-USAGE-GUIDE.md",
+      "to": "docs/reference/quarantining-usage-guide.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\querying-delta-tables-from-fabric.md",
+      "to": "docs/reference/querying-delta-tables-from-fabric.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\REQ-DS-002-DETAILS.md",
+      "to": "docs/reference/req-ds-002-details.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\REQ-DS-003-DETAILS.md",
+      "to": "docs/reference/req-ds-003-details.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\REQUIREMENT-TREE-STRUCTURE.md",
+      "to": "docs/reference/requirement-tree-structure.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\REQUIREMENT-UI-FIELDS-GUIDE.md",
+      "to": "docs/reference/requirement-ui-fields-guide.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\RESET-BOT-TOKEN-STEP-BY-STEP.md",
+      "to": "docs/reference/reset-bot-token-step-by-step.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\RESET-DISCORD-BOT-TOKEN.md",
+      "to": "docs/reference/reset-discord-bot-token.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\reusable-test-data-builder-complete.md",
+      "to": "memory/journal/2025-12-12-reusable-test-data-builder-complete.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\run-contract-validation.md",
+      "to": "docs/reference/run-contract-validation.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\run-modes-explained.md",
+      "to": "docs/reference/run-modes-explained.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\runtime-flags-reference.md",
+      "to": "docs/reference/runtime-flags-reference.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\SDK-OPTIMIZATION-ANALYSIS.md",
+      "to": "docs/reference/sdk-optimization-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\SETUP-BOT-TOKEN-FOR-CHANNELS.md",
+      "to": "docs/development/setup-bot-token-for-channels.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-builds-sample-database.md",
+      "to": "docs/reference/source-builds-sample-database.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-contract-vs-notebook-status.md",
+      "to": "memory/journal/2025-12-12-source-contract-vs-notebook-status.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-notebook-cleanup-plan.md",
+      "to": "docs/source-notebook-cleanup-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-notebook-cleanup-summary.md",
+      "to": "memory/journal/2025-12-12-source-notebook-cleanup-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-notebook-complete-flow.md",
+      "to": "memory/journal/2025-12-12-source-notebook-complete-flow.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-notebook-production-plan.md",
+      "to": "docs/deployment/source-notebook-production-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-notebook-run-modes.md",
+      "to": "docs/reference/source-notebook-run-modes.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-register.md",
+      "to": "docs/reference/source-register.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-stage-baseline-plan.md",
+      "to": "docs/source-stage-baseline-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-stage-baseline-summary.md",
+      "to": "memory/journal/2025-12-12-source-stage-baseline-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-stage-contract-audit.md",
+      "to": "docs/reference/source-stage-contract-audit.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\SOURCE-STAGE-ENHANCEMENT-ANALYSIS.md",
+      "to": "docs/reference/source-stage-enhancement-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\SOURCE-STAGE-PLANNED-FEATURES.md",
+      "to": "docs/source-stage-planned-features.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-stage-quality-gate-report.md",
+      "to": "docs/reference/source-stage-quality-gate-report.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\source-table-portfolio-design.md",
+      "to": "docs/architecture/source-table-portfolio-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectra-grade-runtime-flags.md",
+      "to": "docs/reference/spectra-grade-runtime-flags.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectra-grade-sample-extraction.md",
+      "to": "docs/reference/spectra-grade-sample-extraction.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectra-test-project-design.md",
+      "to": "docs/architecture/spectra-test-project-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectra-wide-project-structure.md",
+      "to": "docs/reference/spectra-wide-project-structure.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectratestproject-comprehensive-design.md",
+      "to": "docs/architecture/spectratestproject-comprehensive-design.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\spectratestproject-implementation-plan.md",
+      "to": "docs/spectratestproject-implementation-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\test-project-configuration.md",
+      "to": "docs/development/test-project-configuration.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\todays-discoveries-summary.md",
+      "to": "memory/journal/2025-12-12-todays-discoveries-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\tomorrow-fine-tooth-comb-plan.md",
+      "to": "docs/tomorrow-fine-tooth-comb-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\ZEPHYR-API-DISCOVERIES.md",
+      "to": "docs/api/zephyr-api-discoveries.md",
+      "reason": "API documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\zephyr-backlog-project.md",
+      "to": "docs/reference/zephyr-backlog-project.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\zephyr-canonical-project-template-plan.md",
+      "to": "docs/zephyr-canonical-project-template-plan.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\zephyr-complete-understanding.md",
+      "to": "memory/journal/2025-12-12-zephyr-complete-understanding.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\zephyr-enterprise-master-knowledge.md",
+      "to": "docs/reference/zephyr-enterprise-master-knowledge.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "docs\\zephyr-research-summary.md",
+      "to": "memory/journal/2025-12-12-zephyr-research-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "intelligence\\validation-report.md",
+      "to": "docs/reference/validation-report.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\blocker-001.md",
+      "to": "docs/reference/blocker-001.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\blocker-002.md",
+      "to": "docs/reference/blocker-002.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\bug-001.md",
+      "to": "docs/troubleshooting/bug-001.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\bug-002.md",
+      "to": "docs/troubleshooting/bug-002.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\bug-003.md",
+      "to": "docs/troubleshooting/bug-003.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\bug-004.md",
+      "to": "docs/troubleshooting/bug-004.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\bug-005.md",
+      "to": "docs/troubleshooting/bug-005.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\doc-gap-001.md",
+      "to": "docs/reference/doc-gap-001.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "issues\\doc-gap-002.md",
+      "to": "docs/reference/doc-gap-002.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "tests\\PREPARE-STAGE-FIXES-SUMMARY.md",
+      "to": "memory/journal/2025-12-12-prepare-stage-fixes-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "tests\\TESTING-PLAN-PREPARE-STAGE.md",
+      "to": "docs/testing-plan-prepare-stage.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "validation-reports\\api-coverage-matrix.md",
+      "to": "docs/api/api-coverage-matrix.md",
+      "reason": "API documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "validation-reports\\canonical-creation-order.md",
+      "to": "docs/reference/canonical-creation-order.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "validation-reports\\failure-analysis.md",
+      "to": "docs/reference/failure-analysis.md",
+      "reason": "reference documentation",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "validation-reports\\fixes-from-research.md",
+      "to": "docs/troubleshooting/fixes-from-research.md",
+      "reason": "troubleshooting guide",
+      "executed": false
+    },
+    {
+      "timestamp": "2025-12-12T14:10:42.177595",
+      "from": "validation-reports\\hierarchy-discovery-summary.md",
+      "to": "memory/journal/2025-12-12-hierarchy-discovery-summary.md",
+      "reason": "temporal document",
+      "executed": false
+    }
+  ]
+}

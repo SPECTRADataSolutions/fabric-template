@@ -1,0 +1,98 @@
+stage: "Source"
+owner: "SPECTRA Data Solutions"
+objectives:
+  - "Guarantee deterministic pulls of Zephyr projects, releases, cycles, and executions."
+  - "Capture evidence for autonomous pipeline builds (manifest + plan parity)."
+  - "Keep Jira parity notes so downstream models stay consistent."
+
+artifacts:
+  contract: "contract.yaml"
+  manifest: "manifest.json"
+  procedures: "docs/source/procedures.md"
+
+ingestionUnits:
+  - name: "projects"
+    description: "Seed list of all Zephyr projects."
+    endpoint: "/project"
+    method: "GET"
+    schedule: "00 */2 * * *"
+    outputs:
+      landingPath: "fabric/raw/zephyr/source/projects"
+      format: "json"
+    controls:
+      schemaHash: true
+      checksum: "sha256"
+  - name: "releases"
+    description: "Release catalogue per project."
+    endpoint: "/release"
+    method: "GET"
+    schedule: "15 */2 * * *"
+    inputs:
+      upstream: "projects"
+    outputs:
+      landingPath: "fabric/raw/zephyr/source/releases"
+      format: "json"
+    controls:
+      incrementalField: "lastModifiedOn"
+      watermarkStore: "fabric/control/zephyr/releases"
+  - name: "cycles"
+    description: "Test cycles organised by release."
+    endpoint: "/cycle"
+    method: "GET"
+    schedule: "30 */2 * * *"
+    inputs:
+      upstream: "releases"
+    outputs:
+      landingPath: "fabric/raw/zephyr/source/cycles"
+      format: "json"
+    controls:
+      incrementalField: "lastModifiedOn"
+      watermarkStore: "fabric/control/zephyr/cycles"
+  - name: "executions"
+    description: "Execution level telemetry with pass/fail states."
+    endpoint: "/execution"
+    method: "GET"
+    schedule: "45 */2 * * *"
+    inputs:
+      upstream: "cycles"
+    outputs:
+      landingPath: "fabric/raw/zephyr/source/executions"
+      format: "json"
+    controls:
+      incrementalField: "lastTestedOn"
+      watermarkStore: "fabric/control/zephyr/executions"
+
+qualityGates:
+  - name: "contract-alignment"
+    description: "Validate object definitions against contract.yaml"
+    enforcement: "fail-fast"
+  - name: "row-thresholds"
+    description: "Alert when record deltas fall below 5% week-over-week"
+    enforcement: "warn"
+
+instrumentation:
+  metrics:
+    - name: "zephyr_source_latency_seconds"
+      type: "gauge"
+      description: "End-to-end latency from Zephyr API to Fabric landing."
+    - name: "zephyr_source_records"
+      type: "counter"
+      description: "Records ingested per object per run."
+  logging:
+    level: "info"
+    destination: "appinsights://spectra-zephyr-source"
+
+jiraAlignment:
+  lessons:
+    - item: "Watermark drift"
+      mitigation: "Store Zephyr high-water marks in Fabric control tables, mirroring Jira fix from 2025-10."
+    - item: "Pagination reliability"
+      mitigation: "Adopt offset pagination with explicit limit/offset just like Jira issue sync."
+
+escalation:
+  sev1: "#spectra-data-pipelines"
+  sev2: "Core OpsHub"
+
+nextSteps:
+  - "Pair with Jira owners to confirm Prepare stage re-use."
+  - "Publish spectrafy evidence once `.spectra` footprints exist."

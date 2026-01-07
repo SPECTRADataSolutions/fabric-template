@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/variables/1.0.0/schema.json",
+  "variables": [
+    {
+      "name": "SOURCE_SYSTEM",
+      "note": "From contract.yaml sourceSystem.key",
+      "type": "String",
+      "value": "zephyr"
+    },
+    {
+      "name": "SOURCE_NAME",
+      "note": "From contract.yaml sourceSystem.name",
+      "type": "String",
+      "value": "Zephyr Enterprise"
+    },
+    {
+      "name": "STAGE",
+      "note": "Current SPECTRA stage (source, extract, clean, etc.)",
+      "type": "String",
+      "value": "source"
+    },
+    {
+      "name": "NOTEBOOK_NAME",
+      "note": "Notebook identifier for logging/monitoring",
+      "type": "String",
+      "value": "sourceZephyr"
+    },
+    {
+      "name": "BASE_URL",
+      "note": "Zephyr API base URL (from contract.yaml endpoints.host)",
+      "type": "String",
+      "value": "https://velonetic.yourzephyr.com"
+    },
+    {
+      "name": "BASE_PATH",
+      "note": "Zephyr API base path (from contract.yaml endpoints.basePath)",
+      "type": "String",
+      "value": "/flex/services/rest/latest"
+    },
+    {
+      "name": "API_TOKEN",
+      "note": "Secret - populate from .env (NOT in contract.yaml)",
+      "type": "String",
+      "value": ""
+    },
+    {
+      "name": "TEST_PROJECT_ID",
+      "note": "SpectraTestProject ID - locked to project 45 for this environment. Environment-specific constant, NOT a pipeline parameter.",
+      "type": "String",
+      "value": "45"
+    },
+    {
+      "name": "DISCORD_WEBHOOK_URL_ZEPHYR",
+      "note": "Discord webhook URL for Zephyr pipeline notifications (data-zephyr-pipelines channel). Source stage will automatically send completion notifications to this webhook.",
+      "type": "String",
+      "value": ""
+    }
+  ]
+}

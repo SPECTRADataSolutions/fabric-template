@@ -1,0 +1,62 @@
+{
+  "entity": "requirement_folder",
+  "sample_data": {
+    "id": 708,
+    "name": "API Intelligence Probe - Req Folder 20251209134246",
+    "description": "Auto-generated for schema discovery",
+    "projectId": 45,
+    "categories": [],
+    "requirements": [],
+    "lastModifiedOn": 1765287767438,
+    "releaseIds": [],
+    "hasChild": false
+  },
+  "schema": {
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "projectId": {
+        "type": "integer"
+      },
+      "categories": {
+        "type": "array"
+      },
+      "requirements": {
+        "type": "array"
+      },
+      "lastModifiedOn": {
+        "type": "integer"
+      },
+      "releaseIds": {
+        "type": "array"
+      },
+      "hasChild": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "categories",
+      "description",
+      "hasChild",
+      "id",
+      "lastModifiedOn",
+      "name",
+      "projectId",
+      "releaseIds",
+      "requirements"
+    ]
+  },
+  "endpoint": "/requirementtree/add",
+  "method": "POST",
+  "status": "\u2705 Working",
+  "notes": "Works perfectly"
+}

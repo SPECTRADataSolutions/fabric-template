@@ -1,0 +1,186 @@
+metadata:
+  generated_at: '2025-12-09'
+  source: 'Phase 1: Survey'
+  method: Consolidated from existing discoveries
+  total_entities: 9
+  working_entities: 5
+  broken_entities: 1
+  blocked_entities: 3
+entities:
+- name: project
+  description: Top-level Zephyr project container
+  level: 0
+  dependencies: []
+  status: ✅ Working
+  endpoints:
+    get: /project
+    get_by_id: /project/{id}
+    create: null
+  lifecycle:
+  - active
+  notes: Projects are created manually in Zephyr UI, not via API
+- name: release
+  description: Release entity within a project
+  level: 0
+  dependencies: []
+  status: ✅ Working (with lock quirk)
+  endpoints:
+    get: /release
+    get_by_id: /release/{id}
+    create: /release
+    update: /release/{id}
+    delete: /release/{id}
+  lifecycle:
+  - draft
+  - active
+  - completed
+  notes: 'BLOCKER-003: Locks for >60s after creation. Workaround: Use existing releases.'
+  quirks:
+  - 'BLOCKER-003: Release lock duration >60s'
+  - 'BUG-007: GET by ID returns HTTP 403'
+- name: requirement_folder
+  description: Folder for organizing requirements
+  level: 0
+  dependencies: []
+  status: ✅ Working perfectly
+  endpoints:
+    create: /requirementtree/add
+    update: /requirementtree/update
+    delete: /requirementtree/delete
+  lifecycle:
+  - active
+  notes: Works flawlessly, no issues
+- name: requirement
+  description: Test requirement within a folder
+  level: 1
+  dependencies:
+  - requirement_folder
+  status: ✅ Working (with workaround)
+  endpoints:
+    create: /requirementtree/add
+    create_broken: /requirement
+    update: /requirement/{id}
+    delete: /requirement/{id}
+  lifecycle:
+  - draft
+  - active
+  notes: 'BLOCKER-001: POST /requirement returns HTTP 500. Workaround: Use /requirementtree/add
+    with parentId.'
+  quirks:
+  - 'BLOCKER-001: Direct requirement creation API broken'
+  - Must use unique names across all runs
+- name: cycle
+  description: Test cycle within a release
+  level: 1
+  dependencies:
+  - release
+  status: ✅ Working (with unlocked release)
+  endpoints:
+    get: /cycle
+    get_by_id: /cycle/{id}
+    create: /cycle
+    update: /cycle/{id}
+    delete: /cycle/{id}
+  lifecycle:
+  - active
+  - completed
+  notes: Requires unlocked release. Use existing releases to avoid lock issue.
+  quirks:
+  - Fails with newly created releases due to BLOCKER-003
+- name: testcase_folder
+  description: Folder for organizing test cases
+  level: 1
+  dependencies:
+  - project
+  status: ❌ Broken (BLOCKER-002)
+  endpoints:
+    create: /testcasetree
+    update: /testcasetree
+    delete: /testcasetree
+  lifecycle:
+  - active
+  notes: 'BLOCKER-002: POST /testcasetree returns HTTP 400 ''For input string: null''.
+    Tried 4 variations, all failed.'
+  quirks:
+  - 'BLOCKER-002: Folder API rejects valid payloads (parentId: null issue)'
+- name: testcase
+  description: Test case within a folder
+  level: 2
+  dependencies:
+  - testcase_folder
+  status: ⏸️ Blocked by testcase_folder
+  endpoints:
+    get: /testcase
+    get_by_id: /testcase/{id}
+    create: /testcase
+    update: /testcase/{id}
+    delete: /testcase/{id}
+  lifecycle:
+  - draft
+  - active
+  notes: Cannot test until testcase_folder API is fixed. Requires tcrCatalogTreeId
+    (folder ID).
+- name: execution
+  description: Test execution linking testcase to cycle
+  level: 3
+  dependencies:
+  - testcase
+  - cycle
+  status: ⏸️ Blocked by testcase
+  endpoints:
+    get: /execution
+    get_by_id: /execution/{id}
+    create: /execution
+    update: /execution/{id}
+    delete: /execution/{id}
+  lifecycle:
+  - not executed
+  - in progress
+  - passed
+  - failed
+  - blocked
+  notes: Cannot test until testcase creation works.
+- name: allocation
+  description: Testcase allocation to resources
+  level: 2
+  dependencies:
+  - testcase
+  status: ⏸️ Blocked by testcase
+  endpoints:
+    create: /allocation
+    update: /allocation/{id}
+    delete: /allocation/{id}
+  lifecycle:
+  - active
+  notes: Cannot test until testcase creation works.
+dependency_hierarchy:
+  level_0_independent:
+  - project
+  - release
+  - requirement_folder
+  level_1_single_dependency:
+  - requirement
+  - cycle
+  - testcase_folder
+  level_2_multiple_dependencies:
+  - testcase
+  - allocation
+  level_3_complex_dependencies:
+  - execution
+status_summary:
+  working:
+  - project
+  - release
+  - requirement_folder
+  - requirement
+  - cycle
+  broken:
+  - testcase_folder
+  blocked:
+  - testcase
+  - execution
+  - allocation
+critical_blockers:
+- 'BLOCKER-001: Requirement creation API broken (POST /requirement returns HTTP 500)'
+- 'BLOCKER-002: Testcase folder API broken (POST /testcasetree returns HTTP 400)'
+- 'BLOCKER-003: Release lock duration >60 seconds'

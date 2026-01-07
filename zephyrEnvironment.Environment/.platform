@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Environment",
+    "displayName": "zephyrEnvironment",
+    "description": "Fabric environment that binds the Zephyr pipeline, lakehouse, and variable library for the zephyr workspace; owned by the Data Platform team; see clients/spectra.yaml and manifest.json for bindings."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "92a8349b-6a62-b2e9-40bf-1ac52e9ab184"
+  }
+}

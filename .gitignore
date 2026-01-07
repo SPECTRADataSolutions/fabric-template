@@ -1,0 +1,67 @@
+# SPECTRA Fabric Template - Git Ignore
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+coverage.json
+
+# Test artifacts
+.pytest_cache/
+test_run.log
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+temp_*
+
+# Secrets (never commit!)
+*.key
+*.pem
+*secret*
+*password*
+*token*
+credentials.json
+
+# Fabric-specific
+*.pbir
+*.pbism
+*.whl  # SDK wheels (install from releases)
+
+# Logs
+*.log
+logs/
+
+# Local test data
+test_data/
+local_test/
