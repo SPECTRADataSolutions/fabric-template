@@ -1,6 +1,6 @@
 # SPECTRA Fabric Workspace Template
 
-[![SPECTRA-Grade](https://img.shields.io/badge/SPECTRA-Grade-brightgreen.svg)](https://github.com/SPECTRADataSolutions/spectra-fabric-template)
+[![SPECTRA-Grade](https://img.shields.io/badge/SPECTRA-Grade-brightgreen.svg)](https://github.com/SPECTRADataSolutions/fabric-template)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 **SPECTRA-grade template for Microsoft Fabric workspaces** following the proven 7-stage SPECTRA methodology.
