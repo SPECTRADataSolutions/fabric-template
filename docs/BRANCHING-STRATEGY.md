@@ -240,14 +240,14 @@ Closes #123"
 
 ## 📊 Comparison with Other SPECTRA Repos
 
-| Repository          | Strategy                    | Reason                         |
-| ------------------- | --------------------------- | ------------------------------ |
-| **Portal**          | `feature/*` → `main`        | Web service, simple deployment |
-| **Notifications**   | `feature/*` → `main`         | API service, simple deployment |
-| **Assistant**       | `feature/*` → `main`         | API service, simple deployment |
-| **Jira Pipeline**   | `feature/*` → `main`         | Monthly release cycle          |
-| **Zephyr Pipeline** | `feature/*` → `main`        | Monthly release cycle          |
-| **Fabric Template** | `feature/*` → `main`         | Monthly release cycle          |
+| Repository          | Strategy             | Reason                         |
+| ------------------- | -------------------- | ------------------------------ |
+| **Portal**          | `feature/*` → `main` | Web service, simple deployment |
+| **Notifications**   | `feature/*` → `main` | API service, simple deployment |
+| **Assistant**       | `feature/*` → `main` | API service, simple deployment |
+| **Jira Pipeline**   | `feature/*` → `main` | Monthly release cycle          |
+| **Zephyr Pipeline** | `feature/*` → `main` | Monthly release cycle          |
+| **Fabric Template** | `feature/*` → `main` | Monthly release cycle          |
 
 **Rule:** All SPECTRA repos use simple `feature/*` → `main` strategy with monthly releases.
 
