@@ -6,18 +6,18 @@
 
 ---
 
-## 🎯 Strategy: Feature → Dev → Test → Main (Multi-Stage)
+## 🎯 Strategy: Feature → Main (Simple, Monthly Releases)
 
 **Branch Model:**
 
 ```
-feature/* → dev → test → main (production)
-     ↓        ↓      ↓       ↓
-  Fabric   Fabric  Fabric  Fabric
-  Workspace Workspace Workspace Workspace
+feature/* → main (production)
+     ↓         ↓
+  Feature   Monthly
+  Branch    Release
 ```
 
-**Fabric workspaces require multi-stage strategy for data validation and workspace integration.**
+**SPECTRA uses feature branches that merge directly to main, with monthly release cycles for validation and deployment.**
 
 ---
 
@@ -30,57 +30,16 @@ feature/* → dev → test → main (production)
 **Deployment:** Production pipelines  
 **Protection:**
 
-- Requires PR from `test`
+- Requires PR from `feature/*` branches
 - Requires CI checks to pass
-- Requires test stage validation
 - No direct commits
+- Auto-delete head branches after merge
 
 **Usage:**
-- Final production deployment
-- Stable, validated code only
-- All 7 SPECTRA stages complete and tested
 
----
-
-### **`test`** (Pre-Production Validation)
-
-**Purpose:** Pre-production testing and validation  
-**Fabric Workspace:** Test workspace  
-**Deployment:** Test pipelines  
-
-**Workflow:**
-1. Merge from `dev` when ready for testing
-2. Run full pipeline validation
-3. Test all 7 SPECTRA stages
-4. Validate data quality
-5. Merge to `main` when validated
-
-**Usage:**
-- Final validation before production
-- End-to-end testing
-- Data quality checks
-- Performance validation
-
----
-
-### **`dev`** (Development)
-
-**Purpose:** Active development and Fabric workspace integration  
-**Fabric Workspace:** Development workspace  
-**Deployment:** Development pipelines  
-
-**Workflow:**
-1. Merge from `feature/*` branches
-2. Continuous integration testing
-3. Fabric workspace sync
-4. Stage-by-stage development
-5. Merge to `test` when ready
-
-**Usage:**
-- Active development
-- Fabric workspace integration
-- Stage implementation
-- SDK updates
+- Production deployment
+- Stable, validated code
+- Monthly release cycle
 
 ---
 
@@ -96,14 +55,15 @@ feature/* → dev → test → main (production)
 
 **Workflow:**
 
-1. Branch from `dev` (or `main` for hotfixes)
+1. Branch from `main`
 2. Make changes
 3. Test in local Fabric workspace
-4. Push and open PR to `dev`
-5. Merge to `dev`
+4. Push and open PR to `main`
+5. Merge to `main` (after review)
 6. Branch auto-deleted
 
 **Usage:**
+
 - Isolated feature development
 - Bug fixes
 - Stage implementations
@@ -116,9 +76,9 @@ feature/* → dev → test → main (production)
 ### **1. Create Feature Branch**
 
 ```bash
-# Ensure dev is up to date
-git checkout dev
-git pull origin dev
+# Ensure main is up to date
+git checkout main
+git pull origin main
 
 # Create feature branch
 git checkout -b feature/add-extract-stage
@@ -152,16 +112,16 @@ Closes #42"
 # Push branch
 git push -u origin feature/add-extract-stage
 
-# Create PR to dev (using GitHub CLI)
+# Create PR to main (using GitHub CLI)
 gh pr create \
-  --base dev \
+  --base main \
   --title "feat: add extract stage implementation" \
   --body "Implements extract stage with API extraction logic. Closes #42"
 ```
 
 ---
 
-### **4. Merge to Dev**
+### **4. Review and Merge**
 
 **When PR approved and CI passes:**
 
@@ -171,49 +131,24 @@ gh pr merge --squash --delete-branch
 ```
 
 **Fabric automatically:**
-- Syncs to dev workspace
-- Runs dev pipeline
+
+- Syncs to production workspace
+- Runs production pipeline
 - Validates changes
 
 ---
 
-### **5. Promote to Test**
+## 📅 Monthly Release Cycle
 
-**When dev is stable:**
+**SPECTRA uses monthly releases for validation and deployment:**
 
-```bash
-# Create PR from dev to test
-gh pr create \
-  --base test \
-  --head dev \
-  --title "Promote dev to test" \
-  --body "Dev branch is stable and ready for pre-production validation"
-```
+1. **Feature Development:** Work happens in `feature/*` branches
+2. **Continuous Integration:** PRs merge to `main` as ready
+3. **Monthly Review:** First Monday of each month
+4. **Release Validation:** Review all changes, test, deploy
+5. **Documentation:** Update CHANGELOG, create release notes
 
-**After merge:**
-- Syncs to test workspace
-- Runs full validation pipeline
-- Tests all 7 stages
-
----
-
-### **6. Promote to Main (Production)**
-
-**When test validation passes:**
-
-```bash
-# Create PR from test to main
-gh pr create \
-  --base main \
-  --head test \
-  --title "Release to production" \
-  --body "Test validation complete. Ready for production deployment."
-```
-
-**After merge:**
-- Syncs to production workspace
-- Deploys to production
-- All stages live
+**See:** `Core/operations/playbooks/release/release.001-monthly-review-release.md`
 
 ---
 
@@ -222,46 +157,22 @@ gh pr create \
 ### **`main` Branch**
 
 **Required:**
-- ✅ Pull request from `test` only
+
+- ✅ Pull request from `feature/*` branches only
 - ✅ Status checks must pass (CI, lint, build)
-- ✅ Test stage validation complete
 - ✅ Conversation resolution (if comments exist)
 - ✅ Auto-delete head branches after merge
 
 **Allowed:**
+
 - ✅ Auto-merge (when checks pass)
 - ✅ Squash merging (default)
 
 **Forbidden:**
+
 - ❌ Direct commits to `main`
 - ❌ Force pushes
 - ❌ Deletion of `main` branch
-- ❌ PRs from `dev` or `feature/*` (must go through `test`)
-
----
-
-### **`test` Branch**
-
-**Required:**
-- ✅ Pull request from `dev` only
-- ✅ Status checks must pass
-- ✅ Auto-delete head branches after merge
-
-**Allowed:**
-- ✅ Direct commits (for test fixes)
-- ✅ Squash merging
-
----
-
-### **`dev` Branch**
-
-**Required:**
-- ✅ Pull request from `feature/*` branches
-- ✅ Status checks must pass
-
-**Allowed:**
-- ✅ Direct commits (for quick fixes)
-- ✅ Squash merging
 
 ---
 
@@ -278,6 +189,7 @@ gh pr create \
 ```
 
 **Types:**
+
 - `feat`: New feature or stage
 - `fix`: Bug fix
 - `docs`: Documentation update
@@ -310,18 +222,16 @@ Closes #123"
 
 ### **Branch → Workspace Mapping**
 
-| Branch | Workspace | Purpose |
-|--------|-----------|---------|
-| `main` | `{PROJECT}Prod.Workspace` | Production |
-| `test` | `{PROJECT}Test.Workspace` | Pre-production |
-| `dev` | `{PROJECT}Dev.Workspace` | Development |
+| Branch      | Workspace                     | Purpose             |
+| ----------- | ----------------------------- | ------------------- |
+| `main`      | `{PROJECT}Prod.Workspace`     | Production          |
 | `feature/*` | Local or shared dev workspace | Feature development |
 
 ### **Switching Branches in Fabric**
 
 1. Go to Fabric workspace
 2. Open Git integration
-3. Switch to branch (e.g., `dev`, `test`, `feature/add-extract`)
+3. Switch to branch (e.g., `feature/add-extract`)
 4. Sync branch to Fabric
 5. Run pipeline
 6. Test changes
@@ -330,16 +240,16 @@ Closes #123"
 
 ## 📊 Comparison with Other SPECTRA Repos
 
-| Repository          | Strategy                              | Reason                         |
-| ------------------- | ------------------------------------- | ------------------------------ |
-| **Portal**          | `feature/*` → `main`                  | Web service, simple deployment |
-| **Notifications**   | `feature/*` → `main`                  | API service, simple deployment |
-| **Assistant**       | `feature/*` → `main`                  | API service, simple deployment |
-| **Jira Pipeline**   | `feature/*` → `dev` → `test` → `main` | Fabric workspace integration   |
-| **Zephyr Pipeline** | `feature/*` → `dev` → `test` → `main` | Fabric workspace integration   |
-| **Fabric Template** | `feature/*` → `dev` → `test` → `main` | Fabric workspace integration   |
+| Repository          | Strategy                    | Reason                         |
+| ------------------- | --------------------------- | ------------------------------ |
+| **Portal**          | `feature/*` → `main`        | Web service, simple deployment |
+| **Notifications**   | `feature/*` → `main`         | API service, simple deployment |
+| **Assistant**       | `feature/*` → `main`         | API service, simple deployment |
+| **Jira Pipeline**   | `feature/*` → `main`         | Monthly release cycle          |
+| **Zephyr Pipeline** | `feature/*` → `main`        | Monthly release cycle          |
+| **Fabric Template** | `feature/*` → `main`         | Monthly release cycle          |
 
-**Rule:** Web services use simple strategy, Fabric pipelines use multi-stage.
+**Rule:** All SPECTRA repos use simple `feature/*` → `main` strategy with monthly releases.
 
 ---
 
@@ -348,26 +258,25 @@ Closes #123"
 **Branching strategy is working when:**
 
 1. ✅ All changes go through PRs
-2. ✅ Feature branches merge to `dev`
-3. ✅ `dev` promotes to `test` after validation
-4. ✅ `test` promotes to `main` after full validation
-5. ✅ CI checks pass at each stage
-6. ✅ Fabric workspaces sync correctly
-7. ✅ No direct commits to `main`
-8. ✅ Branches auto-delete after merge
+2. ✅ Feature branches merge directly to `main`
+3. ✅ Monthly releases validate and deploy changes
+4. ✅ CI checks pass before merge
+5. ✅ Fabric workspaces sync correctly
+6. ✅ No direct commits to `main`
+7. ✅ Branches auto-delete after merge
 
 ---
 
 ## 📝 Related Documents
 
+- **Monthly Release Playbook:** `Core/operations/playbooks/release/release.001-monthly-review-release.md`
 - **Portal Branching:** `Core/portal/docs/reference/branching-strategy.md`
 - **Git Workflow:** `Core/operations/playbooks/git/git.001-spectra-grade-pr-workflow.md`
 - **Fabric Setup:** `TEMPLATE-USAGE.md`
 
 ---
 
-**Version:** 1.0.0  
+**Version:** 2.0.0  
 **Last Updated:** 2026-01-06  
 **Owner:** SPECTRA Data Solutions Team  
 **Status:** ✅ Active Standard
-
